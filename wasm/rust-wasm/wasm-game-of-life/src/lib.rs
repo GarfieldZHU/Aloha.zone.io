@@ -3,6 +3,8 @@ mod utils;
 use wasm_bindgen::prelude::*;
 use std::fmt;
 
+extern crate js_sys;
+
 // When the `wee_alloc` feature is enabled, use `wee_alloc` as the global
 // allocator.
 #[cfg(feature = "wee_alloc")]
@@ -113,8 +115,13 @@ impl Universe {
         let height = 64;
 
         let cells = (0..width * height)
-            .map(|i| {  // Define a rule for initial pattern here
-                if i % 2 == 0 || i % 7 == 0 {
+            .map(|i| {  
+                // if i % 2 == 0 || i % 7 == 0 { // Define a rule for initial pattern here
+                //     Cell::Alive
+                // } else {
+                //     Cell::Dead
+                // }
+                if js_sys::Math::random() < 0.5 { // Randomly intialize the pattern
                     Cell::Alive
                 } else {
                     Cell::Dead
