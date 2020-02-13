@@ -37,7 +37,7 @@ impl fmt::Display for Universe {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         for line in self.cells.as_slice().chunks(self.width as usize) {
             for &cell in line {
-                let symbol = if cell == Cell::Dead { '◻' } else { '◼' };
+                let symbol = if cell == 0 { '◻' } else { '◼' };
                 write!(f, "{}", symbol)?;
             }
             write!(f, "\n")?;
@@ -146,36 +146,6 @@ impl Universe {
 
     pub fn cells(&self) -> *const u32 {
         self.cells.as_slice().as_ptr()
-    }
-
-    /// Set the width of the universe.
-    ///
-    /// Resets all cells to the dead state.
-    pub fn set_width(&mut self, width: u32) {
-        self.width = width;
-        self.cells = (0..width * self.height).map(|_i| Cell::Dead).collect();
-    }
-
-    /// Set the height of the universe.
-    ///
-    /// Resets all cells to the dead state.
-    pub fn set_height(&mut self, height: u32) {
-        self.height = height;
-        self.cells = (0..self.width * height).map(|_i| Cell::Dead).collect();
-    }
-
-    /// Get the dead and alive values of the entire universe.
-    pub fn get_cells(&self) -> &[Cell] {
-        &self.cells
-    }
-
-    /// Set cells to be alive in a universe by passing the row and column
-    /// of each cell as an array.
-    pub fn set_cells(&mut self, cells: &[(u32, u32)]) {
-        for (row, col) in cells.iter().cloned() {
-            let idx = self.get_index(row, col);
-            self.cells[idx] = Cell::Alive;
-        }
     }
 }
 
