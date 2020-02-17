@@ -89,7 +89,8 @@ const renderLoop = () => {
   drawGrid();
   drawCells();
 
-  requestAnimationFrame(renderLoop);
+  setTimeout(() => requestAnimationFrame(renderLoop), 166)
+  
 };
 
 
