@@ -5,8 +5,17 @@ use std::fmt;
 
 extern crate js_sys;
 extern crate fixedbitset;
+extern crate web_sys;
+
 use fixedbitset::FixedBitSet;
 
+
+// A macro to provide `println!(..)`-style syntax for `console.log` logging.
+macro_rules! log {
+    ( $( $t:tt )* ) => {
+        web_sys::console::log_1(&format!( $( $t )* ).into());
+    }
+}
 
 // When the `wee_alloc` feature is enabled, use `wee_alloc` as the global
 // allocator.
@@ -112,6 +121,8 @@ impl Universe {
 
     // Constructor. Initialize the size of universe with initial pattern
     pub fn new() -> Universe {
+        utils::set_panic_hook();
+
         let width = 64;
         let height = 64;
 
