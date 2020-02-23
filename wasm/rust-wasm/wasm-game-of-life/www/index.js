@@ -83,13 +83,35 @@ const drawGrid = () => {
   ctx.stroke();
 };
 
+// Click event listener on cells to toggle the status
+canvas.addEventListener("click", event => {
+  const boundingRect = canvas.getBoundingClientRect();
+
+  const scaleX = canvas.width / boundingRect.width;
+  const scaleY = canvas.height / boundingRect.height;
+
+  const canvasLeft = (event.clientX - boundingRect.left) * scaleX;
+  const canvasTop = (event.clientY - boundingRect.top) * scaleY;
+
+  const row = Math.min(Math.floor(canvasTop / (CELL_SIZE + 1)), height - 1);
+  const col = Math.min(Math.floor(canvasLeft / (CELL_SIZE + 1)), width - 1);
+
+  console.log('---Toggling:', row, col)
+  universe.toggle_cell(row, col);
+
+  drawGrid();
+  drawCells();
+});
+
+
+
 let animationId = null;
 
 const renderLoop = () => {
   drawGrid();
   drawCells();
 
-  debugger;
+  // debugger;
   universe.tick();
 
   // setTimeout(() => animationId = requestAnimationFrame(renderLoop), 166)
@@ -120,25 +142,6 @@ playPauseButton.addEventListener("click", event => {
   } else {
     pause();
   }
-});
-
-// Click event listener on cells to toggle the status
-canvas.addEventListener("click", event => {
-  const boundingRect = canvas.getBoundingClientRect();
-
-  const scaleX = canvas.width / boundingRect.width;
-  const scaleY = canvas.height / boundingRect.height;
-
-  const canvasLeft = (event.clientX - boundingRect.left) * scaleX;
-  const canvasTop = (event.clientY - boundingRect.top) * scaleY;
-
-  const row = Math.min(Math.floor(canvasTop / (CELL_SIZE + 1)), height - 1);
-  const col = Math.min(Math.floor(canvasLeft / (CELL_SIZE + 1)), width - 1);
-
-  universe.toggle_cell(row, col);
-
-  drawGrid();
-  drawCells();
 });
 
 
