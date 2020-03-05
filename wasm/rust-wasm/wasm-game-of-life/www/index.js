@@ -124,6 +124,7 @@ const isPaused = () => {
 };
 
 const playPauseButton = document.getElementById("play-pause");
+const resetButton = document.getElementById("reset");
 
 const play = () => {
   playPauseButton.textContent = "⏸";
@@ -143,6 +144,10 @@ playPauseButton.addEventListener("click", event => {
     pause();
   }
 });
+
+resetButton.addEventListener("click", event => {
+  universe.reset();
+})
 
 
 // Begin rendering

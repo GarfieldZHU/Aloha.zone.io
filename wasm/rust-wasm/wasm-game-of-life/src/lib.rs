@@ -152,6 +152,18 @@ impl Universe {
         }
     }
 
+    pub fn reset(&mut self) {
+        let width = 64;
+        let height = 64;
+        let size = (width * height) as usize;
+        let mut new_universe = FixedBitSet::with_capacity(size);
+
+        for i in 0..size {
+            cells.set(i, if js_sys::Math::random() < 0.5 { true } else { false })
+        }
+        self.cells = new_universe;
+    }
+
     // Get a formatted string 
     pub fn render(&self) -> String {
         self.to_string()
