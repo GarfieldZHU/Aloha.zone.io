@@ -8,6 +8,7 @@
 ---
 
 ## Rust 
+* [Rust learning material](./Rust)
 * [Rustling practise answer](https://github.com/GarfieldZHU/Aloha-study-room/tree/master/Rust/rustling-answers)
 
 ## TypeScript
