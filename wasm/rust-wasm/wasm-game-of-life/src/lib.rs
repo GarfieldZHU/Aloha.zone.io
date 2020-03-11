@@ -159,7 +159,7 @@ impl Universe {
         let mut new_universe = FixedBitSet::with_capacity(size);
 
         for i in 0..size {
-            cells.set(i, if js_sys::Math::random() < 0.5 { true } else { false })
+            new_universe.set(i, if js_sys::Math::random() < 0.25 { true } else { false })
         }
         self.cells = new_universe;
     }
