@@ -16,8 +16,9 @@ https://img.shields.io/github/last-commit/GarfieldZHU/Aloha-study-room)](.)
 * [Rustling practise answer](https://github.com/GarfieldZHU/Aloha-study-room/tree/master/Rust/rustling-answers)
 
 ## TypeScript
+* [TypeScript learning material](./TypeScript)
 * [Samples](./TypeScript/TypeScriptSamples)
-* [Type system](./TypeScript/type_system.md)
+* [TypeScript Manual](https://github.com/zhongsp/TypeScript)
 
 ## Web-assembly
 * [Rust wasm](https://github.com/GarfieldZHU/Aloha-study-room/tree/master/wasm/rust-wasm)
