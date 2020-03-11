@@ -11,7 +11,8 @@
 * [Rustling practise answer](https://github.com/GarfieldZHU/Aloha-study-room/tree/master/Rust/rustling-answers)
 
 ## TypeScript
-* [Type system](https://github.com/GarfieldZHU/Aloha-study-room/blob/master/TypeScript/type_system.md)
+* [Samples](./TypeScript/TypeScriptSamples)
+* [Type system](./TypeScript/type_system.md)
 
 ## Web-assembly
 * [Rust wasm](https://github.com/GarfieldZHU/Aloha-study-room/tree/master/wasm/rust-wasm)
