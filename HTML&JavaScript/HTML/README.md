@@ -2,6 +2,7 @@
 
 Advanced knowledge about HTML. 
 
+[Reading notes of HTML standard], which records some interesting or key points when reading the standard spectification.
 
 
 #### Reference
