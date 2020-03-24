@@ -3,7 +3,7 @@
 [![Apache-2.0 licensed](https://img.shields.io/github/license/GarfieldZHU/Aloha-study-room)](./LICENSE)
 [![Last commit](
 https://img.shields.io/github/last-commit/GarfieldZHU/Aloha-study-room)](.)
-
+[![GitHub language count](https://img.shields.io/github/languages/count/GarfieldZHU/Aloha-study-room)](.)
 
 😆 This is the space for [Garfield](https://github.com/GarfieldZHU)'s personal learning notes, practices, materials, etc. 
 
