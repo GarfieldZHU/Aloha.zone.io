@@ -62,14 +62,15 @@ In a word, it just likes **"a network proxy for http requests"**  +  **"caches f
 
 
 
-The main life cycle graph:
+The major life cycle graph:
 
 ![service worker lifecycle](https://developers.google.com/web/fundamentals/primers/service-workers/images/sw-lifecycle.png)
 
-###### Registration
+###### - Registration -
 
 To install a service worker, you need to register it in your main JavaScript code. Registration tells the browser where your service worker is located, and to start installing it in the background. 
 
+This step is not part of major life cycle of Service Worker, and it should be done in the main script. 
 
 ```javascript
 if ('serviceWorker' in navigator) {
@@ -91,6 +92,8 @@ navigator.serviceWorker.register('/service-worker.js', {
 });
 ```
 
+###### Download
+
 ###### Installation
 
 
@@ -111,7 +114,40 @@ navigator.serviceWorker.register('/service-worker.js', {
 
 
 
+### Matters need attention
 
+- Credential not included by default for fetch API.
+  
+  If credential is necessary, fetch the url with parameter:
+  
+  ```javascript
+  fetch(url, {
+    credentials: 'include'
+  })
+  ```
+  
+- Cross origin is not support for caching. 
+  
+  - If the target resources support CORS, use parameter `{mode: 'cors'}` 
+  
+  - If the target reousrces do not support CORS or unknown, we can use `non-cors` to overcome it. 
+    
+    But this will cause an 'opaque' response, which means you won't be able to tell if the response was successful or not.
+    
+    ```javascript
+    cache.addAll(urlsToPrefetch.map(function(urlToPrefetch) {
+      return new Request(urlToPrefetch, { mode: 'no-cors' });
+    })).then(function() {
+      console.log('All resources have been fetched and cached.');
+    });
+    ```
+  
+- HTTP status 30X redirect is not supported yet for offline fetch, as a [known issue](https://github.com/w3c/ServiceWorker/issues/1457).
+  
+  Suggest to find workaround per your use case, before there is a resolution for offline direction.
+
+
+---
 
 ### References
 
