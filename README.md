@@ -23,5 +23,6 @@
 * [Rust wasm](https://github.com/GarfieldZHU/Aloha-study-room/tree/master/wasm/rust-wasm)
 
 ## HTML & JavaScript
-* [More about HTML](./HTML%26JavaScript/HTML)
-* [More about JavaScript](./HTML%26JavaScript/JavaScript)
+* [More about HTML](./Browser/HTML)
+* [More about JavaScript](./Browser/JavaScript)
+* [More about PWA](./Browser/PWA)
