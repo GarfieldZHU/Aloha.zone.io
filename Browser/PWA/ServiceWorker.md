@@ -29,6 +29,10 @@ It is still valid, but not recommended anymore.
 
 A service worker is an event-driven [web worker](https://developer.mozilla.org/en-US/docs/Web/API/Worker) registered against an origin and a path. It takes the form of a JavaScript file that can control the web-page/site that it is associated with, intercepting and modifying navigation and resource requests, and caching resources in a very granular fashion to give you complete control over how your app behaves in certain situations (the most obvious one being when the network is not available).
 
+Service workers enable applications to control network requests, cache those requests to improve performance, and provide offline access to cached content.
+
+Service workers depend on two APIs to make an app work offline: [***Fetch***](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) (a standard way to retrieve content from the network) and [***Cache***](https://developer.mozilla.org/en-US/docs/Web/API/Cache) (a persistent content storage for application data). This cache is persistent and independent from the browser cache or network status.
+
 In a word, it just likes **"a network proxy for http requests"**  +  **"caches for resources and responses"**.
 
 
@@ -81,13 +85,15 @@ if ('serviceWorker' in navigator) {
 
 The ***scope*** of the service worker determines which files the service worker controls, in other words, from which path the service worker will intercept requests. The default scope is the location of the service worker file, and extends to all directories below. 
 
-```
- navigator.serviceWorker.register('/service-worker.js', {
+```javascript
+navigator.serviceWorker.register('/service-worker.js', {
   scope: '/app/'
 });
 ```
 
 ###### Installation
+
+
 
 ###### Activate
 
