@@ -5,7 +5,7 @@
 
 ### Introduction
 
-###### Begin
+###### Have a try
 
 Here are sample page: [Google devleloper doc](https://developers.google.com/web/ilt/pwa/introduction-to-service-worker), [Pokemon index](https://pokedex.org/). Try them with below steps:
 
@@ -60,13 +60,19 @@ In a word, it just likes **"a network proxy for http requests"**  +  **"caches f
 
 ### Life Cycle
 
-
-
 The major life cycle graph:
 
-![service worker lifecycle](https://developers.google.com/web/fundamentals/primers/service-workers/images/sw-lifecycle.png)
+<img src="https://developers.google.com/web/fundamentals/primers/service-workers/images/sw-lifecycle.png" alt="service worker lifecycle" style="zoom:70%;" />
 
-###### - Registration -
+
+
+Life cycle details:
+
+<img src="https://mdn.mozillademos.org/files/12636/sw-lifecycle.png" alt="img" style="zoom:80%;" />
+
+
+
+##### - Registration -
 
 To install a service worker, you need to register it in your main JavaScript code. Registration tells the browser where your service worker is located, and to start installing it in the background. 
 
@@ -92,22 +98,274 @@ navigator.serviceWorker.register('/service-worker.js', {
 });
 ```
 
+
+
+##### - Life Events -
+
+The major state changes in life cycle are notified by events:
+
+<img src="https://mdn.mozillademos.org/files/12632/sw-events.png" alt="install, activate, message, fetch, sync, push" style="zoom:80%;" />
+
 ###### Download
 
+Download begins when we call register. It needs to:
+  1)  download the script
+  2)  parse the script as service worker
+  3)  install the service worker to browser
+
+  It may not able to be downloaded, parsed, or it may throw an error when initialization. Any failures can been see in the DevTools -> Application tab.
+
+
+
 ###### Installation
+
+The installation is an event which is first triggered in service worker. 
+In the install event handler, we can assign a cache name (for identifying), and a list of resources to be cached.
+
+```javascript
+const CACHE_NAME = 'my-site-cache-v1';
+const urlsToCache = [  // The list of resources to cache
+  '/',
+  '/styles/main.css',
+  '/script/main.js'
+];
+
+self.addEventListener('install', event => {
+  // Perform install steps
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(function(cache) {
+        console.log('Opened cache');
+        return cache.addAll(urlsToCache);
+      })
+  );
+});
+```
 
 
 
 ###### Activate
 
+Once your service worker is ready to control clients and handle functional events like push and sync, you'll get an activate event. But that doesn't mean the page that called .register() will be controlled.
+
+```javascript
+self.addEventListener('activate', event => {
+  console.log('V1 now ready to handle fetches!');
+});
+```
+
+Take a look at this [demo](https://cdn.rawgit.com/jakearchibald/80368b84ac1ae8e229fc90b3fe826301/raw/ad55049bee9b11d47f1f7d19a73bf3306d156f43/), the service worker hijacked "fetch" only takes effect after it is activated:
+
+1. When initial load the demo page, you are expected to see a dog picture for the HTML page refers to a dog image. And the image request has already finshed before Service Worker is registered.
+
+2. Refreshing the page, then you should see the cat picture instead. Because the activated Service Worker takes over the your http request, to replace the image resources in the response.
+
+   ```javascript
+   // Caching the cat image when installing
+   self.addEventListener('install', event => {
+     console.log('V2 installing…');
+   
+     // cache a horse SVG into a new cache, static-v2
+     event.waitUntil(
+       caches.open('static-v2').then(cache => cache.add('/cat.svg'))
+     );
+   });
+   
+   // Response the cat image when requesting dog.
+   self.addEventListener('fetch', event => {
+     const url = new URL(event.request.url);	 
+     // serve the cat SVG from the cache if the request is
+     // same-origin and the path is '/dog.svg'
+     if (url.origin == location.origin && url.pathname.endsWith('/dog.svg')) {
+       event.respondWith(caches.match('cat.svg'));
+     }
+   });
+   ```
+
+3. In DevTools -> Application -> Service Worker tab, we can unregister the service worker for this site. 
+   Then refreshing the page, we will see the dog again, in this new process for registering the worker.
+
+
+
+### APIs
+
+There are many Service Worker related APIs to make a Web App more strong.
+
+#### Cache & Fetch API
+
+When browser or the web page trigger the event for Service Worker, we may want to ***fetch*** and ***cache***  some content. This typically happens in `fetch` event of Service Worker, which is triggered when the registered page is requesting network. 
+
+###### cache
+
+| Object                                                       | API                          | Usage                                                        |
+| ------------------------------------------------------------ | ---------------------------- | ------------------------------------------------------------ |
+| [CacheStorage](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage) | caches.open                  | Open the cache object by an identifier                       |
+| [Cache](https://developer.mozilla.org/en-US/docs/Web/API/Cache) | cache.match / cache.matchAll | Resolve the matching request in Cache                        |
+| [Cache](https://developer.mozilla.org/en-US/docs/Web/API/Cache) | cache.add / cache.addAll     | Retrieves the resources, and adds the resulting response objects to the given cache. |
+| [Cache](https://developer.mozilla.org/en-US/docs/Web/API/Cache) | cache.delete                 | Remove from the cache object                                 |
+|                                                              |                              |                                                              |
+
+- Sample to add the resources to cache:
+
+```javascript
+self.addEventListener('install', function(event) {
+  // In install event, cache the resources first
+  event.waitUntil(
+    caches.open('my-cache-identifier')   // Open/create a cache with identifier
+      .then(function(cache) {
+        console.log('Opened cache');
+        return cache.addAll([    
+          '/',
+          '/styles/main.css',
+          '/script/main.js'
+        ]); // Cache the major HTML, CSS, JS file
+      })
+  );
+});
+```
+
+
+
+###### fetch
+
+[Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) is typically used in [FetchEvent](https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent) for Service Worker. 
+
+When the page is sending http request, the `fetch` event of Service Worker will be triggered and we are able to monitor the request content and provide response to the page.
+
+Including: 
+
+- Check if the request was cached ever. If so, respond with a cache response.
+- Analysis the request contents, filter some requests, or modify even mock the requests.
+- Use `fetch` API to send the original or modified/mocked request.
+- Consume the request, filter response by status, type, or other headers, modify even mock the response.
+- Cache the response.
+
+Sample: 
+
+```javascript
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    caches.match(event.request)
+      .then(function(response) {
+        // Cache hit - return response
+        if (response) {
+          return response;
+        }
+
+        return fetch(event.request).then(
+          function(response) {
+            // Check if we received a valid response
+            if(!response || response.status !== 200 || response.type !== 'basic') {
+              return response;
+            }
+
+            // IMPORTANT: Clone the response. A response is a stream
+            // and because we want the browser to consume the response
+            // as well as the cache consuming the response, we need
+            // to clone it so we have two streams.
+            var responseToCache = response.clone();
+
+            caches.open(CACHE_NAME)
+              .then(function(cache) {
+                cache.put(event.request, responseToCache);
+              });
+
+            return response;
+          }
+        );
+      })
+    );
+});
+```
 
 
 
 
 
+#### Storage & Telecommunication
+
+`Fetch`  is API over network and `cache` is for caching. But they are used for "proxying host page's network" and "caching the content of the host page ". 
+
+If the Service Worker has its own necessity for telecommunication (with the host page, or with server over network)  and persist some states (page level, or browser level), use these APIs below.
+
+###### IPC
+
+Service Worker is generally like a Web Worker, it's a standalone thread away from rendering context, so it cannot manipulate DOM or `window` directly. It uses the same way: [postMessage](https://html.spec.whatwg.org/multipage/workers.html#dom-worker-postmessage) and `message` event to telecommunicate with host page's thread.
+
+- Use channel in host thread to `postMessage` and listen to `message` event by [**MessageChannel**](https://developer.mozilla.org/en-US/docs/Web/API/MessageChannel):
+
+```javascript
+function sendMessage(message) {
+  // This wraps the message posting/response in a promise, which will resolve if the response doesn't
+  // contain an error, and reject with the error if it does. If you'd prefer, it's possible to call
+  // controller.postMessage() and set up the onmessage handler independently of a promise, but this is
+  // a convenient wrapper.
+  return new Promise(function(resolve, reject) {
+    var messageChannel = new MessageChannel();
+    messageChannel.port1.onmessage = function(event) {
+      if (event.data.error) {
+        reject(event.data.error);
+      } else {
+        resolve(event.data);
+      }
+    };
+
+    // This sends the message data as well as transferring messageChannel.port2 to the service worker.
+    // The service worker can then use the transferred port to reply via postMessage(), which
+    // will in turn trigger the onmessage handler on messageChannel.port1.
+    // See https://html.spec.whatwg.org/multipage/workers.html#dom-worker-postmessage
+    navigator.serviceWorker.controller.postMessage(message,
+      [messageChannel.port2]);
+  });
+}
+```
+
+- Use [`Client.postMessage` ](https://developer.mozilla.org/en-US/docs/Web/API/Client/postMessage) to send message, and listen to `message` event in Service Worker:
+
+```javascript
+// Consume the message from host thread (or other Workers)
+addEventListener('message', (event) => {
+    console.log(`The client sent me a message: ${event.data}`);
+});
+
+{
+  // Send message to host thread (or other Workers)
+  clients.matchAll(event.clientId).postMessage({
+    msg: "Hey I just got a fetch from you!",
+  });
+}
+```
 
 
-### Use cases
+
+###### Storage
+
+Use Web storage APIs to persist necessary information of Service Worker:
+
+![Image from Chrome Developer Tools](https://i.stack.imgur.com/ZRHTt.png)
+
+1. Because the service worker is not blocking (it's designed to be fully asynchronous) synchronous XHR and `localStorage` cannot be used in a service worker. ([LocalStorage calls are always synchronous](https://stackoverflow.com/questions/20231163/is-html5-localstorage-asynchronous))
+2. If there is information that you need to persist and reuse across restarts, you can use [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) databases.
+
+
+
+
+
+#### More Web APP APIs
+
+Service Woker provides the starting point for features that make web applications work like native apps:
+
+| API                                                          | Functionalities                                              |
+| ------------------------------------------------------------ | :----------------------------------------------------------- |
+| [Channel Messaging](https://developer.mozilla.org/en-US/docs/Web/API/Channel_Messaging_API) | Telecommnucation with other [Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Worker) and host page |
+| [Notifications API](https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API) | Display and interact with notifications using the OS's native notification system. |
+| [Push API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API) | Enables your app to subscribe to a push service and receive push messages. |
+| [Background Sync](https://developers.google.com/web/updates/2015/12/background-sync) | Lets you defer actions until the user has stable connectivity. |
+|                                                              |                                                              |
+
+
+
+### Use cases 
 
 
 
@@ -145,7 +403,8 @@ navigator.serviceWorker.register('/service-worker.js', {
 - HTTP status 30X redirect is not supported yet for offline fetch, as a [known issue](https://github.com/w3c/ServiceWorker/issues/1457).
   
   Suggest to find workaround per your use case, before there is a resolution for offline direction.
-
+  
+- When porxying the response, remember to [clone](https://fetch.spec.whatwg.org/#dom-response-clone) the response rather than consume the response directly. The reason is that response is a [Stream](https://streams.spec.whatwg.org/), the body can only be consumed once. Since we want to return the response for the browser to use, as well as pass it to the cache to use, we need to clone it so we can send one to the browser and one to the cache.
 
 ---
 
