@@ -336,7 +336,7 @@ addEventListener('message', (event) => {
 }
 ```
 
-
+[Demo](https://googlechrome.github.io/samples/service-worker/post-message/index.html) for posting message
 
 ###### Storage
 
@@ -367,14 +367,40 @@ Service Woker provides the starting point for features that make web application
 
 ### Use cases 
 
+Serice Worker could be used as the core flow controller since it is able to control and cach any the requests/responses for any static resources or REST API calls. 
 
+1. **Full static site**
+
+   If the website contains static resources only, we can cache all the html page, css style, scripts and images. Then the site could be accessed offline totally.
+
+2. **Prefetch**
+
+   There may be some elements in page, which are not loaded when the page is first rendered but triggered by events in scripts. For such resources, we can prefetch them in Servie Worker.
+   [Demo](https://googlechrome.github.io/samples/service-worker/prefetch/index.html) / [Demo prefetch video](https://googlechrome.github.io/samples/service-worker/prefetch-video/index.html)
+
+3. **Fallback response**
+
+   Sometimes when the request fails, we hope to show a fallback content to user. And it may be good to present the resource/data of last success request. (Example: Live data telemetry) 
+
+   Service Worker helps to validate if the request succeeds and responds with cache if fails.
+   [Demo](https://googlechrome.github.io/samples/service-worker/fallback-response/index.html)
+
+4. **Mock response**
+
+   Mocking is useful. It helps to isolate some specific requests from network with given response, or we can use it to test some API/resource is not ready or not able to access.
+
+5. **Window cache**
+   Service Worker just take the responsibility to cache the content from response, which can be a persisted data in `window.cache` for the page. 
+   [Demo](https://googlechrome.github.io/samples/service-worker/window-caches/index.html)
+
+6. ...
 
 
 
 
 ### Matters need attention
 
-- Credential not included by default for fetch API.
+- Requests won't contain credentials such as cookies by default for fetch API.
   
   If credential is necessary, fetch the url with parameter:
   
