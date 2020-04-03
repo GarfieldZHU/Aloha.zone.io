@@ -12,7 +12,7 @@
 
 ## Rust 
 * [Rust learning material](./Rust)
-* [Rustling practise answer](https://github.com/GarfieldZHU/Aloha-study-room/tree/master/Rust/rustling-answers)
+* [Rustling practise answer](./Rust/rustling-answers)
 
 ## TypeScript
 * [TypeScript learning material](./TypeScript)
@@ -20,7 +20,7 @@
 * [TypeScript Manual](https://github.com/zhongsp/TypeScript)
 
 ## Web-assembly
-* [Rust wasm](https://github.com/GarfieldZHU/Aloha-study-room/tree/master/wasm/rust-wasm)
+* [Rust wasm](./wasm/rust-wasm)
 
 ## HTML & JavaScript
 * [More about HTML](./Browser/HTML)
