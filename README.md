@@ -16,6 +16,8 @@
 
 ## TypeScript
 * [TypeScript learning material](./TypeScript)
+    * [Tricks](./TypeScript/tricks.md)
+    * [Type system](./TypeScript/type_system.md)
 * [Samples](./TypeScript/TypeScriptSamples)
 * [TypeScript Manual](https://github.com/zhongsp/TypeScript)
 
