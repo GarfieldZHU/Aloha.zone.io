@@ -23,6 +23,7 @@ macro_rules! log {
 #[global_allocator]
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
+
 // Single cell state. 
 // One byte length. As be calcualted as u8.
 #[wasm_bindgen]
@@ -32,6 +33,7 @@ pub enum Cell {
     Dead = 0,
     Alive = 1,
 }
+
 
 // The linear structure for 2-dimension universe
 #[wasm_bindgen]
@@ -83,6 +85,7 @@ impl Universe {
         count
     }
 }
+
 
 // Public methods, exported to JavaScript
 #[wasm_bindgen]
