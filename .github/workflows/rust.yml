@@ -20,6 +20,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build
-      run: wasm-pack build
+      run: cargo build --verbose
     - name: Run tests
-      run: wasm-pack test --headless --firefox
+      run: cargo test --verbose
