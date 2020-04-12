@@ -3,8 +3,14 @@ name: Rust
 on:
   push:
     branches: [ master ]
+    paths:
+    - 'wasm/rust-wasm/wasm-game-of-life/**'
+    - '!wasm/rust-wasm/wasm-game-of-life/www/**'
   pull_request:
     branches: [ master ]
+    paths:
+    - 'wasm/rust-wasm/wasm-game-of-life/**'
+    - '!wasm/rust-wasm/wasm-game-of-life/www/**'
 
 jobs:
   build:
