@@ -33,3 +33,4 @@
 * [More about JavaScript](./Browser/JavaScript)
 * [More about PWA](./Browser/PWA)
      * [Service Worker](./Browser/PWA/ServiceWorker.md)
+     * [IndexedDB](./Browser/PWA/IndexedDB.md)
