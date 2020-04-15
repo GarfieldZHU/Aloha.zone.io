@@ -20,6 +20,7 @@
     * [Type system](./TypeScript/type_system.md)
 * [Samples](./TypeScript/TypeScriptSamples)
 * [TypeScript Manual](https://github.com/zhongsp/TypeScript)
+* [Functional programming in TypeScript](./TypeScript/FP)
 
 ## Web-assembly
 * [Rust wasm](./wasm/rust-wasm)
