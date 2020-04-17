@@ -18,6 +18,7 @@
 * [TypeScript learning material](./TypeScript)
     * [Tricks](./TypeScript/tricks.md)
     * [Type system](./TypeScript/type_system.md)
+    * [Functional programming](./TypeScript/FP)
 * [Samples](./TypeScript/TypeScriptSamples)
 * [TypeScript Manual](https://github.com/zhongsp/TypeScript)
 * [Functional programming in TypeScript](./TypeScript/FP)
