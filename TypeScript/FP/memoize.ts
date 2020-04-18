@@ -1,4 +1,4 @@
-// Copyright 2018-2020 @Alohayo. All rights reserved. MIT license.
+// Copyright 2018-2020 @GarfieldZHU. All rights reserved. MIT license.
 
 
 //----------------------Sample----------------------
@@ -6,7 +6,7 @@
 /**
  * Memoize a function for its any input parameter
  */ 
-export const memoize = (f: (...args: any) => any) => {
+const memoize = (f: (...args: any) => any) => {
   const cache = {} as {[key: string]: any}
 
   return (...args: any) => {
