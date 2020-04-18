@@ -1,6 +1,10 @@
 # Functional programming in TypeScript
 
-A project based on [Deno](https://github.com/denoland/deno), which contains several practise for functional programming in TypeScript. 
+Introduce and demo some useful snippets of FP in TypeScript. Samples are based Deno runtime, and also compatible with browser:
+
+- Copy the demo and run on [TypeScript Playground](https://www.typescriptlang.org/play/index.html#)
+- Run with [Deno](https://deno.land/) runtime, like: 
+  `deno run memoize.ts`
 
 ---
 
