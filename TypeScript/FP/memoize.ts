@@ -1,5 +1,11 @@
+// Copyright 2018-2020 @Alohayo. All rights reserved. MIT license.
 
-// Memoize a function for its any input parameter
+
+//----------------------Sample----------------------
+
+/**
+ * Memoize a function for its any input parameter
+ */ 
 export const memoize = (f: (...args: any) => any) => {
   const cache = {} as {[key: string]: any}
 
@@ -10,9 +16,14 @@ export const memoize = (f: (...args: any) => any) => {
   }
 }
 
-// A recursive Fibonacci 
-// Time: O(2^n)
-// Space: O(1)
+//----------------------Demo----------------------
+
+/**
+ * A recursive Fibonacci 
+ * Time: O(2^n)
+ * Space: O(1)
+ * @param n 
+ */
 const fib = (n: number): number => {
   if (n <= 0) return 0
   if (1 === n || 2 === n) return 1
@@ -25,23 +36,26 @@ const testMemoFib = () => {
   console.log(fib(40))
   console.timeEnd('Raw Fib: n=40')
 
-  const memoFib = memoize(fib)
-  console.log('Step 2: count the time of first call of memoized fib')
-  console.time('First call Memo Fib: n=40')
-  console.log(memoFib(40))
-  console.timeEnd('First call Memo Fib: n=40')
+  {
+    const memoFib = memoize(fib)
+    console.log('Step 2: count the time of first call of memoized fib')
+    console.time('First call Memo Fib: n=40')
+    console.log(memoFib(40))
+    console.timeEnd('First call Memo Fib: n=40')
 
-  console.time('Another call Memo Fib: n=39')
-  console.log(memoFib(39))
-  console.timeEnd('Another call Memo Fib: n=39')
+    console.time('Another call Memo Fib: n=39')
+    console.log(memoFib(39))
+    console.timeEnd('Another call Memo Fib: n=39')
 
-  console.time('Second call Memo Fib: n=40')
-  console.log(memoFib(40))
-  console.timeEnd('Second call Memo Fib: n=40')
+    console.time('Second call Memo Fib: n=40')
+    console.log(memoFib(40))
+    console.timeEnd('Second call Memo Fib: n=40')
 
-  console.time('Second call Memo Fib: n=39')
-  console.log(memoFib(39))
-  console.timeEnd('Second call Memo Fib: n=39')
+    console.time('Second call Memo Fib: n=39')
+    console.log(memoFib(39))
+    console.timeEnd('Second call Memo Fib: n=39')
+  }
+  // console.log(memoFib(39))  // Out side the namespace of memoFib, the closure is released as well as the memo results
 }
 
 
