@@ -15,10 +15,11 @@ Introduce and demo some useful snippets of FP in TypeScript. Samples are based D
   [Memoization](./memoize.ts)
 
 - Portable / Self-documenting
-
 - Testable
-
 - Reasonable
+- Concurrency
+
+### Curry
 
 
 
