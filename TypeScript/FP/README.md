@@ -21,6 +21,12 @@ Introduce and demo some useful snippets of FP in TypeScript. Samples are based D
 
 ### Curry
 
+TypeScript is not born to support curry. Node package like `[Rambda](https://github.com/ramda/ramda)` provides a good implementation of curry, but since we are on `Deno` with TypeScript, it seems not very direct for us to use it, neither give a cool implementation of it in TS. 
+
+We can look forward for the proposed feature [Variadic Kinds](https://github.com/Microsoft/TypeScript/issues/5453), which will make it easier to define a typed `curry` function.
+
+
+### Compose
 
 
 ### Reference 
