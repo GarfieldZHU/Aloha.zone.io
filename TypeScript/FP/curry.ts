@@ -1,4 +1,9 @@
+// Copyright 2018-2020 @GarfieldZHU. All rights reserved. MIT license.
+
 import curry from "https://deno.land/x/denofun/lib/curry.ts";
+
+
+//----------------------Exercise----------------------
 
 console.log('add', map(add(2)));
 
