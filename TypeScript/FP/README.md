@@ -57,6 +57,8 @@ Practises: [using curry](./curry.ts)
 
 ### Compose
 
+Practises: [using compose](./compose.ts)
+
 
 ### Reference 
 
