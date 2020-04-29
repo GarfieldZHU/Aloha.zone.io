@@ -64,6 +64,8 @@ Practises: [using curry](./curry.ts)
     // associative(x) = f(g(h(x)))
   ```
 
+Practises: [using compose](./compose.ts)
+
 
 ### Reference 
 
