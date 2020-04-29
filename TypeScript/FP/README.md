@@ -64,6 +64,17 @@ Practises: [using curry](./curry.ts)
     // associative(x) = f(g(h(x)))
   ```
 
+- Pointfree
+  "***Never say your data***"
+  ```typescript
+  // 非 pointfree，因为提到了数据：word
+    const snakeCase = (word: string) => word.toLowerCase().replace(/\s+/ig, '_')
+
+    // pointfree
+    const pointfreeSnakeCase = compose(replace(/\s+/ig, '_'), toLowerCase);
+
+  ```
+
 Practises: [using compose](./compose.ts)
 
 
