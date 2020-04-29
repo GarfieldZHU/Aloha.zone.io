@@ -56,6 +56,13 @@ curriedGreet("Tomasz")(26)
 Practises: [using curry](./curry.ts)
 
 ### Compose
+- Associativity
+  ```typescript
+    const associative = compose(f, compose(g, h)) == compose(compose(f, g), h)
+
+    // Both have:
+    // associative(x) = f(g(h(x)))
+  ```
 
 
 ### Reference 
