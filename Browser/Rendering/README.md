@@ -28,15 +28,120 @@ Both debounce and throttle techniques allow us to **“group” multiple sequent
 
 ###### debounce
 
-Given a timer X, the event handler will be executed only once the 
+Given a timer X, the event handler will be executed only when timeout. If the event is triggered again during the timer, reset the timer X. It means all event will be group into one when no more events come in.
+
+- Use case:
+
+  - Validate the content for inputbox (locally or sent request for validation).
+    Example:
+
+    ```typescript
+    // -- InputValidator.tsx
+    
+    const changeHandler = async (e: Event) => {
+      const resp = await fetch()
+      if (!resp.ack) {
+        // show warning
+      }
+    }
+    
+    // Old React component without debouncing
+    const InputValidator = () => {
+      return <Input 
+      	onChange={changeHandler}
+       	//...
+      />
+    }
+    
+    // New React component 
+    const DebouncedInput = () => {
+      return <Input
+      	onChange={_.debounce(changeHandler)}
+    		//...
+      >
+    }
+    ```
+
+    
+
+- Example of `debounce` function:
+
+```typescript
+function debounce(fn: Function, interval: number = 300) {
+    let timeout = null
+    return function () {
+        clearTimeout(timeout)
+        timeout = setTimeout(() => {
+            fn.apply(this, arguments)
+        }, interval)
+    };
+}
+```
+
+
 
 ###### throttle
 
+Given a timer X, the task will be executed once and only once when timeout. 
 
+It helps to reduce the frequency and stablize the uncertain frequency.
 
+- Use case
 
+  - Check if the window has scrolled to bottom and we need to fetch more elements to shown.
+    Example:
 
- 
+    ```typescript
+    // -- IncrList.tsx
+    
+    // Scroll event handler, send request to fetch next data volume if reach the bottom of page.
+    const scrollHandler = async (e: Event) => {
+      const pageHeight = body.height(),
+            scrollTop = window.scrollTop(),
+            winHeight = window.height(),
+            thresold = pageHeight - scrollTop - winHeight
+      if (thresold > -100 && thresold <= 20) {
+        const nextPage = await fetch()
+        // Show next page
+      }
+    }
+    
+    // Original list, it will check scroll bottom with high frequency
+    const IncrList = () => {
+      return <ScrollableList
+      	onScroll={scrollHandler}
+      />
+    }
+        
+    // Original list, it will check scroll bottom per 500ms
+    const ThrottledIncrList = () => {
+      return <ScrollableList
+      	onScroll={_.throttle(scrollHandler, 500)}
+      />
+    }
+    ```
+
+    
+
+  - Check if the object is still dragged over a specific zone.
+
+- Example of `throttle` function:
+
+  ```typescript
+  function throttle(fn: Function, interval: number = 300) {
+      let canRun = true
+      return function () {
+          if (!canRun) return
+          canRun = false
+          setTimeout(() => {
+              fn.apply(this, arguments)
+              canRun = true
+          }, interval)
+      };
+  }
+  ```
+
+  
 
 
 
