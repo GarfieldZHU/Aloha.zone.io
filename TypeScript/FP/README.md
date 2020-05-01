@@ -76,14 +76,15 @@ Practises: [using curry](./curry.ts)
   ```
 
 - Debug 
-  It could be hard to find the error place in a composed function. Like this:
+  It could be hard to find the error place in a pointfree style, since we throw all the parameters away
+  Like this:
   ```typescript
     const dasherize = compose(join('-'), toLower, split(' '), replace(/\s{2,}/ig, ' '))
     dasherize('The world is a vampire')
     // TypeError: Cannot read property 'apply' of undefined
   ```
 
-  We can simply use a curried `trace` function to telemetry for debugging:
+  We can simply use a curried `trace` function to telemetry the parameters for debugging:
   ```typescript
     const trace = curry(function(tag, x){
       console.log(tag, x)
