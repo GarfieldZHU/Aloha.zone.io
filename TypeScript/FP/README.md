@@ -75,6 +75,25 @@ Practises: [using curry](./curry.ts)
 
   ```
 
+- Debug 
+  It could be hard to find the error place in a composed function. Like this:
+  ```typescript
+    const dasherize = compose(join('-'), toLower, split(' '), replace(/\s{2,}/ig, ' '))
+    dasherize('The world is a vampire')
+    // TypeError: Cannot read property 'apply' of undefined
+  ```
+
+  We can simply use a curried `trace` function to telemetry for debugging:
+  ```typescript
+    const trace = curry(function(tag, x){
+      console.log(tag, x)
+      return x
+    })
+
+    const dasherize = compose(join('-'), toLower, trace("after split"), split(' '), replace(/\s{2,}/ig, ' '));
+    // after split [ 'The', 'world', 'is', 'a', 'vampire' ]
+  ```
+
 Practises: [using compose](./compose.ts)
 
 
