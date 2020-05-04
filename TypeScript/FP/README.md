@@ -93,6 +93,11 @@ Practises: [using curry](./curry.ts)
 
     const dasherize = compose(join('-'), toLower, trace("after split"), split(' '), replace(/\s{2,}/ig, ' '));
     // after split [ 'The', 'world', 'is', 'a', 'vampire' ]
+
+
+    // Correct:
+    const dasherize = compose(join('-'), map(toLower), split(' '), replace(/\s{2,}/ig, ' '))
+    dasherize('The world is a vampire');
   ```
 
 Practises: [using compose](./compose.ts)
