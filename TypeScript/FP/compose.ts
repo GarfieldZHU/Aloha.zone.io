@@ -14,4 +14,11 @@ import compose from 'https://deno.land/x/denofun/lib/curry.ts"
 // }
 //==============
 // const isLastInStock = _.compose(_.prop('in_stock'), _.last())
-const isLastInStock = compose(_.prop('in_stock'), _.last())
+const isLastInStock = compose(prop('in_stock'), last)
+
+
+// Exercise 2 
+// Use `compose()`, `prop()` and `head()` to get the name of the first car
+// const nameOfFirstCar = undefined
+//==============
+const nameOfFirstCar = compose(prop('name'), head)
