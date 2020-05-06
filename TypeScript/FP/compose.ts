@@ -43,3 +43,34 @@ const averageDollarValue = compose(average, map(prop('dollar_value')))
 //==============
 const sanitizeNames = compose(_underscore, toLowercase, prop('name'))
 
+
+// Bonus 1
+// Refactor `availablePrices` with compose.
+//  const availablePrices = function(cars: Car[]) {
+//    const available_cars = _.filter(_.prop('in_stock'), cars)
+//    return available_cars.map((x: Car) => accounting.formatMoney(x.dollar_value)).join(', ')
+//  }
+//==============
+const availablePrices = compose(
+  join(', '),
+  map(compose(
+    formatMoney,
+    prop('dollar_value')
+  )),
+  filter(prop('in_stock'))
+)
+
+
+// Bonus 2
+// Refactor to pointfree
+//   const fastestCar = function(cars: Car[]) {
+//     const sorted = _.sortBy((car: Car) => car.horsepower, cars)
+//     const fastest = _.last(sorted)
+//     return fastest.name + ' is the fastest'
+//   }
+//==============
+const fastestCar = compose(
+  append(' is the fastest'),
+  last(),
+  sortBy(prop('horsepower'))
+)
