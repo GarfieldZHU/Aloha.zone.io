@@ -23,13 +23,23 @@ const isLastInStock = compose(prop('in_stock'), last)
 //==============
 const nameOfFirstCar = compose(prop('name'), head)
 
+
 // Exercise 3
 // Considering the following function:
-// const average = xs => reduce(add, 0, xs) / xs.length
+//   const average = xs => reduce(add, 0, xs) / xs.length
 // Use the helper function `average` to refactor `averageDollarValue` as a composition:
-  // const averageDollarValue = function(cars: Car[]) {
-  //   const dollar_values = map(function(c: Car) { return c.dollar_value; }, cars)
-  //   return average(dollar_values)
-  // }
+//   const averageDollarValue = function(cars: Car[]) {
+//   const dollar_values = map(function(c: Car) { return c.dollar_value; }, cars)
+//     return average(dollar_values)
+//   }
 //==============
 const averageDollarValue = compose(average, map(prop('dollar_value')))
+
+
+// Exercise 4
+// Use `compose()` to write a `sanitizeNames()` method:
+//   const _underscore = replace(/\W+/g, '_'); //<-- no need change，use it in `sanitizeNames`
+//   const sanitizeNames = undefined;
+//==============
+const sanitizeNames = compose(_underscore, toLowercase, prop('name'))
+
