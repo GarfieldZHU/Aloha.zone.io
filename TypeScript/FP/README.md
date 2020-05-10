@@ -6,6 +6,9 @@ Introduce and demo some useful snippets of FP in TypeScript. Samples are based D
 - Run with [Deno](https://deno.land/) runtime, like: 
   `deno run memoize.ts`
 
+- `ramda.js` is one of the best FP library for js/ts. 
+  Refer to [official doc](https://ramdajs.com/docs/) and [a tutorial](https://www.ruanyifeng.com/blog/2017/03/ramda.html) in Chinese.
+
 ---
 
 ### Keep *IMMUTABLE*
@@ -74,6 +77,8 @@ Practises: [using curry](./curry.ts)
     const pointfreeSnakeCase = compose(replace(/\s+/ig, '_'), toLowerCase);
 
   ```
+
+  - Blog: [using pointfree](http://www.ruanyifeng.com/blog/2017/03/pointfree.html)
 
 - Debug 
   It could be hard to find the error place in a pointfree style, since we throw all the parameters away
