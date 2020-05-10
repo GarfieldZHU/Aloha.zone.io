@@ -105,6 +105,9 @@ Practises: [using curry](./curry.ts)
     dasherize('The world is a vampire');
   ```
 
+Moreover, we have a similar `pipe` function, which also combines the functions.
+The function parameter is called from right to left in `compose`, but left to right in `pipe`.
+
 Practises: [using compose](./compose.ts)
 
 
