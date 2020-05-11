@@ -111,6 +111,13 @@ The function parameter is called from right to left in `compose`, but left to ri
 Practises: [using compose](./compose.ts)
 
 
+### Functor
+
+> A Functor is a type that implements map and obeys some laws
+
+
+
+
 ### Reference 
 
 [Mostly adequate guide to FP (in javascript)](https://mostly-adequate.gitbooks.io/mostly-adequate-guide/)
