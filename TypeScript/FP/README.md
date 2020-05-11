@@ -70,7 +70,7 @@ Practises: [using curry](./curry.ts)
 - Pointfree
   "***Never say your data***"
   ```typescript
-  // 非 pointfree，因为提到了数据：word
+  // not pointfree, for data `word` is mentioned
     const snakeCase = (word: string) => word.toLowerCase().replace(/\s+/ig, '_')
 
     // pointfree
