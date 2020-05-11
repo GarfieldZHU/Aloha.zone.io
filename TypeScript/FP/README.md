@@ -78,6 +78,7 @@ Practises: [using curry](./curry.ts)
 
   ```
 
+  - Reference: [Favoring Curry](https://fr.umio.us/favoring-curry/)
   - Blog: [using pointfree](http://www.ruanyifeng.com/blog/2017/03/pointfree.html)
 
 - Debug 
