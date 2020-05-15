@@ -2,6 +2,7 @@
 
 // 1. Use `safeProp` and `map/join` or `chain` to safety get the street name when given a user
 // getStreetName :: User -> Maybe String
+//==============
 const getStreetName = compose(
   chain(safeProp('name')),
   chain(safeProp('street')),
@@ -13,6 +14,7 @@ const getStreetName = compose(
 //   const getFile = IO.of('/home/mostly-adequate/ch09.md')
 //   const pureLog = str => new IO(() => console.log(str))
 //   logFileName :: IO()
+//==============
 const basename = compose(last, split('/'))
 const logFilename = compose(
   chain(purelog),
@@ -24,6 +26,7 @@ const logFilename = compose(
 //   validateEmail :: Email -> Either String Email
 //   addToMailingList :: Email -> IO([Email])
 //   emailBlast :: [Email] -> IO()
+//==============
 const joinMailingList = compose(
   map(compose(chain(emailBlast), addToMailingList)),
   validateEmail
