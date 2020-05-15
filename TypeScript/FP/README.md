@@ -14,21 +14,21 @@ Related libraries:
 
 ---
 
-### Keep *IMMUTABLE*
+## Keep *IMMUTABLE*
 
 The best practise in FP is using **immutable** variables anywhere if possible. 
 
 In TypeScript, use `const` for type declaration and `readonly` for properties of type/interface and args of functions as much as possible. Avoid using `let` or `var` declaration if they are not a must. (Actually, there should always be a way to abandon a mutable variable) 
 
 Example:
+
 ```typescript
 declare const a : numer
 const b = a > 0 ? 'positive' : 'negativeOrZero'   // $ExpectedType: 'positive' | 'negativeOrZero'
 let b = a > 0 ? 'postive' : 'negativeOrZero'     // $ExpectedType: string
 ```
 
-
-### *Pure* function
+## *Pure* function
 
 - **Cacheable**
   
@@ -39,8 +39,7 @@ let b = a > 0 ? 'postive' : 'negativeOrZero'     // $ExpectedType: string
 - Reasonable
 - Concurrency
 
-
-### Curry
+## Curry
 
 TypeScript is not born to support curry. Node package like `[Rambda](https://github.com/ramda/ramda)` provides a good implementation of curry, but since we are on `Deno` with TypeScript, it seems not very direct for us to use it, neither give a cool implementation of it in TS. 
 
@@ -48,9 +47,10 @@ A sample for a currying step by step: [How to master advanced TypeScript pattern
 
 Also, we can look forward for the proposed feature [Variadic Kinds](https://github.com/Microsoft/TypeScript/issues/5453), which will make it easier to define a typed `curry` function. 
 
-Fortunately, [Denofun](https://github.com/galkowskit/denofun) serves a group of useful utilities for FP including `curry`. 
+Fortunately, [Denofun](https://github.com/galkowskit/denofun) serves a group of useful utilities for FP including `curry`.
 
 Example:
+
 ```typescript
 import curry from "https://deno.land/x/denofun/lib/curry.ts";
 
@@ -61,8 +61,10 @@ curriedGreet("Tomasz")(26)
 
 Practises: [using curry](./curry.ts)
 
-### Compose
+## Compose
+
 - Associativity
+
   ```typescript
     const associative = compose(f, compose(g, h)) == compose(compose(f, g), h)
 
@@ -72,6 +74,7 @@ Practises: [using curry](./curry.ts)
 
 - Pointfree
   "***Never say your data***"
+
   ```typescript
   // not pointfree, for data `word` is mentioned
     const snakeCase = (word: string) => word.toLowerCase().replace(/\s+/ig, '_')
@@ -87,6 +90,7 @@ Practises: [using curry](./curry.ts)
 - Debug 
   It could be hard to find the error place in a pointfree style, since we throw all the parameters away
   Like this:
+
   ```typescript
     const dasherize = compose(join('-'), toLower, split(' '), replace(/\s{2,}/ig, ' '))
     dasherize('The world is a vampire')
@@ -94,6 +98,7 @@ Practises: [using curry](./curry.ts)
   ```
 
   We can simply use a curried `trace` function to telemetry the parameters for debugging:
+
   ```typescript
     const trace = curry(function(tag, x){
       console.log(tag, x)
@@ -119,10 +124,7 @@ Practises: [using compose](./compose.ts)
 
 > A Functor is a type that implements map and obeys some laws
 
-
-
-
-### Reference 
+### Reference
 
 [Mostly adequate guide to FP (in javascript)](https://mostly-adequate.gitbooks.io/mostly-adequate-guide/)
 
