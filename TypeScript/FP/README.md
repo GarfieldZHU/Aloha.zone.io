@@ -1,12 +1,15 @@
 # Functional programming in TypeScript
 
-Introduce and demo some useful snippets of FP in TypeScript. Samples are based Deno runtime, and also compatible with browser:
+Introduce and demo some useful snippets of FP in TypeScript.
 
-- Copy the demo and run on [TypeScript Playground](https://www.typescriptlang.org/play/index.html#)
-- Run with [Deno](https://deno.land/) runtime, like: 
+Related libraries:
+
+- [fp-ts](https://github.com/gcanti/fp-ts) is the most recommended to be used in ts. Read [code conventions](https://gcanti.github.io/fp-ts/guides/code-conventions.html) for a best practise.
+
+- Run with [Deno](https://deno.land/) runtime, like:
   `deno run memoize.ts`
 
-- `ramda.js` is one of the best FP library for js/ts. 
+- `ramda.js` is one of the common FP library for js.
   Refer to [official doc](https://ramdajs.com/docs/) and [a tutorial](https://www.ruanyifeng.com/blog/2017/03/ramda.html) in Chinese.
 
 ---
