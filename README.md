@@ -13,6 +13,7 @@
 ## Rust 
 * [Rust learning material](./Rust)
 * [Rustling practise answer](./Rust/rustling-answers)
+* [Too Many linked lists in Rust](./Rust/Linked_Lists)
 
 ## TypeScript
 * [TypeScript learning material](./TypeScript)
