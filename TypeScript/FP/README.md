@@ -123,7 +123,6 @@ Practises: [using compose](./compose.ts)
 
 > A Functor is a type that implements map and obeys some laws
 
-<<<<<<< HEAD
 Typically, we use pointed function which contains a `of` function for instantiating a functor.
 
 ```typescript
@@ -136,7 +135,12 @@ Typically, we use pointed function which contains a `of` function for instantiat
 
 ### Applicative Functor
 
-Apply the value of a functor to the value of another functor. With a function `ap`.
+"Applicative functor" is a kind of "pointed functor" which implements `ap` function.
+
+Function `ap` should apply the value of a functor to the value of another functor. 
+
+It means: `F.of(x).map(f) == F.of(f).ap(F.of(x))`
+
 
 
 ```typescript
@@ -146,12 +150,19 @@ Apply the value of a functor to the value of another functor. With a function `a
   Container.of(2).map(add).ap(Container.of(3))
 ```
 
+Use applicative functor will make a curried function in functor being used like a a normal function call:
+
+```typescript
+  Maybe.of(add).ap(Maybe.of(2)).ap(Maybe.of(3))
+  // Maybe(5)
+
+  Task.of(add).ap(Task.of(2)).ap(Task.of(3));
+  // Task(5)
+
+```
 
 
-### Reference 
-=======
 ## Reference
->>>>>>> f8c9b0228061f1a8fef3831cd871129ad2501944
 
 [Mostly adequate guide to FP (in javascript)](https://mostly-adequate.gitbooks.io/mostly-adequate-guide/)
 
