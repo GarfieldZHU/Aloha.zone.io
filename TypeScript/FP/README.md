@@ -116,6 +116,27 @@ Practises: [using compose](./compose.ts)
 
 > A Functor is a type that implements map and obeys some laws
 
+Typically, we use pointed function which contains a `of` function for instantiating a functor.
+
+```typescript
+  Container.of(3)
+  // Container(3)
+
+  Container.of(3).map(x => x + 1)
+  // Container(4)
+```
+
+### Applicative Functor
+
+Apply the value of a functor to the value of another functor. With a function `ap`.
+
+
+```typescript
+  Container.of(add(2)).ap(Container.of(3))
+  // Container(5)
+
+  Container.of(2).map(add).ap(Container.of(3))
+```
 
 
 
