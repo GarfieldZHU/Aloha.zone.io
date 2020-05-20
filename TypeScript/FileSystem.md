@@ -7,7 +7,7 @@ Thus, it will contain the behavior of different ways of file access: `import`, `
 
 |                               | Deno | Node | Browser \(Chrome\) | Browser \(Firefox\) |
 |-------------------------------|------|------|--------------------|---------------------|
-| Import keywork                |      |      |                    |                     |
+| Import keyword                |      |      |                    |                     |
 | Import expression \(dynamic\) |      |      |                    |                     |
 | fetch API                     |      |      |                    |                     |
-| fs module                     |      |      |                    |                     |
+| fs module                     |      |      |         -          |          -          |
