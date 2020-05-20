@@ -10,4 +10,4 @@ Thus, it will contain the behavior of different ways of file access: `import`, `
 | Import keyword                |      |      |                    |
 | Import expression \(dynamic\) |      |      |                    |
 | [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)                     |      |      |                    |
-| fs module                     |      |      |         Browser support sandbox [file system API](https://developer.mozilla.org/en-US/docs/Web/API/File_and_Directory_Entries_API)          |
+| fs module                     |      |      | Browser only supports sandbox [file system API](https://developer.mozilla.org/en-US/docs/Web/API/File_and_Directory_Entries_API)          |
