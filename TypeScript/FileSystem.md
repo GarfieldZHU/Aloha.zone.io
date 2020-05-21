@@ -5,7 +5,7 @@ It is not only related to Deno, but also nodejs and browsers (It is sometimes di
 
 Thus, it will contain the behavior of different ways of file access: `import`, `dynamic import`, `fetch` API, `fs` modules in browsers, nodejs and Deno.
 
-|                                                                                  | Deno                                                                                               | Node | Browser                                                                                                                                     |
+| | Deno | Node | Browser |
 |----------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|------|---------------------------------------------------------------------------------------------------------------------------------------------|
 | Import keywork                                                                   |                                                                                                    |      |                                                                                                                                             |
 | Import expression (dynamic)                                                    |                                                                                                    |      |                                                                                                                                             |
