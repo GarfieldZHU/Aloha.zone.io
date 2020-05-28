@@ -23,7 +23,7 @@
 * [Samples](./TypeScript/TypeScriptSamples)
 * [TypeScript Manual](https://github.com/zhongsp/TypeScript)
 * [Functional programming in TypeScript](./TypeScript/FP)
-* [Access file system](./TypeScript/FileSystem)
+* [Access file system](./TypeScript/FileSystem.md)
 
 ## Web-assembly
 * [Rust wasm](./wasm/rust-wasm)
