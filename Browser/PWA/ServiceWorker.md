@@ -1,6 +1,6 @@
 # Service Worker 
 
-**Author**: @[Zhu, Jiahui](https://github.microstrategy.com/jiazhu)
+**Author**: @[AlohaYo](https://github.com/GarfieldZHU)
 
 ---
 
