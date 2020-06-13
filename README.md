@@ -40,3 +40,12 @@
      * [Service Worker](./Browser/PWA/ServiceWorker.md)
      * [IndexedDB](./Browser/PWA/IndexedDB.md)
 * [Rendering](./Browser/Rendering)
+
+
+---
+
+## Builds status:
+
+![](https://github.com/GarfieldZHU/Aloha-study-room/workflows/Rust-wasm/badge.svg)
+
+
