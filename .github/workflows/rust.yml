@@ -21,6 +21,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Install deps
       run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+    - name: Change to target directory
+      run: cd wasm/rust-wasm/wasm-game-of-life/
     - name: Build
       run: cargo build --verbose
     - name: Run tests
