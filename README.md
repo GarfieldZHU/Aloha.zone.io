@@ -27,6 +27,7 @@
 
 ## Web-assembly
 * [Rust wasm](./wasm/rust-wasm)
+      * [Wasm - Game of life](./wasm/rust-wasm/wasm-game-of-life)
 
 ## Graphics
 * [Ray tracing](./Graphics/RayTracing)
