@@ -39,7 +39,7 @@
 * [More about PWA](./Browser/PWA)
      * [Service Worker](./Browser/PWA/ServiceWorker.md)
      * [IndexedDB](./Browser/PWA/IndexedDB.md)
-* [Rendering](./Browser/Rendering)
+* [Optimize rendering](./Browser/RenderingOptimization)
 
 
 ---
