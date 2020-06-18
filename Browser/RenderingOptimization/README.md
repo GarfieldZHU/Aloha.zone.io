@@ -141,11 +141,35 @@ It helps to reduce the frequency and stablize the uncertain frequency.
   }
   ```
 
-  
+
+
+
+
+##### Virtual Scrolling
+
+When we use a scrollable list with large, even infinity data volume, there would be large amount of DOM nodes if we allocate each data cell a real DOM node. 
+
+To optimize it, we use a virtualized way to render to list, by recycling the real nodes out of the view. The limited DOM nodes scrolling behaves much fluently.
+
+
+
+###### Mechanism
+
+- The list structure
+
+![](https://i0.wp.com/blog.logrocket.com/wp-content/uploads/2020/02/virtual-scrolling-settings-object-value.png?w=267&ssl=1)![](https://i0.wp.com/blog.logrocket.com/wp-content/uploads/2020/02/virtual-scrolling-initial-state-change.gif?resize=179%2C404&ssl=1)
+
+
+
+- The real DOM change during scrolling:
+
+![](https://user-gold-cdn.xitu.io/2018/4/25/162fc86d3120304f?imageslim)
+
+
 
 
 
 #### Reference
 
 - [Debouncing and Throttling Explained Through Examples](https://css-tricks.com/debouncing-throttling-explained-examples/)
-- 
+- [Virtual scrolling: Core principles and basic implementation in React

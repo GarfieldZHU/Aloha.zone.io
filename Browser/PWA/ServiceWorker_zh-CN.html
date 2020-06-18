@@ -1,0 +1,599 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>ServiceWorker</title><link href='https://fonts.loli.net/css?family=Didact+Gothic&display=swap&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit inherit; background-repeat: inherit inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit inherit; background-repeat: inherit inherit; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; background-repeat: initial initial; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; background-position: initial initial; background-repeat: initial initial; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; background-position: initial initial; background-repeat: initial initial; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; background-repeat: initial initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); background-position: initial initial; background-repeat: initial initial; }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit inherit; background-repeat: inherit inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right-width: 1px; border-right-style: solid; border-right-color: rgb(221, 221, 221); background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; white-space: nowrap; background-position: inherit inherit; background-repeat: inherit inherit; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit inherit; background-repeat: inherit inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit inherit; background-repeat: inherit inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 30px; z-index: 3; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; border: none !important; background-position: 0px 0px !important; background-repeat: initial initial !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; border-width: 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; word-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; background-position: 0px 0px; background-repeat: initial initial; }
+.CodeMirror-wrap pre { word-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right-width: 30px; border-right-style: solid; border-right-color: transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right-style: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right-style: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background-color: rgba(255, 255, 0, 0.4); background-position: initial initial; background-repeat: initial initial; }
+@media print { 
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+@include-when-export url(https://fonts.loli.net/css?family=Didact+Gothic&display=swap&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext);
+
+/* cyrillic-ext */
+/* cyrillic */
+:root {
+	--window-border: none;
+	--typora-center-window-title: true;
+	--active-file-bg-color: #f3f3f3;
+	--bg-color: #fcfcfc;
+	--control-text-color: #777;
+}
+
+.mac-seamless-mode #typora-sidebar {
+	top: 20px;
+	padding-top: 0;
+	height: auto;
+}
+
+html,
+body,
+#write{
+	background: #fcfcfc;
+	background: var(--bg-color);
+	font-family: 'TeXGyreAdventor', "Century Gothic", "Didact Gothic", "Yu Gothic", sans-serif;
+	font-weight: 300;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: #111;
+	font-family: 'TeXGyreAdventor', "Century Gothic", "Didact Gothic", "Yu Gothic", sans-serif;
+}
+
+html {
+	font-size:16px;
+}
+
+#write {
+	max-width: 914px;
+	text-align: justify;
+}
+
+#write>h1:first-child {
+	margin-top: 2.75rem;
+}
+#write>h2:first-child {
+	margin-top: 1.75rem;
+}
+#write>h3:first-child {
+	margin-top: 1rem;
+}
+#write>h4:first-child {
+	margin-top: 0.5rem;
+}
+h1 {
+	font-weight: normal;
+	line-height: 4rem;
+	margin: 0 0 1.75rem;
+	padding: 20px 30px;
+	text-align: center;
+	text-transform: uppercase;
+	margin-top: 4rem;
+}
+h2 {
+	font-weight: normal;
+	line-height: 3rem;
+	margin: 0 0 1.9375rem;
+	padding: 0 30px;
+	text-align: center;
+	text-transform: uppercase;
+	margin-top: 3rem
+}
+h3 {
+	font-weight: normal;
+}
+h4 {
+	font-weight: normal;
+}
+h5 {
+	font-size: 1.125rem;
+	font-weight: normal;
+}
+h6 {
+	font-size: 1rem;
+	font-weight: bold;
+}
+p {
+	color: #111;
+	font-size: 1rem;
+	line-height: 1.75rem;
+	margin: 0 0 1.25rem;
+}
+#write>h3.md-focus:before {
+	left: -1.875rem;
+	top: 0.5rem;
+	padding: 2px;
+}
+#write>h4.md-focus:before {
+	left: -1.875rem;
+	top: 0.3125rem;
+	padding: 2px;
+}
+#write>h5.md-focus:before {
+	left: -1.875rem;
+	top: 0.25rem;
+	padding: 2px;
+}
+#write>h6.md-focus:before {
+	left: -1.875rem;
+	top: .125rem;
+	padding: 2px;
+}
+@media screen and (max-width: 48em) {
+	blockquote {
+		margin-left: 1rem;
+		margin-right: 0;
+		padding: 0.5em;
+	}
+	.h1,
+	h1 {
+		font-size: 2.827rem;
+	}
+	.h2,
+	h2 {
+		font-size: 1.999rem;
+	}
+	.h3,
+	h3 {
+		font-size: 1.413rem;
+	}
+	.h4,
+	h4 {
+		font-size: 1.250rem;
+	}
+	.h5,
+	h5 {
+		font-size: 1.150rem;
+	}
+	.h6,
+	h6 {
+		font-size: 1rem;
+	}
+}
+a,
+.md-def-url {
+	color: #990000;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+table {
+	margin-bottom: 20px
+}
+table th,
+table td {
+	padding: 8px;
+	line-height: 1.25rem;
+	vertical-align: top;
+	border-top: 1px solid #ddd
+}
+table th {
+	font-weight: bold
+}
+table thead th {
+	vertical-align: bottom
+}
+table caption+thead tr:first-child th,
+table caption+thead tr:first-child td,
+table colgroup+thead tr:first-child th,
+table colgroup+thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
+	border-top: 0
+}
+table tbody+tbody {
+	border-top: 2px solid #ddd
+}
+code, .md-fences {
+	padding: .5em;
+	/*background: #f0f0f0;*/
+	border: 1px solid #ccc;
+	padding: .1em;
+	font-size: 0.9em;
+	margin-left: 0.2em;
+	margin-right: 0.2em;
+}
+.md-fences {
+	margin: 0 0 20px;
+	font-size: 1em;
+	padding: 0.3em 1em;
+  	padding-top: 0.4em;
+}
+.task-list{
+	padding-left: 0;
+}
+
+.task-list-item {
+	padding-left:2.125rem;
+}
+
+input {
+	border-style: ridge;
+}
+
+.task-list-item input {
+	top: 3px;
+}
+
+.md-task-list-item input {
+	margin-left: -1.5em;
+}
+
+.task-list-item input:before {
+	content: "";
+	display: inline-block;
+	width: 1rem;
+	height: 1rem;
+	vertical-align: middle;
+	text-align: center;
+	border: 1px solid gray;
+	background-color: #fdfdfd;
+	margin-left: 0;
+	-webkit-appearance: none;
+	margin-top: -1rem;
+}
+
+.typora-node .task-list-item input:before {
+	top: 0.3ex;
+	position: absolute;
+}
+
+.task-list-item input:checked:before,
+.task-list-item input[checked]:before{
+	content: '\25FC';
+	/*◘*/
+	font-size: 0.8125rem;
+	line-height: 0.9375rem;
+}
+
+/* Chrome 29+ */
+@media screen and (-webkit-min-device-pixel-ratio:0)
+  and (min-resolution:.001dpcm) {
+    .task-list-item input:before {
+    	margin-top: -0.2rem;
+    }
+
+    .task-list-item input:checked:before,
+	.task-list-item input[checked]:before {
+		margin-top: -0.2rem;
+	}
+}
+
+blockquote {
+	margin: 0 0 1.11111rem;
+	padding: 0.5rem 1.11111rem 0 1.05556rem;
+	border-left: 1px solid gray;
+}
+blockquote,
+blockquote p {
+	line-height: 1.6;
+	color: #6f6f6f;
+}
+#write pre.md-meta-block {
+	min-height: 30px;
+	background: #f8f8f8;
+	padding: 1.5em;
+	font-weight: 300;
+	font-size: 1em;
+	padding-bottom: 1.5em;
+	padding-top: 3em;
+    margin-top: -1.5em;
+	color: #999;
+	
+	width: 100vw;
+	max-width: calc(100% + 60px);
+	margin-left: -30px;
+	border-left: 30px #f8f8f8 solid;
+	border-right: 30px #f8f8f8 solid;
+}
+.MathJax_Display {
+	font-size: 0.9em;
+	margin-top: 0.5em;
+	margin-bottom: 0;
+}
+p.mathjax-block,
+.mathjax-block {
+	padding-bottom: 0;
+}
+.mathjax-block>.code-tooltip {
+	bottom: 5px;
+	box-shadow: none;
+}
+.md-image>.md-meta {
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+}
+.md-image>img {
+	margin-top: 2px;
+}
+.md-image>.md-meta:first-of-type:before {
+	padding-left: 4px;
+}
+
+#typora-source {
+	color: #555;
+}
+
+/** ui for windows **/
+#md-searchpanel {
+    border-bottom: 1px solid #ccc;
+}
+
+#md-searchpanel .btn {
+    border: 1px solid #ccc;
+}
+
+#md-notification:before {
+	top: 14px;
+}
+
+#md-notification {
+	background: #eee;
+}
+
+.megamenu-menu-panel .btn {
+	border: 1px solid #ccc;
+}
+
+#typora-sidebar {
+	box-shadow: none;
+}
+
+.file-list-item ,
+.show-folder-name .file-list-item {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	line-height: 20px;
+}
+
+.file-list-item-summary {
+	height: 40px;
+	line-height: 20px;
+}
+
+.ty-table-edit {
+	background: #ededed;
+}
+
+.dropdown-menu .divider {
+	border-color: #e5e5e5;
+}
+
+ .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
+</style>
+</head>
+<body class='typora-export' >
+<div  id='write'  class = 'is-mac'><h1><a name="service-worker-不完全指北" class="md-header-anchor"></a><span>Service Worker 不完全指北</span></h1><p><strong><span>Author</span></strong><span>: @</span><a href='https://github.com/GarfieldZHU'><span>Alohayo</span></a></p><hr /><p>&nbsp;</p><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n0"><a class="md-toc-inner" href="#service-worker-不完全指北">Service Worker 不完全指北</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n8"><a class="md-toc-inner" href="#序">序</a></span><span role="listitem" class="md-toc-item md-toc-h6" data-ref="n9"><a class="md-toc-inner" href="#尝尝鲜">尝尝鲜</a></span><span role="listitem" class="md-toc-item md-toc-h6" data-ref="n24"><a class="md-toc-inner" href="#追史溯源">追史溯源</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n29"><a class="md-toc-inner" href="#概览">概览</a></span><span role="listitem" class="md-toc-item md-toc-h6" data-ref="n30"><a class="md-toc-inner" href="#基本概念">基本概念</a></span><span role="listitem" class="md-toc-item md-toc-h6" data-ref="n37"><a class="md-toc-inner" href="#service-worker存在的目的">Service Worker存在的目的</a></span><span role="listitem" class="md-toc-item md-toc-h6" data-ref="n47"><a class="md-toc-inner" href="#使用service-worker的必要条件">使用Service Worker的必要条件</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n61"><a class="md-toc-inner" href="#生命周期">生命周期</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n68"><a class="md-toc-inner" href="#--注册">- 注册</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n77"><a class="md-toc-inner" href="#--生命周期事件--">- 生命周期事件 -</a></span><span role="listitem" class="md-toc-item md-toc-h6" data-ref="n80"><a class="md-toc-inner" href="#下载事件-dowload">下载事件 (Dowload)</a></span><span role="listitem" class="md-toc-item md-toc-h6" data-ref="n84"><a class="md-toc-inner" href="#安装事件-install">安装事件 (Install)</a></span><span role="listitem" class="md-toc-item md-toc-h6" data-ref="n90"><a class="md-toc-inner" href="#激活事件-activate">激活事件 (activate)</a></span><span role="listitem" class="md-toc-item md-toc-h6" data-ref="n95"><a class="md-toc-inner" href="#请求事件-fetch">请求事件 (fetch)</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n114"><a class="md-toc-inner" href="#apis">APIs</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n116"><a class="md-toc-inner" href="#cache--fetch-api">Cache &amp; Fetch API</a></span><span role="listitem" class="md-toc-item md-toc-h6" data-ref="n119"><a class="md-toc-inner" href="#cache">cache</a></span><span role="listitem" class="md-toc-item md-toc-h6" data-ref="n151"><a class="md-toc-inner" href="#fetch">fetch</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n170"><a class="md-toc-inner" href="#存储--通信api">存储 &amp; 通信API</a></span><span role="listitem" class="md-toc-item md-toc-h6" data-ref="n174"><a class="md-toc-inner" href="#进程间通信">进程间通信</a></span><span role="listitem" class="md-toc-item md-toc-h6" data-ref="n186"><a class="md-toc-inner" href="#数据存储">数据存储</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n195"><a class="md-toc-inner" href="#更多-web-应用的api">更多 Web 应用的API</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n217"><a class="md-toc-inner" href="#使用场景">使用场景</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n241"><a class="md-toc-inner" href="#小贴士">小贴士</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n263"><a class="md-toc-inner" href="#引用">引用</a></span></p></div><p>&nbsp;</p><p>&nbsp;</p><h3><a name="序" class="md-header-anchor"></a><span>序</span></h3><h6><a name="尝尝鲜" class="md-header-anchor"></a><span>尝尝鲜</span></h6><p><span>这里有一些实例网页: </span><a href='https://developers.google.com/web/ilt/pwa/introduction-to-service-worker'><span>Google开发者文档</span></a><span>, </span><a href='https://pokedex.org/'><span>宝可梦图鉴</span></a><span>。按下面的步骤来把玩一下吧：</span></p><ol start='' ><li><p><span>打开你的浏览器（拒绝IE和多年未更新的古董！），访问这些网页，确认网页加载完成后关闭它们。</span></p></li><li><p><span>断开你的网络连接（拔网线）。</span></p></li><li><p><span>重新在浏览器里打开这些页面。</span></p></li><li><p><span>😲 震惊！！我们仍然可以正常的访问并浏览页面的内容。</span></p></li><li><p><span>打开其他网站如</span><a href='google.com'><span>google.com</span></a><span>再试试，果不其然我们看到了熟悉的小恐龙。</span></p><p><img src="https://github.com/GarfieldZHU/Aloha-study-room/blob/master/Browser/PWA/assets/dinosaur.png?raw=true" style="zoom:50%;" /></p></li></ol><h6><a name="追史溯源" class="md-header-anchor"></a><span>追史溯源</span></h6><p><span>在WHATWG的 </span><a href='https://html.spec.whatwg.org/multipage/offline.html#offline'><span>HTML 标准</span></a><span>中提到关于离线应用，</span><code>html</code><span> 标签有一个</span><code>manifest</code><span> 属性，并且有相应的</span><code>.appcache</code><span> 格式文件用于为离线应用缓存资源。</span></p><p><span>这仍然是一个可用的浏览器特性，但不在被推荐了。因为有了Service Worker。</span></p><p>&nbsp;</p><h3><a name="概览" class="md-header-anchor"></a><span>概览</span></h3><h6><a name="基本概念" class="md-header-anchor"></a><span>基本概念</span></h6><p><span>Service Worker是一种事件驱动的特殊的</span><a href='https://developer.mozilla.org/en-US/docs/Web/API/Worker'><span>web worker</span></a><span>，注册于指定的源和路径。它使用一个特定格式的JavaScript文件用于与它的网页关联，监听或拦截来自这个页面的访问和资源请求甚至可以修改它们。同时它可以缓存页面的资源来使得网页在一些特殊的情况下仍然可以按预期的行为运作（最常见的就是网络不可用的状况了）。</span></p><p><span>换而言之，Service Worker使得启用它的应用能够控制网络请求，缓存请求内容来优化性能，并且拥有离线访问已缓存的内容的能力，就像一个本地应用一样工作。</span></p><p><span>Service Worker 以来于两个核心API来使得网页应用离线工作: </span><a href='https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API'><strong><em><span>Fetch</span></em></strong></a><span> (从网络获取资源的标准方式) and </span><a href='https://developer.mozilla.org/en-US/docs/Web/API/Cache'><strong><em><span>Cache</span></em></strong></a><span> (为应用数据提供持久’化的存储)。注意这里的cache是应用缓存 (参见DevTools -&gt; Application -&gt; Cache)，需要区分于浏览器层面的缓存，应用缓存的失效和过期需要由service worker来管理。</span></p><p><span>总之，它就像是一个“HTTP请求的本地代理服务器”+“响应和资源的缓存管理器”。</span></p><p>&nbsp;</p><h6><a name="service-worker存在的目的" class="md-header-anchor"></a><span>Service Worker存在的目的</span></h6><ul><li><p><span>作为</span><a href='https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Introduction'><span>PWA (Progressive Web Application, 渐进式网络应用)</span></a><span>的核心。</span></p></li><li><p><span>提供更好的网页性能。</span></p></li><li><p><span>提供优秀的离线和弱网环境的使用体验。</span></p><p><span>(为网络基础设施落后地区的人民提供可用的网络体验也是重要的政治正确)</span></p></li></ul><h6><a name="使用service-worker的必要条件" class="md-header-anchor"></a><span>使用Service Worker的必要条件</span></h6><ul><li><p><span>浏览器支持</span></p><ul><li><span>使用最新的Chrome, Firefox, Edge, Safari等。</span></li><li><span>在</span><a href='https://jakearchibald.github.io/isserviceworkerready/'><span>这里测试你的浏览器</span></a><span>是否支持。</span></li></ul></li><li><p><span>必须使用HTTPS</span></p></li></ul><p><span>         基于Service Worker的核心能力，能够劫持网络连接，伪造和过滤响应结果，它在网络层面过于强大也赋予了使用者做坏事的能力。为了防止中间人威胁到启用了Service Worker的页面的安全，它被设计成只能使用于HTTPS站点。</span></p><p><span> </span></p><h3><a name="生命周期" class="md-header-anchor"></a><span>生命周期</span></h3><p><span>Service Worker的初次运行生命周期流程如下图所示，从未注册开始主要分为Installed, Activated, IDLE 等阶段。</span></p><p><img src="https://developers.google.com/web/fundamentals/primers/service-workers/images/sw-lifecycle.png" alt="service worker lifecycle" style="zoom:70%;" /></p><p>&nbsp;</p><p><span>不同生命周期阶段转移的细节：</span></p><p><img src="https://mdn.mozillademos.org/files/12636/sw-lifecycle.png" alt="img" style="zoom:80%;" /></p><p>&nbsp;</p><h5><a name="--注册" class="md-header-anchor"></a><span>- 注册</span></h5><p><span>在Service Worker被安装之前，首先需要在HTML页面内的脚本里注册server worker的脚本，即前面提到过的特定格式的JavaScript见（例如: sw.js）。注册这一步是在运行网页自身的脚本时告知浏览器:</span></p><p><code>这个页面是使用了Service Worker的，请加载指定路径的Service Worker的脚本并将它安装到当前域。</code></p><p><span>这一步本身不属于Service Worker的生命周期，因为它是需要在页面脚本里完成的，这和WebSocket比较类似。如下面的脚本（注意：它必须是HTML页面中</span><code>script</code><span>标签的一部分，而不是sw.js中的）：</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="javascript"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="javascript"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">if</span> (<span class="cm-string">'serviceWorker'</span> <span class="cm-keyword">in</span> <span class="cm-variable">navigator</span>) {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-variable">navigator</span>.<span class="cm-property">serviceWorker</span>.<span class="cm-property">register</span>(<span class="cm-string">'/sw.js'</span>).<span class="cm-property">then</span>(<span class="cm-keyword">function</span>(<span class="cm-def">registration</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-comment">// Registration was successful</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-string">':) Success. '</span>, <span class="cm-variable-2">registration</span>.<span class="cm-property">scope</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> }, <span class="cm-keyword">function</span>(<span class="cm-def">err</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-comment">// registration failed :(</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-string">':( Failed. '</span>, <span class="cm-variable-2">err</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> });</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 198px;"></div><div class="CodeMirror-gutters" style="display: none; height: 198px;"></div></div></div></pre><p><span>上面的代码为当前页面所在的域注册了sw.js，我们还可以使用</span><strong><em><span>scope</span></em></strong><span>为它的指定更为细分的范围。也就是说，只有发送往当前域中来自scope中指定子路径的请求才会被Service Worker拦截，其他路径的请求将不受影响。如下图代码，只有向”</span><u><a href='https://domain/app/' target='_blank' class='url'>https://domain/app/</a></u><span>“及其子路径作为url的请求才会被</span><code>service-worker.js</code><span>里绑定的事件响应。</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="javascript"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="javascript"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">navigator</span>.<span class="cm-property">serviceWorker</span>.<span class="cm-property">register</span>(<span class="cm-string">'/service-worker.js'</span>, {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-property">scope</span>: <span class="cm-string">'/app/'</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">});</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 66px;"></div><div class="CodeMirror-gutters" style="display: none; height: 66px;"></div></div></div></pre><p><span>若scope未被指定，那么默认的scope是获取service worker脚本所在的同级域，及其响应的子域。</span></p><p>&nbsp;</p><h5><a name="--生命周期事件--" class="md-header-anchor"></a><span>- 生命周期事件 -</span></h5><p><span>Service Worker中的主要生命周期阶段的变化，是通过事件来通知脚本的，所以Serice Worker的脚本主要需要做的是为不同生命周期事件绑定好对应的处理器。核心的生命周期事件处理器如图示：</span></p><p><img src="https://mdn.mozillademos.org/files/12632/sw-events.png" alt="install, activate, message, fetch, sync, push" style="zoom:80%;" /></p><h6><a name="下载事件-dowload" class="md-header-anchor"></a><span>下载事件 (Dowload)</span></h6><p><span>下载事件未在上图中标出，它发生在脚本注册阶段被触发且由浏览器处理：</span>
+<span>  1)  从指定路径下载service worker的脚本；</span>
+<span>  2)  完成脚本的解析，如果不符合service worker脚本的规范则不会触发安装事件；</span>
+<span>  3)  正确的脚本被安装到浏览器的Service Worker列表，被触发安装事件；</span>
+<span>下载失败，解析失败或者初始化错误引发的错误也可以在浏览器的开发者工具 -&gt; 应用 -&gt; Service Worker列表看到，</span></p><p><img src="https://github.com/GarfieldZHU/Aloha-study-room/blob/master/Browser/PWA/assets/InstalledServiceWorker.png?raw=true" style="zoom:50%;" /></p><p>&nbsp;</p><h6><a name="安装事件-install" class="md-header-anchor"></a><span>安装事件 (Install)</span></h6><p><span>在下载事件被浏览器响应完成后，安装事件是Service Worker生命周期中第一个被触发的，所以它非常重要。我们通常使用它来完成各种初始化任务，主要是资源的预加载、缓存以及持久化一些长期有效的状态。</span></p><p><span>这里主要被使用的是Cache API，监听到安装事件就可以预先拉取一些资源，并在应用缓存中存储它们并用给定的名字标识，参见下面的代码示例。在下文中有关于API的更详细的内容。</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="javascript" style="break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="javascript"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><span><span>​</span>x</span></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">const</span> <span class="cm-def">CACHE_NAME</span> <span class="cm-operator">=</span> <span class="cm-string">'my-site-cache-v1'</span>;</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">const</span> <span class="cm-def">urlsToCache</span> <span class="cm-operator">=</span> [ &nbsp;<span class="cm-comment">// The list of resources to cache</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-string">'/'</span>,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-string">'/styles/main.css'</span>,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-string">'/script/main.js'</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">];</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">self</span>.<span class="cm-property">addEventListener</span>(<span class="cm-string">'install'</span>, <span class="cm-def">event</span> <span class="cm-operator">=&gt;</span> {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-comment">// Perform install steps</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable-2">event</span>.<span class="cm-property">waitUntil</span>(</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">caches</span>.<span class="cm-property">open</span>(<span class="cm-variable">CACHE_NAME</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;  .<span class="cm-property">then</span>(<span class="cm-keyword">function</span>(<span class="cm-def">cache</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-string">'Opened cache'</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable-2">cache</span>.<span class="cm-property">addAll</span>(<span class="cm-variable">urlsToCache</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;  })</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  );</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">});</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 374px;"></div><div class="CodeMirror-gutters" style="display: none; height: 374px;"></div></div></div></pre><p><span>鉴于Service Worker本质上类似于Web Worker，它的资源加载完全独立于页面进程，所以它完全不会影响首屏渲染的性能。当然了，我们也完全不能预期在首次加载中就能受到应用缓存带来的优化。</span></p><p>&nbsp;</p><h6><a name="激活事件-activate" class="md-header-anchor"></a><span>激活事件 (activate)</span></h6><p><span>当Service Worker已经就绪，可以控制页面请求并处理功能事件如</span><code>fetch</code><span>,</span><code>push</code><span>和</span><code>sync</code><span>，激活事件就会被触发，我们监听激活事件的处理器就可以响应。</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="javascript"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="javascript"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">self</span>.<span class="cm-property">addEventListener</span>(<span class="cm-string">'activate'</span>, <span class="cm-def">event</span> <span class="cm-operator">=&gt;</span> {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-string">'V1 now ready to handle fetches!'</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">});</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 66px;"></div><div class="CodeMirror-gutters" style="display: none; height: 66px;"></div></div></div></pre><p><span>激活事件标志着从这之后的请求将被Service Worker接管，所以通常用于区分Service Worker接管前后的分隔。</span>
+<span>但这不意味着当前这次有效完成&quot;.register()&quot;的页面会受到Service Worker 管理，因为我们无法预测页面资源先获取完成还是激活事件先响应。</span></p><p>&nbsp;</p><h6><a name="请求事件-fetch" class="md-header-anchor"></a><span>请求事件 (fetch)</span></h6><p><code>fetch</code><span>事件被触发于页面对网络发起任意请求，当然我们前面已经提过：1）必须在激活事件触发后service worker接管网络请求；2）请求的目标url必须位于注册的资源范围(scope)内。</span></p><p><span>来看一下这个 </span><a href='https://cdn.rawgit.com/jakearchibald/80368b84ac1ae8e229fc90b3fe826301/raw/ad55049bee9b11d47f1f7d19a73bf3306d156f43/'><span>demo</span></a><span>, 这里Service Worker劫持了&quot;fetch&quot;请求，但只在激活后才会生效：</span></p><ol start='' ><li><span>当你第一次打开这个demo页面，你应该在等待后看到一张狗的图片，因为这个页面的</span><img><span>标签指向的就是一张dog.svg。对这个图片的请求在完成Service Worker的注册之前就已经发出去了，响应的自然是狗的图片。</span></li><li><span>然后刷新页面，这一次我们看到的却是猫的剪影图片了，之后反复刷新都会是猫的图片。因为Service Worker已经完成了注册，开始接管对图片资源的HTTP请求，并将我们的请求换成它准备好的猫图了。</span></li></ol><p>&nbsp;</p><p><span>我们来看看SW的脚本里都做了什么：</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="javascript" style="break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="javascript"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">// Caching the cat image when installing</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">self</span>.<span class="cm-property">addEventListener</span>(<span class="cm-string">'install'</span>, <span class="cm-def">event</span> <span class="cm-operator">=&gt;</span> {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-string">'V2 installing…'</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-comment">// cache a horse SVG into a new cache, static-v2</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable-2">event</span>.<span class="cm-property">waitUntil</span>(</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">caches</span>.<span class="cm-property">open</span>(<span class="cm-string">'static-v2'</span>).<span class="cm-property">then</span>(<span class="cm-def">cache</span> <span class="cm-operator">=&gt;</span> <span class="cm-variable-2">cache</span>.<span class="cm-property">add</span>(<span class="cm-string">'/cat.svg'</span>))</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  );</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">});</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">// Response the cat image when requesting dog.</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">self</span>.<span class="cm-property">addEventListener</span>(<span class="cm-string">'fetch'</span>, <span class="cm-def">event</span> <span class="cm-operator">=&gt;</span> {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-keyword">const</span> <span class="cm-def">url</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">URL</span>(<span class="cm-variable-2">event</span>.<span class="cm-property">request</span>.<span class="cm-property">url</span>);<span class="cm-tab" role="presentation" cm-text="	"> </span> </span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-comment">// serve the cat SVG from the cache if the request is</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-comment">// same-origin and the path is '/dog.svg'</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable-2">url</span>.<span class="cm-property">origin</span> <span class="cm-operator">==</span> <span class="cm-variable">location</span>.<span class="cm-property">origin</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-variable-2">url</span>.<span class="cm-property">pathname</span>.<span class="cm-property">endsWith</span>(<span class="cm-string">'/dog.svg'</span>)) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-2">event</span>.<span class="cm-property">respondWith</span>(<span class="cm-variable">caches</span>.<span class="cm-property">match</span>(<span class="cm-string">'cat.svg'</span>));</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">});</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 418px;"></div><div class="CodeMirror-gutters" style="display: none; height: 418px;"></div></div></div></pre><ul><li><p><span>在安装事件中，service worker请求了猫图</span><em><u><span>cat.svg</span></u></em><span>并加入缓存，这是页面进程完全不知道的。</span></p></li><li><p><span>而在fetch事件中，我们劫持了网络请求，当资源目标为狗图时，service worker没有乖乖地转发请求，而是从缓存列表取出猫图，回复给了页面。同样，我们的页面并不知道这个请求根本没有通过网络，而是被service worker返回的资源应付了。就会有这张猫图在页面的资源列表里被标注成了请求的dog.svg的奇妙效果：</span></p><p><img src="https://github.com/GarfieldZHU/Aloha-study-room/blob/master/Browser/PWA/assets/funny.png?raw=true" style="zoom:50%;" /></p></li></ul><p><span>在上面提到的Service Worker的开发这界面，我们可以通过点击&quot;unregiter&quot;来取消当前service worker脚本的注册，这样在下一次打开时虽然service worker会被再次注册，至少在那一次的页面我们见到的将还是狗图了。</span></p><p>&nbsp;</p><h3><a name="apis" class="md-header-anchor"></a><span>APIs</span></h3><p><span>Service Worker依赖于包括</span><code>cache</code><span>和</span><code>fetch</code><span>在内的许多相关的浏览器API来使得网页应用更加功能丰富，越来越接近原生应用的体验。（注：这里的cache和fetch是指浏览器接口，与上文的Service Worker的生命周期事件注意区分）</span></p><h4><a name="cache--fetch-api" class="md-header-anchor"></a><span>Cache &amp; Fetch API</span></h4><p><span>作为一个网页应用，除了前端无法控制的服务接口，最重要的无非是获取和存储资源了，</span><strong><em><span>fetch</span></em></strong><span> 和 </span><strong><em><span>cache</span></em></strong><span> 两个接口作为现代浏览器的重要接口，Service Worker的fetch事件的响应几乎可以说是重度依赖于他们。如果浏览器版本捎老一些，可能还需要使用腻子脚本(polyfill)来为提供这两个接口。</span></p><p><span>通过它们，Service Worker可以在截取页面的请求后，修改请求的参数内容，修改请求路径(注意跨域)，延迟响应，修改响应内容，使用缓存内容伪造响应内容，甚至只用缓存构造一个完全不再依赖于网络的页面等等。</span></p><h6><a name="cache" class="md-header-anchor"></a><span>cache</span></h6><figure><table><thead><tr><th><span>Object</span></th><th><span>API</span></th><th><span>Usage</span></th></tr></thead><tbody><tr><td><a href='https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage'><span>CacheStorage</span></a></td><td><span>caches.open</span></td><td><span>通过标识符读取一个缓存对象</span></td></tr><tr><td><a href='https://developer.mozilla.org/en-US/docs/Web/API/Cache'><span>Cache</span></a></td><td><span>cache.match / cache.matchAll</span></td><td><span>从缓存对象中匹配一个相同请求的结果</span></td></tr><tr><td><a href='https://developer.mozilla.org/en-US/docs/Web/API/Cache'><span>Cache</span></a></td><td><span>cache.add / cache.addAll</span></td><td><span>请求资源，将响应结果添加到这个缓存对象中</span></td></tr><tr><td><a href='https://developer.mozilla.org/en-US/docs/Web/API/Cache'><span>Cache</span></a></td><td><span>cache.delete</span></td><td><span>Remove from the cache object</span></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table></figure><ul><li><span>添加资源到缓存对象中:</span></li></ul><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="javascript" style="break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="javascript"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">self</span>.<span class="cm-property">addEventListener</span>(<span class="cm-string">'install'</span>, <span class="cm-keyword">function</span>(<span class="cm-def">event</span>) {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-comment">// In install event, cache the resources first</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable-2">event</span>.<span class="cm-property">waitUntil</span>(</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">caches</span>.<span class="cm-property">open</span>(<span class="cm-string">'my-cache-identifier'</span>) &nbsp; <span class="cm-comment">// Open/create a cache with identifier</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;  .<span class="cm-property">then</span>(<span class="cm-keyword">function</span>(<span class="cm-def">cache</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-string">'Opened cache'</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable-2">cache</span>.<span class="cm-property">addAll</span>([ &nbsp; &nbsp;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-string">'/'</span>,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-string">'/styles/main.css'</span>,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-string">'/script/main.js'</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  ]); <span class="cm-comment">// Cache the major HTML, CSS, JS file</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;  })</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  );</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">});</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 308px;"></div><div class="CodeMirror-gutters" style="display: none; height: 308px;"></div></div></div></pre><p><span>需要注意，一个缓存对象可以添加多个资源路径-&gt;响应结果。</span></p><p>&nbsp;</p><h6><a name="fetch" class="md-header-anchor"></a><span>fetch</span></h6><p><a href='https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API'><span>Fetch API</span></a><span> 是浏览器新的API标准，在Service Worker中通常被用于在 </span><a href='https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent'><span>FetchEvent</span></a><span> 中转发请求。</span></p><p><span>当网页正在发送HTTP请求，触发了Service Worker的fetch事件，我们就能在劫持HTTP包中的内容，按照需要进行读取或者修改，然后再继续发送或者转发给其他目标。</span></p><p><span>通常有以下操作流程或其中一部分: </span></p><ul><li><span>检查请求目标是否已被缓存，如果已存在直接回复缓存内容；</span></li><li><span>拆包分析请求内容，筛选请求，阻止某些请求被发送，或者修改其内容；</span></li><li><span>使用 </span><code>fetch</code><span> API 发送请求，或者转发请求；</span></li><li><span>当得到响应，拆包检查响应状态，类型或者其他的HTTP头，按照需要筛选或者修改回复体的内容；</span></li><li><span>按需缓存响应结果；</span></li></ul><p><span>流程代码示例:</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="javascript" style="break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="javascript"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">self</span>.<span class="cm-property">addEventListener</span>(<span class="cm-string">'fetch'</span>, <span class="cm-keyword">function</span>(<span class="cm-def">event</span>) {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable-2">event</span>.<span class="cm-property">respondWith</span>(</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">caches</span>.<span class="cm-property">match</span>(<span class="cm-variable-2">event</span>.<span class="cm-property">request</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;  .<span class="cm-property">then</span>(<span class="cm-keyword">function</span>(<span class="cm-def">response</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// Cache hit - return response</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable-2">response</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable-2">response</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable">fetch</span>(<span class="cm-variable-2">event</span>.<span class="cm-property">request</span>).<span class="cm-property">then</span>(</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">function</span>(<span class="cm-def">response</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// Check if we received a valid response</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">if</span>(<span class="cm-operator">!</span><span class="cm-variable-2">response</span> <span class="cm-operator">||</span> <span class="cm-variable-2">response</span>.<span class="cm-property">status</span> <span class="cm-operator">!==</span> <span class="cm-number">200</span> <span class="cm-operator">||</span> <span class="cm-variable-2">response</span>.<span class="cm-property">type</span> <span class="cm-operator">!==</span> <span class="cm-string">'basic'</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable-2">response</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// IMPORTANT: Clone the response. A response is a stream</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// and because we want the browser to consume the response</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// as well as the cache consuming the response, we need</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// to clone it so we have two streams.</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">var</span> <span class="cm-def">responseToCache</span> <span class="cm-operator">=</span> <span class="cm-variable-2">response</span>.<span class="cm-property">clone</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">caches</span>.<span class="cm-property">open</span>(<span class="cm-variable">CACHE_NAME</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  .<span class="cm-property">then</span>(<span class="cm-keyword">function</span>(<span class="cm-def">cache</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-2">cache</span>.<span class="cm-property">put</span>(<span class="cm-variable-2">event</span>.<span class="cm-property">request</span>, <span class="cm-variable-2">responseToCache</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  });</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable-2">response</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  );</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;  })</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  );</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">});</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 726px;"></div><div class="CodeMirror-gutters" style="display: none; height: 726px;"></div></div></div></pre><p>&nbsp;</p><p>&nbsp;</p><h4><a name="存储--通信api" class="md-header-anchor"></a><span>存储 &amp; 通信API</span></h4><p><code>Fetch</code><span> 是通信用的API ， </span><code>cache</code><span>是存储用的。但他们通常适用于“代理网页的网络请求”和 “缓存网页的资源”。 </span></p><p><span>如果Service Worker还有其他的通信需求（如直接和页面通信，或者其他的Web Worker通信），或者存储不同需求的数据（如页面层数据，浏览器层数据，更大量的数据等），还有以下常用的API。</span></p><p>&nbsp;</p><h6><a name="进程间通信" class="md-header-anchor"></a><span>进程间通信</span></h6><p><span>上文多次提及Web Worker, Service Worker与常规的Web Worker都是独立于渲染上下文的独立线程，所以它们都是无法直接操作DOM或者window对象的。如果我们有和其他Worker或者页面交互的需求，可以使用 </span><a href='https://html.spec.whatwg.org/multipage/workers.html#dom-worker-postmessage'><span>postMessage</span></a><span> API 和 </span><code>message</code><span>事件来进行进程/线程间通信。</span></p><ul><li><span>在页面的主线程创建消息频道 </span><a href='https://developer.mozilla.org/en-US/docs/Web/API/MessageChannel'><strong><span>MessageChannel</span></strong></a><span>，使用 </span><code>postMessage</code><span> 向频道上发送消息并且监听上面来的 </span><code>message</code><span> 事件:</span></li></ul><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="javascript" style="break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="javascript"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">function</span> <span class="cm-def">sendMessage</span>(<span class="cm-def">message</span>) {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-comment">// This wraps the message posting/response in a promise, which will resolve if the response doesn't</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-comment">// contain an error, and reject with the error if it does. If you'd prefer, it's possible to call</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-comment">// controller.postMessage() and set up the onmessage handler independently of a promise, but this is</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-comment">// a convenient wrapper.</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-keyword">return</span> <span class="cm-keyword">new</span> <span class="cm-variable">Promise</span>(<span class="cm-keyword">function</span>(<span class="cm-def">resolve</span>, <span class="cm-def">reject</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">var</span> <span class="cm-def">messageChannel</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">MessageChannel</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-2">messageChannel</span>.<span class="cm-property">port1</span>.<span class="cm-property">onmessage</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(<span class="cm-def">event</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable-2">event</span>.<span class="cm-property">data</span>.<span class="cm-property">error</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-2">reject</span>(<span class="cm-variable-2">event</span>.<span class="cm-property">data</span>.<span class="cm-property">error</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;  } <span class="cm-keyword">else</span> {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-2">resolve</span>(<span class="cm-variable-2">event</span>.<span class="cm-property">data</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;  }</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  };</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// This sends the message data as well as transferring messageChannel.port2 to the service worker.</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// The service worker can then use the transferred port to reply via postMessage(), which</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// will in turn trigger the onmessage handler on messageChannel.port1.</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// See https://html.spec.whatwg.org/multipage/workers.html#dom-worker-postmessage</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">navigator</span>.<span class="cm-property">serviceWorker</span>.<span class="cm-property">controller</span>.<span class="cm-property">postMessage</span>(<span class="cm-variable-2">message</span>,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;  [<span class="cm-variable-2">messageChannel</span>.<span class="cm-property">port2</span>]);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  });</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 638px;"></div><div class="CodeMirror-gutters" style="display: none; height: 638px;"></div></div></div></pre><ul><li><span>在Service Worker中，使用Client对象上的 </span><a href='https://developer.mozilla.org/en-US/docs/Web/API/Client/postMessage'><code>Client.postMessage</code><span> </span></a><span> 来发送消息, 并且监听 </span><code>message</code><span> Service Worker自己的消息事件:</span></li></ul><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="javascript"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="javascript"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">// Consume the message from host thread (or other Workers)</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">addEventListener</span>(<span class="cm-string">'message'</span>, (<span class="cm-def">event</span>) <span class="cm-operator">=&gt;</span> {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-string-2">`The client sent me a message: ${</span><span class="cm-variable-2">event</span>.<span class="cm-property">data</span><span class="cm-string-2">}`</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">});</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-comment">// Send message to host thread (or other Workers)</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">clients</span>.<span class="cm-property">matchAll</span>(<span class="cm-variable">event</span>.<span class="cm-property">clientId</span>).<span class="cm-property">postMessage</span>({</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-property">msg</span>: <span class="cm-string">"Hey I just got a fetch from you!"</span>,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  });</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 242px;"></div><div class="CodeMirror-gutters" style="display: none; height: 242px;"></div></div></div></pre><p><span>发送消息的 </span><a href='https://googlechrome.github.io/samples/service-worker/post-message/index.html'><span>demo</span></a><span> </span></p><p>&nbsp;</p><h6><a name="数据存储" class="md-header-anchor"></a><span>数据存储</span></h6><p><span>Service Worker中也能使用各种新旧浏览器标准下的Web存储API来持久化数据，我们可以依照不同的需要来选择：</span></p><p><img src="https://github.com/GarfieldZHU/Aloha-study-room/blob/master/Browser/PWA/assets/ZRHTt.png?raw=true" referrerpolicy="no-referrer" alt="Image from Chrome Developer Tools"></p><ol start='' ><li><span>注意Service Worker的官方标准提到它是完全基于Promise的异步非阻塞 (</span><code>it&#39;s designed to be fully asynchronous</code><span>)，同步的XHR请求和 </span><code>localStorage</code><span>  (</span><a href='https://stackoverflow.com/questions/20231163/is-html5-localstorage-asynchronous'><span>LocalStorage请求都是完全同步的</span></a><span>) 在Service Worker不可以被使用。 </span></li><li><span>对于真正需要被长期持久化且在浏览器重启之后也需要被复用的内容，使用</span><a href='https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API'><span>IndexedDB</span></a><span>是更加建议的方案，甚至可以在这之上做类似基于数据库的数据同步。</span></li></ol><p>&nbsp;</p><h4><a name="更多-web-应用的api" class="md-header-anchor"></a><span>更多 Web 应用的API</span></h4><p><span>Service Worker作为PWA的核心概念之一，它也是将web应用变得更接近原生应用的出发点。在它之上，更多浏览器特性提供了类似原生应用的支持。</span></p><figure><table><thead><tr><th><span>API</span></th><th style='text-align:left;' ><span>Functionalities</span></th></tr></thead><tbody><tr><td><a href='https://developer.mozilla.org/en-US/docs/Web/API/Channel_Messaging_API'><span>Channel Messaging</span></a></td><td style='text-align:left;' ><span>和主页面及其他</span><a href='https://developer.mozilla.org/en-US/docs/Web/API/Worker'><span>Web Workers</span></a><span>通信</span></td></tr><tr><td><a href='https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API'><span>Notifications API</span></a></td><td style='text-align:left;' ><span>通过操作系统的通知系统，显示通知和提供支持的交互功能</span></td></tr><tr><td><a href='https://developer.mozilla.org/en-US/docs/Web/API/Push_API'><span>Push API</span></a></td><td style='text-align:left;' ><span>是网页应用能够订阅推送服务，并且受到服务器主动的消息推送</span></td></tr><tr><td><a href='https://developers.google.com/web/updates/2015/12/background-sync'><span>Background Sync</span></a></td><td style='text-align:left;' ><span>后台同步可以在弱网状况下推迟并不阻塞请求，在网络恢复后再与服务器同步</span></td></tr><tr><td>&nbsp;</td><td style='text-align:left;' >&nbsp;</td></tr></tbody></table></figure><p>&nbsp;</p><h3><a name="使用场景" class="md-header-anchor"></a><span>使用场景</span></h3><p><span>Server Worker在PWA之外也有诸多应用，基于它对HTTP请求和响应的强大管理能力，它可以作为多种依赖网络的应用的核心流程管理器。</span></p><ol start='' ><li><p><strong><span>全静态站点</span></strong></p><p><span>如果一个网站只包含静态数据而无需服务, 我们可以缓存所有的html页面，css样式，脚本和图片等资源，来使得这个页面在初次打开后可以被完全地离线访问。例如前面提到的</span><a href='https://pokedex.org/'><span>宝可梦图鉴</span></a></p></li><li><p><strong><span>预加载</span></strong></p><p><span>为了优化首屏渲染，页面上非必要的资源通常被延迟加载直到它们被需要。这类资源使用Server Worker来加载既可以使得在需要被加载时有良好的体验，有不会影响到首屏性能。</span>
+<a href='https://googlechrome.github.io/samples/service-worker/prefetch/index.html'><span>Demo</span></a><span> / </span><a href='https://googlechrome.github.io/samples/service-worker/prefetch-video/index.html'><span>Demo prefetch video</span></a></p></li><li><p><strong><span>应变响应</span></strong></p><p><span>有时候HTTP请求可能会因为不确定因素失败（如服务器离线，网络中断等），此时为用户提供一个应变的响应比如展示上一次成功加载的资源/数据。（例如：实时数据监测）</span></p><p><span>Service worker可以帮助验证请求是否成功，如果失败就提供应变策略的回复。</span>
+<a href='https://googlechrome.github.io/samples/service-worker/fallback-response/index.html'><span>Demo</span></a></p></li><li><p><strong><span>仿造响应</span></strong></p><p><span>仿造响应是非常有用。它可以帮助我们隔离部分特定的请求来使用给定的回复，或者我们可以用它来测试一些尚不可用，或者不能稳定重现问题的资源或者REST API.</span></p></li><li><p><strong><span>窗口缓存</span></strong></p><p><span>Service Worker来承担缓存数据的责任，页面可以直接使用</span><code>window.cache</code><span>来访问缓存。</span></p><p><span>通过窗口缓存作为媒介可以间接实现service worker向页面的数据传递，也可以将Service Worker用作缓存的生产者而页面作为消费者。</span>
+<a href='https://googlechrome.github.io/samples/service-worker/window-caches/index.html'><span>Demo</span></a></p></li><li><p><span>...</span></p></li></ol><p>&nbsp;</p><h3><a name="小贴士" class="md-header-anchor"></a><span>小贴士</span></h3><ul><li><p><span>在Service Worker中使用fetch API来转发请求，请求中默认不会包含cookie等中的用户认证信息。</span></p><p><span>如果需要为转发请求附带认证信息, 在fetch请求中添加&#39;credentials&#39;的参数:</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="javascript"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="javascript"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">fetch</span>(<span class="cm-variable">url</span>, {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-property">credentials</span>: <span class="cm-string">'include'</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">})</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 66px;"></div><div class="CodeMirror-gutters" style="display: none; height: 66px;"></div></div></div></pre></li><li><p><span>跨域资源默认是不支持缓存的，需要额外参数。 </span></p><ul><li><p><span>如果目标资源支持CORS，在构建请求需要附带参数 </span><code>{mode: &#39;cors&#39;}</code><span> 。</span></p></li><li><p><span>如果目标资源不支持CORS或者不确定, 我们可以使用 </span><code>non-cors</code><span>模式，</span></p><p><span>但这会导致&quot;不透明&quot;的响应, 意味着Service Worker不能判断响应中的状态，不透明的结果被缓存后仍被页面消费成non-cors的响应。</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="javascript"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="javascript"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">cache</span>.<span class="cm-property">addAll</span>(<span class="cm-variable">urlsToPrefetch</span>.<span class="cm-property">map</span>(<span class="cm-keyword">function</span>(<span class="cm-def">urlToPrefetch</span>) {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-keyword">return</span> <span class="cm-keyword">new</span> <span class="cm-variable">Request</span>(<span class="cm-variable-2">urlToPrefetch</span>, { <span class="cm-property">mode</span>: <span class="cm-string">'no-cors'</span> });</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">})).<span class="cm-property">then</span>(<span class="cm-keyword">function</span>() {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-string">'All resources have been fetched and cached.'</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">});</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 110px;"></div><div class="CodeMirror-gutters" style="display: none; height: 110px;"></div></div></div></pre></li></ul></li><li><p><span>30X的HTTP状态码尚不支持离线请求重定向, 这是一个</span><a href='https://github.com/w3c/ServiceWorker/issues/1457'><span>已知的issue</span></a><span>。</span></p><p><span>建议在官方支持离线重定向前，根据你的使用场景寻找其他方案，</span></p><p>&nbsp;</p></li><li><p><span>在使用Service Worker代理HTTP的响应体时，务必记住</span><a href='https://fetch.spec.whatwg.org/#dom-response-clone'><span>clone</span></a><span> response，而不要直接消费掉响应体。 原因是HTTP response是一个 </span><a href='https://streams.spec.whatwg.org/'><span>流</span></a><span>, 它的内容只能被消费一次。 只要我们仍然希望既能让浏览器正确的获得响应体中的内容，又能是它被缓存或者在Service Worker作内容检查，请不要忘记复制一个响应体。</span></p></li></ul><hr /><h3><a name="引用" class="md-header-anchor"></a><span>引用</span></h3><ul><li><p><span>Chrome官方在线demo</span></p><p><a href='https://github.com/GoogleChrome/samples/tree/gh-pages/service-worker' target='_blank' class='url'>https://github.com/GoogleChrome/samples/tree/gh-pages/service-worker</a></p></li><li><p><span>Service Worker简介</span></p><p><a href='https://developers.google.com/web/fundamentals/primers/service-workers' target='_blank' class='url'>https://developers.google.com/web/fundamentals/primers/service-workers</a></p></li><li><p><span>Service Worker API - MDN</span></p><p><a href='https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API' target='_blank' class='url'>https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API</a></p></li><li><p><span>W3C 官方标准</span></p><p><a href='https://w3c.github.io/ServiceWorker/' target='_blank' class='url'>https://w3c.github.io/ServiceWorker/</a></p></li><li><p><span>Service Worker相关的资源</span></p><p><a href='https://jakearchibald.github.io/isserviceworkerready/resources.html#moar' target='_blank' class='url'>https://jakearchibald.github.io/isserviceworkerready/resources.html#moar</a></p></li></ul><p>&nbsp;</p></div>
+</body>
+</html>

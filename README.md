@@ -19,7 +19,6 @@
 * [TypeScript learning material](./TypeScript)
     * [Tricks](./TypeScript/tricks.md)
     * [Type system](./TypeScript/type_system.md)
-    * [Functional programming](./TypeScript/FP)
 * [Samples](./TypeScript/TypeScriptSamples)
 * [TypeScript Manual](https://github.com/zhongsp/TypeScript)
 * [Functional programming in TypeScript](./TypeScript/FP)
@@ -38,14 +37,17 @@
 * [More about JavaScript](./Browser/JavaScript)
 * [More about PWA](./Browser/PWA)
      * [Service Worker](./Browser/PWA/ServiceWorker.md)
+     * [Service Worker 不完全指北 (中文版)](https://ghcdn.rawgit.org/GarfieldZHU/Aloha-study-room/master/Browser/PWA/ServiceWorker_zh-CN.html)
      * [IndexedDB](./Browser/PWA/IndexedDB.md)
-* [Rendering](./Browser/Rendering)
+* [Optimize rendering](./Browser/RenderingOptimization)
 
 
 ---
 
 ## Builds status:
 
-![](https://github.com/GarfieldZHU/Aloha-study-room/workflows/Rust-wasm/badge.svg)
+[![](https://github.com/GarfieldZHU/Aloha-study-room/workflows/Rust-wasm/badge.svg)](https://github.com/GarfieldZHU/Aloha-study-room/actions?query=workflow%3ARust-wasm)
+
+[![](https://github.com/GarfieldZHU/Aloha-study-room/workflows/Ray-tracing/badge.svg)](https://github.com/GarfieldZHU/Aloha-study-room/actions?query=workflow%3ARay-tracing)
 
 
