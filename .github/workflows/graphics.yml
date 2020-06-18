@@ -1,4 +1,4 @@
-name: Ray tracing
+name: Ray-tracing
 on:
   push:
     branches: [ master ]
