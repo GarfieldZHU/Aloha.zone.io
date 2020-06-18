@@ -47,6 +47,7 @@
 ## Builds status:
 
 ![](https://github.com/GarfieldZHU/Aloha-study-room/workflows/Rust-wasm/badge.svg)
+
 ![](https://github.com/GarfieldZHU/Aloha-study-room/workflows/Ray-tracing/badge.svg)
 
 
