@@ -1,5 +1,4 @@
-name: Rust-wasm
-
+name: Ray tracing
 on:
   push:
     branches: [ master ]
