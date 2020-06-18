@@ -4,7 +4,7 @@
 [![GitHub language count](https://img.shields.io/github/languages/count/GarfieldZHU/Aloha-study-room)](.)
 [![Last commit](https://img.shields.io/github/last-commit/GarfieldZHU/Aloha-study-room)](.)
 
-😆 This is the space for [Garfield](https://github.com/GarfieldZHU)'s personal learning notes, practices, materials, etc. 
+😆 This is the space for [Alohayo](https://github.com/GarfieldZHU)'s personal learning notes, practices, materials, etc. 
 
 🥳 Enjoy it if you find anything helpful!   
 
