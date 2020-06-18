@@ -1,0 +1,20 @@
+name: Rust-wasm
+
+on:
+  push:
+    branches: [ master ]
+    paths:
+    - 'Graphics/RayTracing/**'
+  pull_request:
+    branches: [ master ]
+    paths:
+    - 'Graphics/RayTracing/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build
+      run: cargo build --verbose
