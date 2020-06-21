@@ -31,6 +31,7 @@
 ## Graphics
 * [Ray tracing](./Graphics/RayTracing)
 * [Vulkan](./Graphics/Vulkan)
+* [Course and practise materials](./Graphics)
 
 ## HTML & JavaScript
 * [More about HTML](./Browser/HTML)
