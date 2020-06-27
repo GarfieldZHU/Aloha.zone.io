@@ -38,7 +38,7 @@
 * [More about JavaScript](./Browser/JavaScript)
 * [More about PWA](./Browser/PWA)
      * [Service Worker](./Browser/PWA/ServiceWorker.md)
-     * [Service Worker 不完全指北 (中文版)](https://ghcdn.rawgit.org/GarfieldZHU/Aloha-study-room/master/Browser/PWA/ServiceWorker_zh-CN.html)
+     * [Service Worker (zh_CN)](https://ghcdn.rawgit.org/GarfieldZHU/Aloha-study-room/master/Browser/PWA/ServiceWorker_zh-CN.html)
      * [IndexedDB](./Browser/PWA/IndexedDB.md)
 * [Optimize rendering](./Browser/RenderingOptimization)
 
