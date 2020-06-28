@@ -1,5 +1,4 @@
-# Aloha study room
-
+# Aloha zone
 [![MIT licensed](https://img.shields.io/github/license/GarfieldZHU/Aloha-study-room)](./LICENSE)
 [![GitHub language count](https://img.shields.io/github/languages/count/GarfieldZHU/Aloha-study-room)](.)
 [![Last commit](https://img.shields.io/github/last-commit/GarfieldZHU/Aloha-study-room)](.)
