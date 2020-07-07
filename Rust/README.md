@@ -19,3 +19,16 @@ Most basic and necessary material. Please try your best to read it carefully, an
 #### iv. Play with web-assembly
 
 - [Rust WebAssemply project](../wasm/rust-wasm/wasm-game-of-life) as a reference.
+
+#### v. Try [linked list in Rust](./Linked_Lists)
+
+- [Learn Rust With Entirely Too Many Linked Lists](https://rust-unofficial.github.io/too-many-lists/)
+
+#### vi. A Web server project
+
+- [Building a Multithreaded Web Server](https://doc.rust-lang.org/stable/book/ch20-00-final-project-a-web-server.html)
+
+#### vii. Graphics with Rust
+
+- [A simple Raytracer in Rust](../Graphics/RayTracing)
+- [Ray Tracing in One Weekend](https://raytracing.github.io/)
