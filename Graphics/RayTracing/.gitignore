@@ -1,5 +1,0 @@
-*.ppm
-
-target/
-bin/
-Cargo.lock

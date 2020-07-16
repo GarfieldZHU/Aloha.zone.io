@@ -1,5 +1,8 @@
 # Ray tracing
 
+Refer to the code in [ray-tracer-rs](https://github.com/GarfieldZHU/ray-tracer-rs)
+
+
 ## Notes
 
 #### PPM format
