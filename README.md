@@ -32,7 +32,7 @@
 * [Ray tracing](./Graphics/RayTracing)
 * [Vulkan](./Graphics/Vulkan)
 * [Course and practise materials](./Graphics)
-* [Notes](./Graphics/Notes)
+* [Notes](./Graphics/Notes.md)
 
 ## HTML & JavaScript
 * [More about HTML](./Browser/HTML)
