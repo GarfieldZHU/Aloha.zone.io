@@ -24,7 +24,7 @@ Aircraft could be a most common example for a spatial rotation, which are descri
 ![plane axes](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Yaw_Axis_Corrected.svg/500px-Yaw_Axis_Corrected.svg.png)
 
 - The rotation:
-![plane rotation](./assets/aircraft.gif)
+![plane rotation](./.assets/aircraft.gif)
 
 <br />
 
