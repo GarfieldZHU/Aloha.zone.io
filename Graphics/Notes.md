@@ -15,6 +15,17 @@ A [gyroscope](https://en.wikipedia.org/wiki/Gyroscope) is a typical way using Eu
 
 ![gyroscope rotation](https://upload.wikimedia.org/wikipedia/commons/d/d5/Gyroscope_operation.gif)
 
+Aircraft could be a most common example for a spatial rotation, which are described with Euler angles by three axes: Pitch, Roll, Yaw.
+
+- The angles:
+![plane angles](https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Plane_with_ENU_embedded_axes.svg/440px-Plane_with_ENU_embedded_axes.svg.png)
+
+- The axes:
+![plane axes](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Yaw_Axis_Corrected.svg/500px-Yaw_Axis_Corrected.svg.png)
+
+- The rotation:
+![plane rotation](./assets/aircraft.gif)
+
 <br />
 
 ##### Gimbal Lock
