@@ -31,7 +31,8 @@
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3",
-    "copy-webpack-plugin": "^5.1.1"
+    "copy-webpack-plugin": "^5.1.1",
+    "serialize-javascript": "^3.1.0"
   },
   "dependencies": {
     "wasm-game-of-life": "file:../pkg"
