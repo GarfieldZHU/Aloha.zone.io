@@ -14,6 +14,7 @@
 * [Rustling practise answer](./Rust/rustling-answers)
 * [Too Many linked lists in Rust](./Rust/Linked_Lists)
 * [Rust Sokoban game](./Rust/Sokoban)
+* [Write OS in Rust](./Rust/OS)
 
 ## TypeScript
 * [TypeScript learning material](./TypeScript)
