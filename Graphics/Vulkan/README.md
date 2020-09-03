@@ -1,5 +1,7 @@
 # Vulkan
 
+Refer to the [practices on Vulkan](https://github.com/GarfieldZHU/my-vulkan).
+
 Learn something about using Vulkan for graphic stuffs.
 
 
