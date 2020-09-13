@@ -52,5 +52,6 @@
 
 [![](https://github.com/GarfieldZHU/Aloha-study-room/workflows/Rust-wasm/badge.svg)](https://github.com/GarfieldZHU/Aloha-study-room/actions?query=workflow%3ARust-wasm)
 
-[![](https://github.com/GarfieldZHU/ray-tracer-rs/workflows/Ray-tracer/badge.svg)](https://github.com/GarfieldZHU/Aloha-study-room/actions?query=workflow%3ARay-tracer)
+[![](https://github.com/GarfieldZHU/ray-tracer-rs/workflows/Ray-tracer/badge.svg)](https://github.com/GarfieldZHU/ray-tracer-rs/actions?query=workflow%3ARay-tracer)
 
+[![](https://github.com/GarfieldZHU/my-vulkan/workflows/Vulkan-project/badge.svg)](https://github.com/GarfieldZHU/my-vulkan/actions?query=workflow%3AVulkan-project)
