@@ -54,7 +54,7 @@ The advanced and **Unsafe** part of Rust as dark art.
 
 #### vi. Operation System
 
-- [Write OS in Rust] (./OS)
+- [Write OS in Rust](./OS)
 
 
 
