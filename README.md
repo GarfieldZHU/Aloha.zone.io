@@ -16,6 +16,7 @@
 * [Too Many linked lists in Rust](./Rust/Linked_Lists)
 * [Rust Sokoban game](./Rust/Sokoban)
 * [Write OS in Rust](./Rust/OS)
+* [Mini Redis with Tokio](./Rust/Tokio)
 
 ## TypeScript
 * [TypeScript learning material](./TypeScript)
