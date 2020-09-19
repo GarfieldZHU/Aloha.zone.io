@@ -57,4 +57,6 @@ The advanced and **Unsafe** part of Rust as dark art.
 - [Write OS in Rust](./OS)
 
 
+#### vii. Mini Redis
 
+- [Practise Tokio by writting a Mini Redis](./Tokio)
