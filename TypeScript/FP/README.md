@@ -23,7 +23,7 @@ In TypeScript, use `const` for type declaration and `readonly` for properties of
 Example:
 
 ```typescript
-declare const a : numer
+declare const a : number
 const b = a > 0 ? 'positive' : 'negativeOrZero'   // $ExpectedType: 'positive' | 'negativeOrZero'
 let b = a > 0 ? 'postive' : 'negativeOrZero'     // $ExpectedType: string
 ```
