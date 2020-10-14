@@ -38,7 +38,7 @@
 * [Notes](./Graphics/Notes.md)
 
 ## Operating System
-* [MIT 6.828 materials](./OS/MIT_6_828)
+* [MIT 6.828 / 6.S081 materials](./OS/MIT_6_828)
 * [Implement toy OS in Rust](https://github.com/GarfieldZHU/ROS)
 
 ## HTML & JavaScript
