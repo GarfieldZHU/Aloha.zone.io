@@ -20,3 +20,7 @@ ABI is an interface between two binary program modules; often, one of these modu
 
 - Writing an OS in Rust: https://os.phil-opp.com/.    
   Github: https://github.com/phil-opp/blog_os
+
+- MIT [course 6.828 - semester 2020](https://pdos.csail.mit.edu/6.828/2020/schedule.html)
+- xv6, Unix-like teaching OS: https://pdos.csail.mit.edu/6.828/2018/xv6/book-rev11.pdf
+- 6.828 homework sample: https://github.com/SmallPond/MIT6.828_OS
