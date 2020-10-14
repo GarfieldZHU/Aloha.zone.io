@@ -37,6 +37,10 @@
 * [Course and practise materials](./Graphics)
 * [Notes](./Graphics/Notes.md)
 
+## Operating System
+* [MIT 6.828 materials](./OS/MIT_6_828)
+* [Implement toy OS in Rust](https://github.com/GarfieldZHU/ROS)
+
 ## HTML & JavaScript
 * [More about HTML](./Browser/HTML)
 * [More about JavaScript](./Browser/JavaScript)
