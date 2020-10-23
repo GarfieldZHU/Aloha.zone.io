@@ -16,6 +16,31 @@ ABI is an interface between two binary program modules; often, one of these modu
 - [Stackoverflow - What is an application binary interface (ABI)?
 ](https://stackoverflow.com/a/2456882/6732968)
 
+
+
+### BIOS vs. UEFI
+
+- [BIOS](https://en.wikipedia.org/wiki/BIOS)
+- [UEFI](https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface)
+
+
+### Target Specification
+
+[Target triple](https://clang.llvm.org/docs/CrossCompilation.html#target-triple) is used to describe the CPU architecture, the vendor, the operating system, and the ABI.
+
+<details>
+  <summary>
+    The triple has the general format &lt;arch&gt;&lt;sub&gt;-&lt;vendor&gt;-&lt;sys&gt;-&lt;abi&gt;:
+  </summary>
+
+- arch = x86_64, i386, arm, thumb, mips, etc.
+- sub = for ex. on ARM: v5, v6m, v7a, v7m, etc.
+- vendor = pc, apple, nvidia, ibm, etc.
+- sys = none, linux, win32, darwin, cuda, etc.
+- abi = eabi, gnu, android, macho, elf, etc.
+
+</details>
+
 ### Reference
 
 - Writing an OS in Rust: https://os.phil-opp.com/.    
