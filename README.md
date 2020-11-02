@@ -6,7 +6,7 @@
 
 😆 This is the space for [Alohayo](https://github.com/GarfieldZHU)'s personal learning notes, practices, materials, etc. 
 
-🥳 Enjoy it if you find anything helpful!   
+🤣 Enjoy it if you find anything helpful!   
 
 ---
 
@@ -32,6 +32,7 @@
     * [Wasm - Game of life](./wasm/rust-wasm/wasm-game-of-life)
 
 ## Graphics
+* [Color Science](./Graphics/ColorScience)
 * [Ray tracing](./Graphics/RayTracing)
 * [Vulkan](./Graphics/Vulkan)
 * [Course and practise materials](./Graphics)
