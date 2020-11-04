@@ -1,14 +1,14 @@
 # Color Science 101
 
-### Color basic 
+### 1. Color basic 
 
 What is color? How we describe color?
 
-#### RGB
+#### 1.1 RGB
 
-#### CYMK 
+#### 1.2 CYMK 
 
-#### HSL/HSV
+#### 1.3 HSL/HSV
 
 
 ### References
