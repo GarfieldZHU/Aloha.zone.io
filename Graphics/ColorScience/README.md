@@ -4,12 +4,26 @@
 
 What is color? How we describe color?
 
+- Color display spectrum
+
+![Visible color in radiant spectrum](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/EM_spectrum.svg/2560px-EM_spectrum.svg.png)
+
+![Color display spectrum](https://upload.wikimedia.org/wikipedia/commons/c/c4/Rendered_Spectrum.png)
+
 #### 1.1 RGB
 
 #### 1.2 CYMK 
 
 #### 1.3 HSL/HSV
 
+a. Hue
+
+- Newton's color circle:
+
+![Newton's color circle](https://upload.wikimedia.org/wikipedia/commons/c/c0/Newton%27s_color_circle.png)
+
+
+b. Saturation
 
 ### References
 
