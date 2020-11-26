@@ -11,7 +11,11 @@
 
 ### Font rasterization
 
-Refer to [Font rasterization on Wiki](https://en.wikipedia.org/wiki/Font_rasterization), 
+Refer to [Font rasterization on Wiki](https://en.wikipedia.org/wiki/Font_rasterization).
+
+Fonts are now vectors, then they could be scaled from extreme small to very large. Rasterization for fonts are map a vector path to a pixel matrix.
+
+![rasterization](./.assets/font_rasterize.webp)
 
 Raw rasterized font without antialiasing:
 
