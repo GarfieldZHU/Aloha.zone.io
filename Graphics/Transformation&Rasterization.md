@@ -43,6 +43,20 @@ Raw rasterized font without antialiasing:
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Rasterization-subpixel-RGB.png/200px-Rasterization-subpixel-RGB.png" />
       </details>
 
+
+- [Font Hinting](https://en.wikipedia.org/wiki/Font_hinting)
+  
+  For the purpose of on-screen text display, font hinting designates which primary pixels are interpolated to more clearly render a font. 
+  
+  -> Font editors are able to do automatic hinting.
+  
+  -> High-quality commercial fonts are often manually hinted to provide the sharpest appearance.
+  
+    <details>
+      <summary>Sample</summary>
+      <img src="./assets/fonthinting.png" />
+    </details>
+
   
 - Subpixel rendering making white
       <details>
