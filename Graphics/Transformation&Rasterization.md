@@ -54,7 +54,7 @@ Raw rasterized font without antialiasing:
   
     <details>
       <summary>Sample</summary>
-      <img src="./assets/fonthinting.png" />
+      <img src="./.assets/fonthinting.png" />
     </details>
 
   
