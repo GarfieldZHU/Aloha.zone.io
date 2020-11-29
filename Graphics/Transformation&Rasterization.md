@@ -43,6 +43,11 @@
 
 ### Basic rasterization
 
+What is [rasterization](https://en.wikipedia.org/wiki/Rasterisation)?  It is kind of a sampling.
+
+An simple example: just imagine some colorful ink float on water, which show as a painting. Now we have a screen window, sink it under the water and slowly take it out.
+Then we'll have a painted screen window, which is similar to rasterization.
+
 [Bresenham's line algorithm](https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm) is the most basic rasterization algorithm for drawing lines (primitive, vector) as bitmaps.
 
   <details>
@@ -84,8 +89,55 @@
 
 ### Antialiasing
 
+#### Theory
+
+- Bad "Sampling":
+  <details>
+    <summary>Antialising is just a sampling, a low frequency sampling on sharp images will get jaggy or [Moiré pattern](https://en.wikipedia.org/wiki/Moir%C3%A9_pattern) </summary>
+    <img src="./.assets/AA_08.png" />
+  </details>
+
+- How sampling frequency losses the original signal:
+  <details>
+    <summary>If your resolution is not that high, you should see a 'blurred' image. </summary>
+    <img src="./.assets/AA_01.png" />
+    <img src="./.assets/AA_02.png" />
+  </details>
 
 
+- Blurr image before sampling:
+  <details>
+    <summary>If your resolution is not that high, you should see a 'blurred' image. </summary>
+    <img src="./.assets/AA_00_a.png" />
+    <img src="./.assets/AA_00_b.png" />
+  </details>
+
+#### Antialisaing
+
+- Use [low-pass filter](https://en.wikipedia.org/wiki/Low-pass_filter) to blur the filter the high frequency signals:
+  <details>
+    <summary>Use convolution (or average color in the unit). </summary>
+    <img src="./.assets/AA_03.png" />
+  </details>
+
+- SSAA/MSAA (Super/Multi-Sampling Anti-Aliasing):
+  <details>
+    <summary>Use a higher sampling ratio in single pixel.</summary>
+    <img src="./.assets/AA_04.png" />
+  </details>
+
+  <details>
+    <summary>Compare the different sampling effect. </summary>
+    <p>Use single sampling in pixel: </p>
+    <img src="./.assets/AA_05.png" />
+    <p>Use multi-sampling in pixel: </p>
+    <img src="./.assets/AA_06.png" />
+  </details>
+
+  <details>
+    <summary>Convolution/Average to low resolution.</summary>
+    <img src="./.assets/AA_07.png" />
+  </details>
 
 ### Font rasterization
 
