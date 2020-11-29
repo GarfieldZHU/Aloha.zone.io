@@ -10,18 +10,43 @@
 
 ### Resolution
 
-- Display resolution
-
-  <details>
-    <summary>The display devices resolution standard</summary>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Vector_Video_Standards8.svg/750px-Vector_Video_Standards8.svg.png" />
-  </details>
-
 - Images resolution
   <details>
     <summary>An image rendered in different resolution </summary>
     <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Resolution_illustration.png" />
   </details>
+
+- Display resolution
+  <details>
+    <summary>The display devices resolution standard</summary>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Vector_Video_Standards8.svg/750px-Vector_Video_Standards8.svg.png" />
+  </details>
+
+- Screen space
+  <details>
+    <summary>The digital screen space are described as a 2-dimension matrix. One unit is shown as one pixel. </summary>
+    <img src="https://scarletsky.github.io/2020/06/10/games101-notes-rasterization/screen_space.png" />
+  </details>
+
+- Screen space
+  <details>
+    <summary>The digital screen space are described as a 2-dimension matrix. One unit is shown as one pixel. </summary>
+    <img src="https://scarletsky.github.io/2020/06/10/games101-notes-rasterization/screen_space.png" />
+  </details>
+
+- Subpixel layout
+
+  <details>
+    <summary>One pixel is consist of RGB subpixels. It has different stripes layout in different display devices. </summary>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Pixel_geometry_01_Pengo.jpg/330px-Pixel_geometry_01_Pengo.jpg" />
+
+    <p>P30 Pro</p>
+    <img src="./.assets/subpixels.png" />
+
+    <p>Google Nexus One</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Nexus_one_screen_microscope.jpg/330px-Nexus_one_screen_microscope.jpg" />
+  </details>
+
 
 
 
