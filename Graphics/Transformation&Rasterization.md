@@ -8,6 +8,23 @@
 
 ## Rasterization
 
+### Resolution
+
+- Display resolution
+
+  <details>
+    <summary>The display devices resolution standard</summary>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Vector_Video_Standards8.svg/750px-Vector_Video_Standards8.svg.png" />
+  </details>
+
+- Images resolution
+  <details>
+    <summary>An image rendered in different resolution </summary>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Resolution_illustration.png" />
+  </details>
+
+
+
 
 ### Font rasterization
 
