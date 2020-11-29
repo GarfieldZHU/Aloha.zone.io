@@ -28,14 +28,7 @@
     <img src="https://scarletsky.github.io/2020/06/10/games101-notes-rasterization/screen_space.png" />
   </details>
 
-- Screen space
-  <details>
-    <summary>The digital screen space are described as a 2-dimension matrix. One unit is shown as one pixel. </summary>
-    <img src="https://scarletsky.github.io/2020/06/10/games101-notes-rasterization/screen_space.png" />
-  </details>
-
 - Subpixel layout
-
   <details>
     <summary>One pixel is consist of RGB subpixels. It has different stripes layout in different display devices. </summary>
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Pixel_geometry_01_Pengo.jpg/330px-Pixel_geometry_01_Pengo.jpg" />
@@ -47,6 +40,49 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Nexus_one_screen_microscope.jpg/330px-Nexus_one_screen_microscope.jpg" />
   </details>
 
+
+### Basic rasterization
+
+[Bresenham's line algorithm](https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm) is the most basic rasterization algorithm for drawing lines (primitive, vector) as bitmaps.
+
+  <details>
+    <summary>Illustration of the result of Bresenham's line algorithm. </summary>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Bresenham.svg/450px-Bresenham.svg.png" />
+  </details>
+
+- Step 1:
+  <details>
+    <summary>Put a geometric figure (like triangle) in the screen space. </summary>
+    <img src="./.assets/rasterize_01.png" />
+  </details>
+
+- Step 2:
+  <details>
+    <summary>Sampling: consider each pixel (center of pixel space) is inside or outside the triangle. </summary>
+    <img src="./.assets/rasterize_02.png" />
+  </details>
+
+- Step 3:
+  <details>
+    <summary>Use bounding box to reduce sampling area. </summary>
+    <img src="./.assets/rasterize_03.png" />
+  </details>
+
+- Step 4:
+  <details>
+    <summary>Get the pixels inside the triangle. </summary>
+    <img src="./.assets/rasterize_04.png" />
+  </details>
+
+- Step 5:
+  <details>
+    <summary>Display the color in those pixels to show the triangle. </summary>
+    <img src="./.assets/rasterize_05.png" />
+  </details>
+
+- Now we get a rasterized figure. But it is really jaggy. It could be improved by a higher resolutions. (See `MSPaint`)
+
+### Antialiasing
 
 
 
