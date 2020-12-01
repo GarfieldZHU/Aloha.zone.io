@@ -10,11 +10,17 @@ What is color? How we describe color?
 
 ![Color display spectrum](https://upload.wikimedia.org/wikipedia/commons/c/c4/Rendered_Spectrum.png)
 
-#### 1.1 RGB
+### 2. Color Vision 
 
-#### 1.2 CYMK 
 
-#### 1.3 HSL/HSV
+
+### 3. Color Model 
+
+#### 3.1 RGB
+
+#### 3.2 CYMK 
+
+#### 3.3 HSL/HSV
 
 a. Hue
 
