@@ -39,6 +39,9 @@ a. Hue
 
 ![Newton's color circle](https://upload.wikimedia.org/wikipedia/commons/c/c0/Newton%27s_color_circle.png)
 
+- Hue ring
+
+![Hue ring](./.assets/hue_rgb.jpg)
 
 b. Saturation
 
