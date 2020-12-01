@@ -31,6 +31,10 @@ a. Hue
 
 b. Saturation
 
+
+
+### 4. Color Space and Gamut 
+
 ### References
 
 - [The basics of color and color management](https://www.youtube.com/watch?v=fq-kNtwifFk&list=PLMsVycIbp_YsQVHP0CSjNDSBuaznyGC6l&index=3) @ [ColorPlaza TV](https://www.youtube.com/channel/UCIwTmFi6wFyHee9JNQ6YbTw)
