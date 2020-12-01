@@ -23,9 +23,9 @@ What is color? How we describe color?
 
   We see the color wave length is linear, increasing from blue to red. But there are some colors exist between blue and red. Why?
   
-  ![Hue ring](../.assets/huering.png)
+  Theoretically, magenta between purple and red does not exist in nature color. It's a "imagine color" by our brain. It makes hue a ring. 
   
-  Theoretically, magenta between purple and red does not exist in nature color. It's a "imagine color" by our brain.
+  ![Hue ring](../.assets/huering.png)
 
 ### 2. Color Vision 
 
@@ -40,7 +40,7 @@ What is color? How we describe color?
 
 #### 3.3 HSL/HSV
 
-a. Hue
+##### a. Hue
 
 - Newton's color circle:
 
@@ -50,7 +50,7 @@ a. Hue
 
 ![Hue ring](../.assets/hue_rgb.jpg)
 
-b. Saturation
+##### b. Saturation
 
 
 
