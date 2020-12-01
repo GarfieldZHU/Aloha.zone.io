@@ -10,8 +10,19 @@ What is color? How we describe color?
 
 ![Color display spectrum](https://upload.wikimedia.org/wikipedia/commons/c/c4/Rendered_Spectrum.png)
 
+
+- [Trichromacy](https://en.wikipedia.org/wiki/Trichromacy)
+
+  The Human's retina contains three types of color receptors (called cone cells in vertebrates) with different absorption spectra.
+  
+  We say S-cone, M-cone, L-cone, and they are activated by blue, green and red.
+  
+  ![wave length of color receptors](../.assets/colorcell.jpg)
+
+
 ### 2. Color Vision 
 
+###
 
 
 ### 3. Color Model 
