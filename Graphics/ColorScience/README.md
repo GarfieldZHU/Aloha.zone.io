@@ -10,20 +10,51 @@ What is color? How we describe color?
 
 ![Color display spectrum](https://upload.wikimedia.org/wikipedia/commons/c/c4/Rendered_Spectrum.png)
 
-#### 1.1 RGB
 
-#### 1.2 CYMK 
+- [Trichromacy](https://en.wikipedia.org/wiki/Trichromacy)
 
-#### 1.3 HSL/HSV
+  The Human's retina contains three types of color receptors (called cone cells in vertebrates) with different absorption spectra.
+  
+  We say S-cone, M-cone, L-cone, and they are activated by blue, green and red.
+  
+  ![wave length of color receptors](../.assets/colorcell.jpg)
 
-a. Hue
+- The color *Magenta* does not exist?
+
+  We see the color wave length is linear, increasing from blue to red. But there are some colors exist between blue and red. Why?
+  
+  Theoretically, magenta between purple and red does not exist in nature color. It's a "imagine color" by our brain. It makes hue a ring. 
+  
+  ![Hue ring](../.assets/huering.png)
+
+### 2. Color Vision 
+
+###
+
+
+### 3. Color Model 
+
+#### 3.1 RGB
+
+#### 3.2 CYMK 
+
+#### 3.3 HSL/HSV
+
+##### a. Hue
 
 - Newton's color circle:
 
 ![Newton's color circle](https://upload.wikimedia.org/wikipedia/commons/c/c0/Newton%27s_color_circle.png)
 
+- Hue ring
 
-b. Saturation
+![Hue ring](../.assets/hue_rgb.jpg)
+
+##### b. Saturation
+
+
+
+### 4. Color Space and Gamut 
 
 ### References
 
