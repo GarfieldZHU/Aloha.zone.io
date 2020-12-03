@@ -4,7 +4,144 @@
 
 ## Transformation
 
+### Basic 2D transformations
 
+- Scaling
+  <details>
+    <summary>Scale an image at x axis </summary>
+    <img src="./.assets/scale.png" />
+    
+    <p>Each point (x0, y0) becomes (x1, y1) after scaling, then we define scaling matrix S(x,y): </p>
+    
+    <img src="./.assets/scale_matrix.png" />
+  </details>
+
+
+- Rotation
+  <details>
+    <summary>Rotate an image (origin point as center) </summary>
+    <img src="./.assets/rotate.png" />
+    <p>Suppose the rotate matrix R(θ) has: </p>
+    <img src="./.assets/rotate_condition.png" />
+  
+    <p><b>Prove: </b></p>
+    <p>(1, 0) becomes (cosθ, sinθ)</p>
+    <img src="./.assets/rotate_prove_1.png" />
+    <p>(0, 1) becomes (-sinθ, cosθ)</p>
+    <img src="./.assets/rotate_prove_2.png" />
+    
+    <p>Then, we have the definition of R </p>
+    <img src="./.assets/rotate_matrix.png" />
+  </details>
+
+- Linear transformation
+
+  Scaling and rotation are both shown as a linear form of matrix. 
+  <details>
+    <summary>Linear transformation</summary>
+    <img src="./.assets/linear_1.png" />
+    <img src="./.assets/linear_2.png" />
+  </details>
+
+- Translation
+
+  <details>
+    <summary>Translation is just the simple movement of the object in coordinate. </summary>
+    <img src="./.assets/translate.png" />
+    <img src="./.assets/translate_matrix.png" />
+  </details>
+
+### Homogeneous coordinates 
+
+A translation is different from linear transformation. Now it must be two matrix for combining them:
+
+<details>
+  <summary>A matrix with both linear transformation and translation.</summary>
+  <img src="./.assets/combined.png" />
+  <img src="./.assets/translate_matrix.png" />
+</details>
+
+But we want one matrix to express them together. Now we introduce a new tool: [homogeneous coordinates](https://en.wikipedia.org/wiki/Homogeneous_coordinates).
+
+##### Defintion
+
+To be simply, homogeneous coordinate works by adding an extra dimention to matrix, for describing higher dimention caused transformation, like projection. 
+In other word, an n-dimention space will be described by n+1-dimention matrices. 
+
+We are discussing 2D transformation, so we express them in ternary form:
+
+- 2D point: (x, y, 1)
+- 2D vector: (x, y, 0)
+
+Accordingly, the transformation matrix will be 3D matrix as well: 
+
+<details>
+  <summary>Transform matrix in homogeneous coordinates:</summary>
+  <img src="./.assets/homogeneous.png" />
+</details>
+
+The homogeneous transform grants us the characteristics below: 
+
+1. "w" value will not be changed for vectors.
+  <details>
+    <summary>Translate vector :</summary>
+    <img src="./.assets/translate_vector.png" />
+  </details>
+
+2. Vector + Vector = Vector
+  - [x1, y1, 0] + [x2, y2, 0] = [x1 + x2, y1 + y2, 0]
+
+3. Point - Point = Vector
+  - [x1, y1, 1] - [x2, y2, 1] = [x1 - x2, y1 - y2, 0]
+
+3. Point + Vector = Point
+  - [x1, y1, 1] + [x2, y2, 0] = [x1 - x2, y1 - y2, 1]
+
+
+##### Affine transformation
+
+Applied homogeneous matrix, we have a transformation named "[Affine transformation](https://en.wikipedia.org/wiki/Affine_transformation)".
+
+<details>
+  <summary>Affine transformation:</summary>
+  <img src="./.assets/affine.png" />
+</details>
+
+<details>
+  <summary>With this utility, we can have expression the above three transformations in homogeneous style: </summary>
+  <img src="./.assets/transform_in_affine.png" />
+  
+  <p>Of cource, the three transformations can be combined in one. </p>
+</details>
+
+
+
+### In practise
+
+Affine transformation matrix for 2D transformation is useful. In UI interface for drawing element, we typically pass this matrix for apply trasformation.
+
+In the 3D transformation matrix, the 3rd row will always be [0, 0, 1], it does not need to be told as parameter.
+
+So the transformation matrix in 2D drawing functions will typically be like:
+
+[A, B, C, D, Tx, Ty]
+
+
+
+
+### For 3D
+
+Affine transformation in 3D is just similar with 2D. Just make the transformation matrix to be 4D.
+
+#### Viewing transformation
+
+#### Viewport transformation
+
+#### Project transformation
+
+#### Perspective transformation
+
+TBD
 
 ## Rasterization
 
