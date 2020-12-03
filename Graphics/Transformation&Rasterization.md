@@ -20,7 +20,7 @@
 - Rotation
   <details>
     <summary>Rotate an image (origin point as center) </summary>
-    <img src="./.assets/rotate.png" />
+    <img src="./.assets/rotation.png" />
     <p>Suppose the rotate matrix R(θ) has: </p>
     <img src="./.assets/rotate_condition.png" />
   
