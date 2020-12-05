@@ -51,7 +51,23 @@ What is color? How we describe color?
 
 #### 3.1 RGB
 
+Red, Green, Blue.
+
+- Additive color (mixing)
+
+  ![RGB mixing](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/AdditiveColor.svg/330px-AdditiveColor.svg.png)
+
+  Additive color models are applied in the design and testing of electronic displays that are used to render realistic images containing diverse sets of color using phosphors that emit light of a limited set of primary colors. 
+
 #### 3.2 CYMK 
+
+Cyan, Yellow, Magenta, **blacK**.
+
+- Subtractive color (mixing)
+  
+  ![CMY mixing](https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/SubtractiveColor.svg/330px-SubtractiveColor.svg.png)
+
+  This idealized model is the essential principle of how dyes and inks are used in color printing and photography where the perception of color is elicited after white light passes through microscopic "stacks" of partially absorbing media allowing some wavelengths of light to reach the eye and not others.
 
 #### 3.3 HSL/HSV
 
