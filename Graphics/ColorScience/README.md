@@ -38,9 +38,14 @@ What is color? How we describe color?
 
   We see the color wave length is linear, increasing from blue to red. But there are some colors exist between blue and red. Why?
   
-  Theoretically, magenta between purple and red does not exist in nature color. It's a "imagine color" by our brain. It makes hue a ring. See more in [color space](#) section.
+  Theoretically, magenta between purple and red does not exist in nature color. It's a "imagine color" by our brain. It makes hue a ring. 
   
-  ![Hue ring](../.assets/huering.png)
+  <details>
+    <summary>Hue ring</summary>
+    <img src="../.assets/huering.png" />
+  </details>
+  
+  See more in [color space](#42-color-space) section.
 
 ### 2. Color Vision 
 
@@ -106,12 +111,49 @@ Cyan, Yellow, Magenta, **blacK**.
  
 #### 4.2 Color Space
 
+###### Reading color space
+
+- Tooltips and wave length
 <details>
-  <summary>Tooltips of reading colorspace graph</summary>
-  <img src="./.assets/colorspace_tooltips.PNG" />
+  <summary>Tooltips of reading colorspace graph:</summary>
+  <img src="../.assets/colorspace_tooltips.PNG" />
+  
+  <img src="../.assets/colorspace_wavelength.PNG" />
 </details>
 
-- sRGB
+
+
+- Line of purples
+<details>
+  <summary><a href="https://en.wikipedia.org/wiki/Line_of_purples">Purple line</a>: </summary>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Line_of_purples.png/300px-Line_of_purples.png" />
+  <p>As discussed above, purples like magenta does not exist on </p>
+</details>
+
+- White balance
+<details>
+  <summary>Color temprature: </summary>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/PlanckianLocus.png/450px-PlanckianLocus.png" />
+  
+  <p>Hues of the Planckian locus on a linear scale (values in kelvin) </p>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Color_temperature_black_body_800-12200K.svg/768px-Color_temperature_black_body_800-12200K.svg.png" />
+
+</details>
+
+`White & gold, or blue & black ? `
+
+![White balance](../.assets/white_balance.jpg)
+
+<details>
+  <summary>White balance: </summary>
+  <img src="https://pic1.zhimg.com/80/v2-392c0561d35f056b10fb2ca5b0835fa4_1440w.png" />
+  <p>Adjust white balance requires two dimensions: temprature (for blue to yellow) and tint (from green to magenta)</p>
+  
+  <img src="https://pic4.zhimg.com/80/v2-f6e517ba429e6464a32786b4ba007513_1440w.png" />
+</details>
+
+
+###### sRGB
   
   sRBG, AKA standard RGB is the most widely adopted color space today. 
   
@@ -119,7 +161,7 @@ Cyan, Yellow, Magenta, **blacK**.
   - Morden browser standard now support sRGB only. 
   - Gamut is limited. Tag "&lt;canvas&gt;" are discussed to support more wild gamut
 
-- AdobeRGB
+###### AdobeRGB
 
 
 #### 4.3 Gamut
