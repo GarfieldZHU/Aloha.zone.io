@@ -27,8 +27,11 @@ What is color? How we describe color?
   
   It is like this:
   
-  ![Metamerism spectrum example](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Metamerism_spectrum_example.svg/600px-Metamerism_spectrum_example.svg.png)
-
+  <details>
+    <summary>Metamerism spectrum example sample</summary>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Metamerism_spectrum_example.svg/600px-Metamerism_spectrum_example.svg.png" />
+    <img src="./.assets/linear_2.png" />
+  </details>
 
 
 - The color *Magenta* does not exist?
