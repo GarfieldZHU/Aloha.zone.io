@@ -18,6 +18,18 @@ What is color? How we describe color?
   We say S-cone, M-cone, L-cone, and they are activated by blue, green and red.
   
   ![wave length of color receptors](../.assets/colorcell.jpg)
+  
+  They just like filter for lights.
+
+- [Metamerism(同色异谱)](https://en.wikipedia.org/wiki/Metamerism_(color))
+
+  Color is a biological phenominon. Now that human has only three color filters for nature lights, it means that some different combinations of lights could result in the same received waves in human's brains. 
+  
+  It is like this:
+  
+  ![Metamerism spectrum example](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Metamerism_spectrum_example.svg/600px-Metamerism_spectrum_example.svg.png)
+
+
 
 - The color *Magenta* does not exist?
 
