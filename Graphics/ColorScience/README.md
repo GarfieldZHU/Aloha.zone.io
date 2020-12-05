@@ -191,7 +191,10 @@ HSV cylinder
 
 Common color pickers are based on HSV/HSL. 
 
-![color picker](../assets/color_picker.png)
+<details>
+  <summary>Color picker: </summary>
+  <img src="../.assets/color_picker.png" />
+</details>
 
 It is actually a section view of the cylinder. 
 
