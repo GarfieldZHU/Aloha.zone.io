@@ -1,0 +1,841 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>Transformation&amp;Rasterization</title><link href='https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit inherit; background-repeat: inherit inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit inherit; background-repeat: inherit inherit; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; background-repeat: initial initial; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; background-position: initial initial; background-repeat: initial initial; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; background-position: initial initial; background-repeat: initial initial; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; background-repeat: initial initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); background-position: initial initial; background-repeat: initial initial; }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+
+
+/* meyer reset -- http://meyerweb.com/eric/tools/css/reset/ , v2.0 | 20110126 | License: none (public domain) */
+
+@include-when-export url(https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext);
+
+/* =========== */
+
+:root {
+	--active-file-bg-color: #dadada;
+	--active-file-bg-color: rgba(32, 43, 51, 0.63);
+	--active-file-text-color: white;
+	--bg-color: #f3f2ee;
+	--text-color: #1f0909;
+	--control-text-color: #444;
+	--rawblock-edit-panel-bd: #e5e5e5;
+
+	--select-text-bg-color: rgba(32, 43, 51, 0.63);
+  --select-text-font-color: white;
+}
+
+pre {
+	--select-text-bg-color: #36284e;
+	--select-text-font-color: #fff;
+}
+
+html {
+	font-size: 16px;
+}
+
+html, body {
+	background-color: #f3f2ee;
+	font-family: "PT Serif", 'Times New Roman', Times, serif;
+	color: #1f0909;
+	line-height: 1.5em;
+}
+
+/*#write {
+	overflow-x: auto;
+    max-width: initial;
+	padding-left: calc(50% - 17em);
+    padding-right: calc(50% - 17em);
+}
+
+@media (max-width: 36em) {
+ 	#write {
+ 		padding-left: 1em;
+    	padding-right: 1em;
+ 	}
+}*/
+
+#write {
+	max-width: 40em;
+}
+
+ol li {
+	list-style-type: decimal;
+	list-style-position: outside;
+}
+ul li {
+	list-style-type: disc;
+	list-style-position: outside;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* styles */
+
+/* ====== */
+
+/* headings */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: bold;
+}
+h1 {
+	font-size: 1.875em;
+	/*30 / 16*/
+	line-height: 1.6em;
+	/* 48 / 30*/
+	margin-top: 2em;
+}
+h2,
+h3 {
+	font-size: 1.3125em;
+	/*21 / 16*/
+	line-height: 1.15;
+	/*24 / 21*/
+	margin-top: 2.285714em;
+	/*48 / 21*/
+	margin-bottom: 1.15em;
+	/*24 / 21*/
+}
+h3 {
+	font-weight: normal;
+}
+h4 {
+	font-size: 1.125em;
+	/*18 / 16*/
+	margin-top: 2.67em;
+	/*48 / 18*/
+}
+h5,
+h6 {
+	font-size: 1em;
+	/*16*/
+}
+h1 {
+	border-bottom: 1px solid;
+	margin-bottom: 1.875em;
+	padding-bottom: 0.8125em;
+}
+/* links */
+
+a {
+	text-decoration: none;
+	color: #065588;
+}
+a:hover,
+a:active {
+	text-decoration: underline;
+}
+/* block spacing */
+
+p,
+blockquote,
+.md-fences {
+	margin-bottom: 1.5em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: 1.5em;
+}
+/* blockquote */
+
+blockquote {
+	font-style: italic;
+	border-left: 5px solid;
+	margin-left: 2em;
+	padding-left: 1em;
+}
+/* lists */
+
+ul,
+ol {
+	margin: 0 0 1.5em 1.5em;
+}
+/* tables */
+.md-meta,.md-before, .md-after {
+	color:#999;
+}
+
+table {
+	margin-bottom: 1.5em;
+	/*24 / 16*/
+	font-size: 1em;
+	/* width: 100%; */
+}
+thead th,
+tfoot th {
+	padding: .25em .25em .25em .4em;
+	text-transform: uppercase;
+}
+th {
+	text-align: left;
+}
+td {
+	vertical-align: top;
+	padding: .25em .25em .25em .4em;
+}
+
+code,
+.md-fences {
+	background-color: #dadada;
+}
+
+code {
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+.md-fences {
+	margin-left: 2em;
+	margin-bottom: 3em;
+	padding-left: 1ch;
+	padding-right: 1ch;
+}
+
+pre,
+code,
+tt {
+	font-size: .875em;
+	line-height: 1.714285em;
+}
+/* some fixes */
+
+h1 {
+	line-height: 1.3em;
+	font-weight: normal;
+	margin-bottom: 0.5em;
+}
+
+p + ul,
+p + ol{
+	margin-top: .5em;
+}
+
+h3 + ul,
+h4 + ul,
+h5 + ul,
+h6 + ul,
+h3 + ol,
+h4 + ol,
+h5 + ol,
+h6 + ol {
+	margin-top: .5em;
+}
+
+li > ul,
+li > ol {
+	margin-top: inherit;
+	margin-bottom: 0;
+}
+
+li ol>li {
+	list-style-type: lower-alpha;
+}
+
+li li ol>li{
+	list-style-type: lower-roman;
+}
+
+h2,
+h3 {
+	margin-bottom: .75em;
+}
+hr {
+	border-top: none;
+	border-right: none;
+	border-bottom: 1px solid;
+	border-left: none;
+}
+h1 {
+	border-color: #c5c5c5;
+}
+blockquote {
+	border-color: #bababa;
+	color: #656565;
+}
+
+blockquote ul,
+blockquote ol {
+	margin-left:0;
+}
+
+.ty-table-edit {
+	background-color: transparent;
+}
+thead {
+	background-color: #dadada;
+}
+tr:nth-child(even) {
+	background: #e8e7e7;
+}
+hr {
+	border-color: #c5c5c5;
+}
+.task-list{
+	padding-left: 1rem;
+}
+
+.md-task-list-item {
+	padding-left: 1.5rem;
+	list-style-type: none;
+}
+
+.md-task-list-item > input:before {
+	content: '\221A';
+	display: inline-block;
+	width: 1.25rem;
+  	height: 1.6rem;
+	vertical-align: middle;
+	text-align: center;
+	color: #ddd;
+	background-color: #F3F2EE;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before{
+	color: inherit;
+}
+
+#write pre.md-meta-block {
+	min-height: 1.875rem;
+	color: #555;
+	border: 0px;
+	background: transparent;
+	margin-top: -4px;
+	margin-left: 1em;
+	margin-top: 1em;
+}
+
+.md-image>.md-meta {
+	color: #9B5146;
+}
+
+.md-image>.md-meta{
+	font-family: Menlo, 'Ubuntu Mono', Consolas, 'Courier New', 'Microsoft Yahei', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', serif;
+}
+
+
+#write>h3.md-focus:before{
+	left: -1.5rem;
+	color:#999;
+	border-color:#999;
+}
+#write>h4.md-focus:before{
+	left: -1.5rem;
+	top: .25rem;
+	color:#999;
+	border-color:#999;
+}
+#write>h5.md-focus:before{
+	left: -1.5rem;
+	top: .0.3125rem;
+	color:#999;
+	border-color:#999;
+}
+#write>h6.md-focus:before{
+	left: -1.5rem;
+	top: 0.3125rem;
+	color:#999;
+	border-color:#999;
+}
+
+.md-toc:focus .md-toc-content{
+	margin-top: 19px;
+}
+
+.md-toc-content:empty:before{
+	color: #065588;
+}
+.md-toc-item {
+	color: #065588;
+}
+#write div.md-toc-tooltip {
+	background-color: #f3f2ee;
+}
+
+#typora-sidebar {
+	background-color: #f3f2ee;
+	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.375);
+  	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.375);
+}
+
+.pin-outline #typora-sidebar {
+	background: inherit;
+	box-shadow: none;
+	border-right: 1px dashed;
+}
+
+.pin-outline #typora-sidebar:hover .outline-title-wrapper {
+	border-left:1px dashed;
+}
+
+.outline-item:hover {
+  background-color: #dadada;
+  border-left: 28px solid #dadada;
+  border-right: 18px solid #dadada;
+}
+
+.typora-node .outline-item:hover {
+  	border-right: 28px solid #dadada;
+}
+
+.outline-expander:before {
+  content: "\f0da";
+  font-family: FontAwesome;
+  font-size:14px;
+  top: 1px;
+}
+
+.outline-expander:hover:before,
+.outline-item-open>.outline-item>.outline-expander:before {
+  content: "\f0d7";
+}
+
+.modal-content {
+	background-color: #f3f2ee;
+}
+
+.auto-suggest-container ul li {
+	list-style-type: none;
+}
+
+/** UI for electron */
+
+.megamenu-menu,
+#top-titlebar, #top-titlebar *,
+.megamenu-content {
+	background: #f3f2ee;
+	color: #1f0909;
+}
+
+.megamenu-menu-header {
+	border-bottom: 1px dashed #202B33;
+}
+
+.megamenu-menu {
+	box-shadow: none;
+	border-right: 1px dashed;
+}
+
+header, .context-menu, .megamenu-content, footer {
+	font-family: "PT Serif", 'Times New Roman', Times, serif;
+    color: #1f0909;
+}
+
+#megamenu-back-btn {
+	color: #1f0909;
+	border-color: #1f0909;
+}
+
+.megamenu-menu-header #megamenu-menu-header-title:before {
+	color: #1f0909;
+}
+
+.megamenu-menu-list li a:hover, .megamenu-menu-list li a.active {
+	color: inherit;
+	background-color: #e8e7df;
+}
+
+.long-btn:hover {
+	background-color: #e8e7df;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: transparent !important;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
+    color: inherit;
+}
+
+.megamenu-menu-panel .btn {
+	background-color: #D2D1D1;
+}
+
+.btn-default {
+	background-color: transparent;
+}
+
+.typora-sourceview-on #toggle-sourceview-btn,
+.ty-show-word-count #footer-word-count {
+	background: #c7c5c5;
+}
+
+#typora-quick-open {
+    background-color: inherit;
+}
+
+.md-diagram-panel {
+	margin-top: 8px;
+}
+
+.file-list-item-file-name {
+	font-weight: initial;
+}
+
+.file-list-item-summary {
+	opacity: 1;
+}
+
+.file-list-item {
+	color: #777;
+}
+
+.file-list-item.active {
+	background-color: inherit;
+	color: black;
+}
+
+.ty-side-sort-btn.active {
+	background-color: inherit;
+}
+
+.file-list-item.active .file-list-item-file-name  {
+	font-weight: bold;
+}
+
+.file-list-item{
+    opacity:1 !important;
+}
+
+.file-library-node.active>.file-node-background{
+	background-color: rgba(32, 43, 51, 0.63);
+	background-color: var(--active-file-bg-color);
+}
+
+.file-tree-node.active>.file-node-content{
+	color: white;
+	color: var(--active-file-text-color);
+}
+
+.md-task-list-item>input {
+	margin-left: -1.7em;
+	margin-top: calc(1rem - 12px);
+}
+
+input {
+	border: 1px solid #aaa;
+}
+
+.megamenu-menu-header #megamenu-menu-header-title,
+.megamenu-menu-header:hover, 
+.megamenu-menu-header:focus {
+	color: inherit;
+}
+
+.dropdown-menu .divider {
+	border-color: #e5e5e5;
+}
+
+/* https://github.com/typora/typora-issues/issues/2046 */
+.os-windows-7 strong,
+.os-windows-7 strong  {
+	font-weight: 760;
+}
+
+.ty-preferences .btn-default {
+	background: transparent;
+}
+
+.ty-preferences .window-header {
+	border-bottom: 1px dashed #202B33;
+	box-shadow: none;
+}
+
+#sidebar-loading-template, #sidebar-loading-template.file-list-item {
+	color: #777;
+}
+
+ .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
+</style>
+</head>
+<body class='typora-export' >
+<div  id='write'  class = 'is-mac'><h1><a name="transformation--rasterization" class="md-header-anchor"></a><span>Transformation &amp; Rasterization</span></h1><p>&nbsp;</p><h2><a name="transformation" class="md-header-anchor"></a><span>Transformation</span></h2><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n0"><a class="md-toc-inner" href="#transformation--rasterization">Transformation &amp; Rasterization</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n3"><a class="md-toc-inner" href="#transformation">Transformation</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n212"><a class="md-toc-inner" href="#basic-2d-transformations">Basic 2D transformations</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n32"><a class="md-toc-inner" href="#homogeneous-coordinates">Homogeneous coordinates </a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n36"><a class="md-toc-inner" href="#defintion">Defintion</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n71"><a class="md-toc-inner" href="#affine-transformation">Affine transformation</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n80"><a class="md-toc-inner" href="#in-practise">In practise</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n87"><a class="md-toc-inner" href="#for-3d">For 3D</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n89"><a class="md-toc-inner" href="#viewing-transformation">Viewing transformation</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n90"><a class="md-toc-inner" href="#viewport-transformation">Viewport transformation</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n91"><a class="md-toc-inner" href="#project-transformation">Project transformation</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n92"><a class="md-toc-inner" href="#perspective-transformation">Perspective transformation</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n94"><a class="md-toc-inner" href="#rasterization">Rasterization</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n95"><a class="md-toc-inner" href="#resolution">Resolution</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n115"><a class="md-toc-inner" href="#basic-rasterization">Basic rasterization</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n139"><a class="md-toc-inner" href="#antialiasing">Antialiasing</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n140"><a class="md-toc-inner" href="#theory">Theory</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n153"><a class="md-toc-inner" href="#antialisaing">Antialisaing</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n165"><a class="md-toc-inner" href="#font-rasterization">Font rasterization</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n172"><a class="md-toc-inner" href="#antialiasing-in-font">Antialiasing in font</a></span></p></div><p>&nbsp;</p><h3><a name="basic-2d-transformations" class="md-header-anchor"></a><span>Basic 2D transformations</span></h3><ul><li><p><span>Scaling</span></p><details>
+  <summary>Scale an image at x axis </summary>
+  <img src="./.assets/scale.png"></details>  <p>Each point (x0, y0) becomes (x1, y1) after scaling, then we define scaling matrix S(x,y): </p><p><span>  </span><img src="./.assets/scale_matrix.png" />
+</details></p></li></ul><ul><li><p><span>Rotation</span></p><details>
+  <summary>Rotate an image (origin point as center) </summary>
+  <img src="./.assets/rotation.png">
+  <p>Suppose the rotate matrix R(θ) has: </p>
+  <img src="./.assets/rotate_condition.png"></details>  <p><b>Prove: </b></p>
+  <p>(1, 0) becomes (cosθ, sinθ)</p><p><span>  </span><img src="./.assets/rotate_prove_1.png" /></p>  <p>(0, 1) becomes (-sinθ, cosθ)</p><p><span>  </span><img src="./.assets/rotate_prove_2.png" /></p>  <p>Then, we have the definition of R </p><p><span>  </span><img src="./.assets/rotate_matrix.png" />
+</details></p></li><li><p><span>Linear transformation</span></p><p><span>Scaling and rotation are both shown as a linear form of matrix. </span></p><details>
+  <summary>Linear transformation</summary>
+  <img src="./.assets/linear_1.png">
+  <img src="./.assets/linear_2.png">
+</details></li><li><p><span>Translation</span></p><details>
+  <summary>Translation is just the simple movement of the object in coordinate. </summary>
+  <img src="./.assets/translate.png">
+  <img src="./.assets/translate_matrix.png">
+</details></li></ul><h3><a name="homogeneous-coordinates" class="md-header-anchor"></a><span>Homogeneous coordinates </span></h3><p><span>A translation is different from linear transformation. Now it must be two matrix for combining them:</span></p><details>
+  <summary>A matrix with both linear transformation and translation.</summary>
+  <img src="./.assets/combined.png">
+  <img src="./.assets/translate_matrix.png">
+</details><p><span>But we want one matrix to express them together. Now we introduce a new tool: </span><a href='https://en.wikipedia.org/wiki/Homogeneous_coordinates'><span>homogeneous coordinates</span></a><span>.</span></p><h5><a name="defintion" class="md-header-anchor"></a><span>Defintion</span></h5><p><span>To be simply, homogeneous coordinate works by adding an extra dimention to matrix, for describing higher dimention caused transformation, like projection. </span>
+<span>In other word, an n-dimention space will be described by n+1-dimention matrices. </span></p><p><span>We are discussing 2D transformation, so we express them in ternary form:</span></p><ul><li><span>2D point: (x, y, 1)</span></li><li><span>2D vector: (x, y, 0)</span></li></ul><p><span>Accordingly, the transformation matrix will be 3D matrix as well: </span></p><details>
+  <summary>Transform matrix in homogeneous coordinates:</summary>
+  <img src="./.assets/homogeneous.png">
+</details><p><span>The homogeneous transform grants us the characteristics below: </span></p><ol start='' ><li><span>&quot;w&quot; value will not be changed for vectors.</span></li></ol>  <details>
+    <summary>Translate vector :</summary>
+    <img src="./.assets/translate_vector.png">
+  </details><ol start='2' ><li><span>Vector + Vector = Vector</span></li></ol><ul><li><span>[x1, y1, 0] + [x2, y2, 0] = [x1 + x2, y1 + y2, 0]</span></li></ul><ol start='3' ><li><span>Point - Point = Vector</span></li></ol><ul><li><span>[x1, y1, 1] - [x2, y2, 1] = [x1 - x2, y1 - y2, 0]</span></li></ul><ol start='3' ><li><span>Point + Vector = Point</span></li></ol><ul><li><span>[x1, y1, 1] + [x2, y2, 0] = [x1 - x2, y1 - y2, 1]</span></li></ul><h5><a name="affine-transformation" class="md-header-anchor"></a><span>Affine transformation</span></h5><p><span>Applied homogeneous matrix, we have a transformation named &quot;</span><a href='https://en.wikipedia.org/wiki/Affine_transformation'><span>Affine transformation</span></a><span>&quot;.</span></p><details>
+  <summary>Affine transformation:</summary>
+  <img src="./.assets/affine.png">
+</details><details>
+  <summary>With this utility, we can have expression the above three transformations in homogeneous style: </summary>
+  <img src="./.assets/transform_in_affine.png"></details>  <p>Of cource, the three transformations can be combined in one. </p><p></details></p><p>&nbsp;</p><h3><a name="in-practise" class="md-header-anchor"></a><span>In practise</span></h3><p><span>Affine transformation matrix for 2D transformation is useful. In UI interface for drawing element, we typically pass this matrix for apply trasformation.</span></p><p><span>In the 3D transformation matrix, the 3rd row will always be [0, 0, 1], it does not need to be told as parameter.</span></p><p><span>So the transformation matrix in 2D drawing functions will typically be like:</span></p><p><span>[A, B, C, D, Tx, Ty]</span></p><p>&nbsp;</p><h3><a name="for-3d" class="md-header-anchor"></a><span>For 3D</span></h3><p><span>Affine transformation in 3D is just similar with 2D. Just make the transformation matrix to be 4D.</span></p><h4><a name="viewing-transformation" class="md-header-anchor"></a><span>Viewing transformation</span></h4><h4><a name="viewport-transformation" class="md-header-anchor"></a><span>Viewport transformation</span></h4><h4><a name="project-transformation" class="md-header-anchor"></a><span>Project transformation</span></h4><h4><a name="perspective-transformation" class="md-header-anchor"></a><span>Perspective transformation</span></h4><p><span>TBD</span></p><h2><a name="rasterization" class="md-header-anchor"></a><span>Rasterization</span></h2><h3><a name="resolution" class="md-header-anchor"></a><span>Resolution</span></h3><ul><li><p><span>Images resolution</span></p><details>
+  <summary>An image rendered in different resolution </summary>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Resolution_illustration.png">
+</details></li><li><p><span>Display resolution</span></p><details>
+  <summary>The display devices resolution standard</summary>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Vector_Video_Standards8.svg/750px-Vector_Video_Standards8.svg.png">
+</details></li><li><p><span>Screen space</span></p><details>
+  <summary>The digital screen space are described as a 2-dimension matrix. One unit is shown as one pixel. </summary>
+  <img src="https://scarletsky.github.io/2020/06/10/games101-notes-rasterization/screen_space.png">
+</details></li><li><p><span>Subpixel layout</span></p><details>
+  <summary>One pixel is consist of RGB subpixels. It has different stripes layout in different display devices. </summary>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Pixel_geometry_01_Pengo.jpg/330px-Pixel_geometry_01_Pengo.jpg"></details>  <p>P30 Pro</p><p><span>  </span><img src="./.assets/subpixels.png" /></p>  <p>Google Nexus One</p><p><span>  </span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Nexus_one_screen_microscope.jpg/330px-Nexus_one_screen_microscope.jpg" />
+</details></p></li></ul><h3><a name="basic-rasterization" class="md-header-anchor"></a><span>Basic rasterization</span></h3><p><span>What is </span><a href='https://en.wikipedia.org/wiki/Rasterisation'><span>rasterization</span></a><span>?  It is kind of a sampling.</span></p><p><span>An simple example: just imagine some colorful ink float on water, which show as a painting. Now we have a screen window, sink it under the water and slowly take it out.</span>
+<span>Then we&#39;ll have a painted screen window, which is similar to rasterization.</span></p><p><a href='https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm'><span>Bresenham&#39;s line algorithm</span></a><span> is the most basic rasterization algorithm for drawing lines (primitive, vector) as bitmaps.</span></p>  <details>
+    <summary>Illustration of the result of Bresenham's line algorithm. </summary>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Bresenham.svg/450px-Bresenham.svg.png">
+  </details><ul><li><p><span>Step 1:</span></p><details>
+  <summary>Put a geometric figure (like triangle) in the screen space. </summary>
+  <img src="./.assets/rasterize_01.png">
+</details></li><li><p><span>Step 2:</span></p><details>
+  <summary>Sampling: consider each pixel (center of pixel space) is inside or outside the triangle. </summary>
+  <img src="./.assets/rasterize_02.png">
+</details></li><li><p><span>Step 3:</span></p><details>
+  <summary>Use bounding box to reduce sampling area. </summary>
+  <img src="./.assets/rasterize_03.png">
+</details></li><li><p><span>Step 4:</span></p><details>
+  <summary>Get the pixels inside the triangle. </summary>
+  <img src="./.assets/rasterize_04.png">
+</details></li><li><p><span>Step 5:</span></p><details>
+  <summary>Display the color in those pixels to show the triangle. </summary>
+  <img src="./.assets/rasterize_05.png">
+</details></li><li><p><span>Now we get a rasterized figure. But it is really jaggy. It could be improved by a higher resolutions. (See </span><code>MSPaint</code><span>)</span></p></li></ul><h3><a name="antialiasing" class="md-header-anchor"></a><span>Antialiasing</span></h3><h4><a name="theory" class="md-header-anchor"></a><span>Theory</span></h4><ul><li><p><span>Bad &quot;Sampling&quot;:</span></p><details>
+  <summary>Antialising is just a sampling, a low frequency sampling on sharp images will get jaggy or [Moiré pattern](https://en.wikipedia.org/wiki/Moir%C3%A9_pattern) </summary>
+  <img src="./.assets/AA_08.png">
+</details></li><li><p><span>How sampling frequency losses the original signal:</span></p><details>
+  <summary>If your resolution is not that high, you should see a 'blurred' image. </summary>
+  <img src="./.assets/AA_01.png">
+  <img src="./.assets/AA_02.png">
+</details></li></ul><ul><li><p><span>Blurr image before sampling:</span></p><details>
+  <summary>If your resolution is not that high, you should see a 'blurred' image. </summary>
+  <img src="./.assets/AA_00_a.png">
+  <img src="./.assets/AA_00_b.png">
+</details></li></ul><h4><a name="antialisaing" class="md-header-anchor"></a><span>Antialisaing</span></h4><ul><li><p><span>Use </span><a href='https://en.wikipedia.org/wiki/Low-pass_filter'><span>low-pass filter</span></a><span> to blur the filter the high frequency signals:</span></p><details>
+  <summary>Use convolution (or average color in the unit). </summary>
+  <img src="./.assets/AA_03.png">
+</details></li><li><p><span>SSAA/MSAA (Super/Multi-Sampling Anti-Aliasing):</span></p><details>
+  <summary>Use a higher sampling ratio in single pixel.</summary>
+  <img src="./.assets/AA_04.png">
+</details><details>
+  <summary>Compare the different sampling effect. </summary>
+  <p>Use single sampling in pixel: </p>
+  <img src="./.assets/AA_05.png">
+  <p>Use multi-sampling in pixel: </p>
+  <img src="./.assets/AA_06.png">
+</details><details>
+  <summary>Convolution/Average to low resolution.</summary>
+  <img src="./.assets/AA_07.png">
+</details></li></ul><h3><a name="font-rasterization" class="md-header-anchor"></a><span>Font rasterization</span></h3><p><span>Refer to </span><a href='https://en.wikipedia.org/wiki/Font_rasterization'><span>Font rasterization on Wiki</span></a><span>.</span></p><p><span>Fonts are now vectors, then they could be scaled from extreme small to very large. Rasterization for fonts are map a vector path to a pixel matrix.</span></p><p><img src="./.assets/font_rasterize.webp" referrerpolicy="no-referrer" alt="rasterization"></p><p><span>Raw rasterized font without antialiasing:</span></p><details>
+  <summary>Sample</summary>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Rasterization-simple.png/200px-Rasterization-simple.png">
+</details><p>&nbsp;</p><h4><a name="antialiasing-in-font" class="md-header-anchor"></a><span>Antialiasing in font</span></h4><ul><li><p><span>Different antialias level</span></p><ul><li><p><span>Basic antialias without hint</span></p><details>
+  <summary>Sample</summary>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Rasterization-antialiasing-without-hinting-2.png/200px-Rasterization-antialiasing-without-hinting-2.png">
+</details></li><li><p><span>Antialias with hint</span></p><details>
+  <summary>Sample</summary>
+  <img src="https://upload.wikimedia.org/wikipedia/en/thumb/e/ec/Rasterization-antialiasing.png/200px-Rasterization-antialiasing.png">
+</details></li><li><p><span>Subpixel rendering for an RGB flat panel</span></p><details>
+  <summary>Sample</summary>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Rasterization-subpixel-RGB.png/200px-Rasterization-subpixel-RGB.png">
+</details></li></ul></li></ul><ul><li><p><a href='https://en.wikipedia.org/wiki/Font_hinting'><span>Font Hinting</span></a></p><p><span>For the purpose of on-screen text display, font hinting designates which primary pixels are interpolated to more clearly render a font. </span></p><p><span>-&gt; Font editors are able to do automatic hinting.</span></p><p><span>-&gt; High-quality commercial fonts are often manually hinted to provide the sharpest appearance.</span></p>  <details>
+    <summary>Sample</summary>
+    <img src="./.assets/fonthinting.png">
+  </details><p>&nbsp;</p></li><li><p><span>Subpixel rendering making white</span>
+<span>    </span><details>
+<span>      </span><summary><span>Sample</span></summary>
+<span>      </span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Subpixel-rendering-RGB.png/300px-Subpixel-rendering-RGB.png" />
+<span>    </span></details></p></li></ul><p>&nbsp;</p><ul><li><span>Morden font rasterization </span></li></ul><p><span>Nowadays, the most popular font rasterization library which supports both Windows and macOS is </span><a href='https://en.wikipedia.org/wiki/FreeType'><span>FreeType</span></a></p><ul><li><p><span>Character &#39;e&#39; in FreeType as small size with subpixel rendering.</span></p><details>
+  <summary>Subpixel renered 'e'</summary>
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Subpixel_e.png">
+</details><p>&nbsp;</p><p>&nbsp;</p></li></ul></div>
+</body>
+</html>

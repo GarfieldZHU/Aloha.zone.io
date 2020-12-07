@@ -4,15 +4,19 @@
 
 ## Transformation
 
+[TOC]
+
+
+
 ### Basic 2D transformations
 
 - Scaling
   <details>
     <summary>Scale an image at x axis </summary>
     <img src="./.assets/scale.png" />
-    
+  
     <p>Each point (x0, y0) becomes (x1, y1) after scaling, then we define scaling matrix S(x,y): </p>
-    
+  
     <img src="./.assets/scale_matrix.png" />
   </details>
 
@@ -29,7 +33,7 @@
     <img src="./.assets/rotate_prove_1.png" />
     <p>(0, 1) becomes (-sinθ, cosθ)</p>
     <img src="./.assets/rotate_prove_2.png" />
-    
+  
     <p>Then, we have the definition of R </p>
     <img src="./.assets/rotate_matrix.png" />
   </details>
@@ -110,7 +114,7 @@ Applied homogeneous matrix, we have a transformation named "[Affine transformati
 <details>
   <summary>With this utility, we can have expression the above three transformations in homogeneous style: </summary>
   <img src="./.assets/transform_in_affine.png" />
-  
+
   <p>Of cource, the three transformations can be combined in one. </p>
 </details>
 
