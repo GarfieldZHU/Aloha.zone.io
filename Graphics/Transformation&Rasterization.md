@@ -1,12 +1,10 @@
 # Transformation & Rasterization
 
-
-
-## Transformation
-
 [TOC]
 
 
+
+## Transformation
 
 ### Basic 2D transformations
 
