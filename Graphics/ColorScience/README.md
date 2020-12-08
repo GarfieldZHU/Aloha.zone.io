@@ -209,19 +209,74 @@ It is actually a section view of the cylinder.
 
 Different color spaces represent different ranges of color.
 
-###### sRGB
+Typically, we see four standards in consuming monitors: sRGB, DCI-P3, AdobeRGB, and NTSC.
 
-  sRBG, AKA standard RGB is the most widely adopted color space today. 
+<details>
+  <summary>Common gamuts: </summary>
+  <img src="../.assets/gamut.jfif" />
+</details>
 
+- [sRGB](https://en.wikipedia.org/wiki/SRGB)
+  sRBG, AKA standard RGB is the most widely adopted color space on computer today. **HP** and **Microsoft** created cooperatively in 1996 to use on monitors, printers, and the Web.
+  
   - Common moditor RGB standard. Other color devices simulate that monitor by calibration.
+  - Using 8-bit integer for R,G,B channels. 
   - Morden browser standard now support sRGB only. 
   - Gamut is limited. Tag "&lt;canvas&gt;" are discussed to support more wild gamut
 
-###### AdobeRGB
+- [NTCS](https://en.wikipedia.org/wiki/NTSC)
+  Named after **National Television System Committee**. It's an old standard for TV. 
+  
+  - Old (1952), and for analog TV signals, not proper for digital monitor signals nowadays.
+  - Wide range, but not that accurate. 
+  - 72% NTSC ≈ 100% sRGB
+
+- [DCI-P3](https://en.wikipedia.org/wiki/DCI-P3)
+  Defined by the Digital Cinema Initiatives (DCI), expected to see adoption in television systems and in the home cinema domain.
+  
+  - Morden (2010), wild, cinema industry usage.
+  - Uses a slightly warmer and greener whitepoint with a correlated color temperature of approximately 6300K
+  - **Apple** products: iPhone, Macbook, iPad, etc.
+
+- [AdobeRGB](https://en.wikipedia.org/wiki/Adobe_RGB_color_space)
+  Developed by **Adobe** Systems, Inc.
+  
+  - Wide, **Adobe** products: PDF, PS, LR, PR, AE, etc.
+  - Improving upon the gamut of the sRGB color space, primarily in ***cyan-green*** hues.
+  
+###### Gamut Coverage vs.  Gamut volume
+
+- Gamut coverage is: the percentage of covered gamut area / the gamut area. 
+
+- Gamut volume is: the percentage of the volume of the (device) supported colors / the volume of a gamut.
+
+It means the "coverage" focuses on accuracy. The higher the coverage is, the more accurate of the device displaying the gamut.
+And the "volume" focuses on amount. The higher the volume is, the more color that device could display.
 
 
+###### [Color difference](https://en.wikipedia.org/wiki/Color_difference) 
 
-###### Delta E
+- Euclidean distance
+  Just describe the color's distance in distance.
+  
+  <details>
+    <summary>Formula: </summary>
+    <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/06cdd86ced397bbf6fad505b4c4d91fa2438b567" />
+    <p>Or, with weighting: </p>
+    <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/9e284ceb4c681bd7a3e6d690127d98c6eaf81adb" />
+  </details>
+  
+- ΔE* (Delta-E)
+  Human is not equally sensitive at different hue and lightness. Then CIE defines Delta-E for a more accurate color different. 
+  
+  - Based on CIELAB color space.
+  - More accurate for most people, widely adopted. 
+  - [MacAdam ellipse](https://en.wikipedia.org/wiki/MacAdam_ellipse) defines a tolerance of color in different colors.
+      
+      <details>
+        <summary>MacAdam ellipse (x10): </summary>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/CIExy1931_MacAdam.png/488px-CIExy1931_MacAdam.png" />
+      </details>
 
 
 
