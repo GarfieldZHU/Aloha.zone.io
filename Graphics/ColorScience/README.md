@@ -243,6 +243,7 @@ Typically, we see four standards in consuming monitors: sRGB, DCI-P3, AdobeRGB, 
   
   - Wide, **Adobe** products: PDF, PS, LR, PR, AE, etc.
   - Improving upon the gamut of the sRGB color space, primarily in ***cyan-green*** hues.
+  - Printing standard. If you need a accurate printed color against what it shows on screen, AdobeRGB is necessary.
   
 ###### Gamut Coverage vs.  Gamut volume
 
@@ -279,8 +280,59 @@ And the "volume" focuses on amount. The higher the volume is, the more color tha
       </details>
 
 
+###### [Color depth](https://en.wikipedia.org/wiki/Color_depth) 
+Color depth, AKA  bit depth, is the number of bits used to indicate the color of a single (sub)pixel. 
+
+When we say RGB in web, we say a 8-bit color depth for R,G,B channels (also say 24-bit true color), each of which ranges from 0~255. And for a single pixel, we have 2^8 * 2^8 * 2^8 = 2^24 ≈ 16 million colors.
+
+In a scenario color changes gradiently in short range, bit depth makes a difference obviously.
+
+  <details>
+    <summary>8-bit vs. 10-bit: </summary>
+    <img src="./.assets/color_depth.webp" />
+  </details>
+
+- [FRC](https://en.wikipedia.org/wiki/Frame_rate_control)，Frame Rate Control
+  FRC is a form of temporal dithering which cycles between different color shades with each new frame to simulate an intermediate shade. 
+  Typically, physical 6-bit + FRC simulates a 8-bit, physical 8-bit + FRC simulates a 10-bit. 
+  
+
+#### SP-4.4 Suggestion for buying a monitor
+
+1. Resolution: 2k for 21', 23'/24', 27' monitors. 4k for 27', 32' monitors. 
+               1080P not recommended, 8k is of low price–performance ratio.
+               Larger size? Why not a TV. 
+               
+2. Refresh rate： Theoeretically the higher, the better. High refresh rate is meaning for gaming (90Hz+), especially FPS (120Hz+)
+               For movie and browser usage, 60Hz is enough anyway. 
+
+3. Panel: IPS, VA, TN. Just pick IPS. 
+
+4. HDR: HDR10, HDR400, HDR600, HDR1000. 
+        10/400 is not recognizable. 600/1000 is very expensive. 
+        No necessary unless you have blue-ray HDR movies. 
+        If you need, better to have a HDR TV.
+        
+5. Gamut: (in product details/spec)
+   - NTSC is really outdated. Do not pick one if it only says its NTSC coverage (typically 72%).
+   - Confirm you are validting gamut coverage rather than volume. 
+     If one says gamut volume only but no coverage (typically 120%+ even 140%), DO NOT BUY IT!
+     An extremely high volume is actually a disadvange which will make color not accurate. And guess why them don't say their coverage?
+   - 99% sRGB coverage is enough and for any common usage. It's a prerequisite for a higher persue.
+   - Pick a P3 if you uses Apple products. As monitor for iMac, Macbook, Mac mini, iPad, etc. 
+     90%+ P3 is good, pick a 95%+ P3 at an acceptable price. 
+     Really comfortable (truct Apple), 
+   - AdobeRGB coverage is always good, but expensive. Pay it for your interests on photographing and photo-printing. 
+
+6. Color difference: Delta-E <= 2 is far good enough for non-expert user. Smaller is better, but not necessary.
+
+7. Color depth: see the color amount spec. 1.07 billion is worth of picking (Typically 8bit + FRC, real 10bit is more expensive).
+                Be careful for 16 million colors, check if it tells a real 8bit or 6bit + FRC. If no obvious information as a real 8bit, not recommend unless a extreme high performance price ratio.
+
+* Test a screen with testing patterns: https://www.eizo.be/monitor-test/
 
 ### References
-
+- [Wikipedia](https://en.wikipedia.org/)
+- [GAMES101 - Morden Computer Graphics - Lingqi Yan](https://www.bilibili.com/video/BV1X7411F744?p=1)
 - [The basics of color and color management](https://www.youtube.com/watch?v=fq-kNtwifFk&list=PLMsVycIbp_YsQVHP0CSjNDSBuaznyGC6l&index=3) @ [ColorPlaza TV](https://www.youtube.com/channel/UCIwTmFi6wFyHee9JNQ6YbTw)
 - [Color WorkSpace: Using sRGB or AdobeRGB?](https://www.youtube.com/watch?v=UKfg8GtT75k) @ [ColorPlaza TV](https://www.youtube.com/channel/UCIwTmFi6wFyHee9JNQ6YbTw)
