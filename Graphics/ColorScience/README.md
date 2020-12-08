@@ -62,7 +62,7 @@ Color is relative. Our eyes is simple to be cheated.
 
 <details>
   <summary>Now we hide the black and white blocks. </summary>
-  <img src="../.assets/color_relative.png" />
+  <img src="../.assets/relative_color.gif" />
 </details>
 
 ### 3. Color Model 
