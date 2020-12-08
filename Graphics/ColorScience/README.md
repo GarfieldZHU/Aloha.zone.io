@@ -1,5 +1,9 @@
 # Color Science 101
 
+[TOC]
+
+
+
 ### 1. Color basic 
 
 What is color? How we describe color?
@@ -102,7 +106,7 @@ For cheapness. Mixing C, M, Y, we can get black. But in printing, we typically u
 <details>
   <summary>CIE 1931 RGB color matching functions </summary>
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/CIE1931_RGBCMF.svg/488px-CIE1931_RGBCMF.svg.png" />
-  
+
   <p>It describes the how to mix up the visible colors in different wave length using RGB, to match what human can see.</p>
   <p>The negative value means that mixing RGB could not present the target color at postive values. Then we mix color to target color to match back the test color and we subtract the value added to target color from the tested one.</p>
 </details>
@@ -111,7 +115,7 @@ For cheapness. Mixing C, M, Y, we can get black. But in printing, we typically u
   <summary>The CIE 1931 color space chromaticity diagram </summary>
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/CIE1931xy_blank.svg/450px-CIE1931xy_blank.svg.png" />
 </details>
- 
+
 #### 4.2 Color Space
 
 ###### Reading color space
@@ -120,7 +124,7 @@ For cheapness. Mixing C, M, Y, we can get black. But in printing, we typically u
 <details>
   <summary>Tooltips of reading colorspace graph:</summary>
   <img src="../.assets/colorspace_tooltips.PNG" />
-  
+
   <img src="../.assets/colorspace_wavelength.PNG" />
 </details>
 
@@ -137,7 +141,7 @@ For cheapness. Mixing C, M, Y, we can get black. But in printing, we typically u
 <details>
   <summary>Color temprature: </summary>
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/PlanckianLocus.png/450px-PlanckianLocus.png" />
-  
+
   <p>Hues of the Planckian locus on a linear scale (values in kelvin) </p>
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Color_temperature_black_body_800-12200K.svg/768px-Color_temperature_black_body_800-12200K.svg.png" />
 
@@ -151,7 +155,7 @@ For cheapness. Mixing C, M, Y, we can get black. But in printing, we typically u
   <summary>White balance: </summary>
   <img src="https://pic1.zhimg.com/80/v2-392c0561d35f056b10fb2ca5b0835fa4_1440w.png" />
   <p>Adjust white balance requires two dimensions: temprature (for blue to yellow) and tint (from green to red)</p>
-  
+
   <img src="https://pic4.zhimg.com/80/v2-f6e517ba429e6464a32786b4ba007513_1440w.png" />
 </details>
 
@@ -191,7 +195,10 @@ HSV cylinder
 
 Common color pickers are based on HSV/HSL. 
 
-![color picker](../assets/color_picker.png)
+<details>
+  <summary>Color picker: </summary>
+  <img src="../.assets/color_picker.png" />
+</details>
 
 It is actually a section view of the cylinder. 
 
@@ -203,9 +210,9 @@ It is actually a section view of the cylinder.
 Different color spaces represent different ranges of color.
 
 ###### sRGB
-  
+
   sRBG, AKA standard RGB is the most widely adopted color space today. 
-  
+
   - Common moditor RGB standard. Other color devices simulate that monitor by calibration.
   - Morden browser standard now support sRGB only. 
   - Gamut is limited. Tag "&lt;canvas&gt;" are discussed to support more wild gamut
@@ -214,7 +221,9 @@ Different color spaces represent different ranges of color.
 
 
 
-- Delta E
+###### Delta E
+
+
 
 ### References
 
