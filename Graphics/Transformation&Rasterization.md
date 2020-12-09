@@ -157,9 +157,25 @@ TBD
 
 - Display resolution
   <details>
-    <summary>The display devices resolution standard</summary>
+    <summary>The display resolution standard: </summary>
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Vector_Video_Standards8.svg/750px-Vector_Video_Standards8.svg.png" />
   </details>
+
+- Native resolution
+  The [native resolution](https://en.wikipedia.org/wiki/Native_resolution) of display devices are determined by the fixed physical pixels. On a fixed native resolution, you could set a equivalent or lower display resolution, or display a lower resolution images. It is about scaling. 
+  
+  Your graphics card sends an 800×600 image to a 1366×768 LCD, the display must interpolate (scale) the image to be larger and fill the screen. In the example here, the aspect ratios (4:3 for 800×600 and 16:9 for 1366×768) are different – so not only will the image be enlarged, the image will be distorted.
+ 
+  - Bitmap are heavily impacted. Vectors will behave better.
+  - The higher your native resolution is, the less side effect of scaling could be notified.
+  - Suggest to use native resolution as display resolution. 
+  
+  <details>
+    <summary>A 800*600 content sent to a native 1024*768. </summary>
+    <img src="https://upload.wikimedia.org/wikipedia/en/f/f7/Native-resolution_800x600_on_1024x768.JPG" />
+  </details>
+  
+
 
 - Screen space
   <details>
