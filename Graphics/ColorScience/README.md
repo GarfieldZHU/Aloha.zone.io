@@ -224,7 +224,7 @@ Typically, we see four standards in consuming monitors: sRGB, DCI-P3, AdobeRGB, 
   - Morden browser standard now support sRGB only. 
   - Gamut is limited. Tag "&lt;canvas&gt;" are discussed to support more wild gamut
 
-- [NTCS](https://en.wikipedia.org/wiki/NTSC)
+- [NTSC](https://en.wikipedia.org/wiki/NTSC)
   Named after **National Television System Committee**. It's an old standard for TV. 
   
   - Old (1952), and for analog TV signals, not proper for digital monitor signals nowadays.
