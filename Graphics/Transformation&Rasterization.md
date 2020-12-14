@@ -386,14 +386,14 @@ Nowadays, the most popular font rasterization library which supports both Window
 
 - [Raster](https://en.wikipedia.org/wiki/Raster_graphics) graphics, or bitmap image, is the most common repesentation of graphics which is a dot matrix data structure. 
 - Typical formats: Jpeg, Png, WebP, Bmp, etc.
-- Usage: photos, canvas.
+- Usage: photos, images, canvas.
 
 
 #### Vector
 
 - [Vector](https://en.wikipedia.org/wiki/Vector_graphics) graphics are defined in terms of of points on a Cartesian plane. 
 - Typical formats: SVG, EPS, PDF, etc.
-- Usage: geometry, design.
+- Usage: geometry, printing, logos, icons, illustrations.
 
 
 #### Comparison
