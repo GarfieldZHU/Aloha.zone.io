@@ -367,9 +367,9 @@ Nowadays, the most popular font rasterization library which supports both Window
   <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Subpixel_e.png" />
   </details>
 
-  
+---
 
-#### Raster (Bitmap) vs. Vector
+### Raster (Bitmap) vs. Vector
 
 <details>
   <summary>Zooming raster vs. vector</summary>
@@ -377,7 +377,7 @@ Nowadays, the most popular font rasterization library which supports both Window
 </details>
 
 
-##### Raster (bitmap)
+#### Raster (bitmap)
 
 <details>
   <summary>Bitmap structure example: </summary>
@@ -389,14 +389,14 @@ Nowadays, the most popular font rasterization library which supports both Window
 - Usage: photos, canvas.
 
 
-##### Vector
+#### Vector
 
 - [Vector](https://en.wikipedia.org/wiki/Vector_graphics) graphics are defined in terms of of points on a Cartesian plane. 
 - Typical formats: SVG, EPS, PDF, etc.
 - Usage: geometry, design.
 
 
-##### Comparison
+#### Comparison
 
 When to use?
 
@@ -404,7 +404,7 @@ When to use?
 - For large amount of objects, raster graphics is more efficient. Vector graphics need store each object as a model but raster only stores the overall canvas. 
 
 
-###### SVG vs. canvas
+##### SVG vs. canvas
 
 [SVG](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics), AKA Scalable Vector Graphics, is XML-based vectir umage format if W3C since 1999.
 
