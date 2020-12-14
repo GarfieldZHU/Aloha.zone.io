@@ -371,10 +371,21 @@ Nowadays, the most popular font rasterization library which supports both Window
 
 #### Raster (Bitmap) vs. Vector
 
+<details>
+  <summary>Zooming raster vs. vector</summary>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/VectorBitmapExample.svg/220px-VectorBitmapExample.svg.png" />
+</details>
+
+
 ##### Raster (bitmap)
 
+<details>
+  <summary>Bitmap structure example: </summary>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Rgb-raster-image.svg/220px-Rgb-raster-image.svg.png" />
+</details>
+
 - [Raster](https://en.wikipedia.org/wiki/Raster_graphics) graphics, or bitmap image, is the most common repesentation of graphics which is a dot matrix data structure. 
-- Typical formats: JPEG, PNG, .
+- Typical formats: Jpeg, Png, WebP, Bmp, etc.
 - Usage: photos, canvas.
 
 
@@ -391,4 +402,17 @@ When to use?
 
 - For high resolution displays, vector graphics is more efficient. Raster graphics could be large when resolution is high. 
 - For large amount of objects, raster graphics is more efficient. Vector graphics need store each object as a model but raster only stores the overall canvas. 
+
+
+###### SVG vs. canvas
+
+[SVG](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics), AKA Scalable Vector Graphics, is XML-based vectir umage format if W3C since 1999.
+
+[Canvas](https://en.wikipedia.org/wiki/Canvas_element) element, is part of HTML5 standard and allows for dynamic, scriptable rendering of 2D shapes and bitmap images. (Initialized by Apple in WebKit since 2004)
+
+
+<details>
+  <summary>Performance comparison: </summary>
+  <img src="../.assets/svg_vs_canvas.png" />
+</details>
 
