@@ -406,10 +406,16 @@ When to use?
 
 ##### SVG vs. canvas
 
-[SVG](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics), AKA Scalable Vector Graphics, is XML-based vectir umage format if W3C since 1999.
+[SVG](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics), AKA Scalable Vector Graphics.
 
-[Canvas](https://en.wikipedia.org/wiki/Canvas_element) element, is part of HTML5 standard and allows for dynamic, scriptable rendering of 2D shapes and bitmap images. (Initialized by Apple in WebKit since 2004)
+- It is XML-based vector image format by W3C since 1999.
+- Based on XML, which is also on DOM and could be manipulated. 
 
+[Canvas](https://en.wikipedia.org/wiki/Canvas_element) element.
+
+- It is part of HTML5 standard and allows for dynamic, scriptable rendering of 2D shapes and bitmap images. (Initialized by Apple in WebKit since 2004)
+- Based on script. Browser does not concentrate on it once finished draw.
+- Require re-paint after manipulate elements.
 
 <details>
   <summary>Performance comparison: </summary>
