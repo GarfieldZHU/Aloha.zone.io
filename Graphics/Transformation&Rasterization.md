@@ -368,4 +368,27 @@ Nowadays, the most popular font rasterization library which supports both Window
   </details>
 
   
-  
+
+#### Raster (Bitmap) vs. Vector
+
+##### Raster (bitmap)
+
+- [Raster](https://en.wikipedia.org/wiki/Raster_graphics) graphics, or bitmap image, is the most common repesentation of graphics which is a dot matrix data structure. 
+- Typical formats: JPEG, PNG, .
+- Usage: photos, canvas.
+
+
+##### Vector
+
+- [Vector](https://en.wikipedia.org/wiki/Vector_graphics) graphics are defined in terms of of points on a Cartesian plane. 
+- Typical formats: SVG, EPS, PDF, etc.
+- Usage: geometry, design.
+
+
+##### Comparison
+
+When to use?
+
+- For high resolution displays, vector graphics is more efficient. Raster graphics could be large when resolution is high. 
+- For large amount of objects, raster graphics is more efficient. Vector graphics need store each object as a model but raster only stores the overall canvas. 
+
