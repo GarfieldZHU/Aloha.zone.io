@@ -145,6 +145,8 @@ Affine transformation in 3D is just similar with 2D. Just make the transformatio
 
 TBD
 
+---
+
 ## Rasterization
 
 ### Resolution
@@ -195,6 +197,79 @@ TBD
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Nexus_one_screen_microscope.jpg/330px-Nexus_one_screen_microscope.jpg" />
   </details>
 
+
+### Raster (Bitmap) vs. Vector
+
+<details>
+  <summary>Zooming raster vs. vector</summary>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/VectorBitmapExample.svg/220px-VectorBitmapExample.svg.png" />
+</details>
+
+
+#### Raster (bitmap)
+
+<details>
+  <summary>Bitmap structure example: </summary>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Rgb-raster-image.svg/220px-Rgb-raster-image.svg.png" />
+</details>
+
+- [Raster](https://en.wikipedia.org/wiki/Raster_graphics) graphics, or bitmap image, is the most common repesentation of graphics which is a dot matrix data structure. 
+- Typical formats: Jpeg, Png, WebP, Bmp, PPM, etc.
+- Usage: photos, images, canvas.
+
+  <details>
+    <summary>Bitmap sample: </summary>
+    <a href="https://raw.githubusercontent.com/GarfieldZHU/ray-tracer-rs/master/image_sample/final_scene_high_resolution.ppm">Image in raw text PPM format: </a>
+  </details>
+  
+  <details>
+    <summary>Equivalent PNG: </summary>
+    <img src="https://github.com/GarfieldZHU/ray-tracer-rs/blob/master/image_sample/final_scene_high_resolution.png?raw=true" />
+  </details>
+
+
+#### Vector
+
+- [Vector](https://en.wikipedia.org/wiki/Vector_graphics) graphics are defined in terms of of points on a Cartesian plane. 
+- Typical formats: SVG, EPS, PDF, etc.
+- Usage: geometry, printing, logos, icons, illustrations.
+
+  <details>
+    <summary>SVG samples: </summary>
+    <a href="https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/">W3C SVG file samples: </a>
+  </details>
+
+
+
+#### Comparison
+
+When to use?
+
+- For high resolution displays, vector graphics is more efficient. Raster graphics could be large when resolution is high. 
+- For large amount of objects, raster graphics is more efficient. Vector graphics need store each object as a model but raster only stores the overall canvas. 
+
+
+##### SVG vs. canvas
+
+[SVG](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics), AKA Scalable Vector Graphics.
+
+- It is XML-based vector image format by W3C since 1999.
+- Based on XML, which is also on DOM and could be manipulated. 
+
+
+[Canvas](https://en.wikipedia.org/wiki/Canvas_element) element.
+
+- It is part of HTML5 standard and allows for dynamic, scriptable rendering of 2D shapes and bitmap images. (Initialized by Apple in WebKit since 2004)
+- Based on script. Browser does not concentrate on it once finished draw.
+- Require re-paint after manipulate elements.
+
+<details>
+  <summary>Performance comparison: </summary>
+  <img src="./.assets/svg_vs_canvas.png" />
+</details>
+
+
+--- 
 
 ### Basic rasterization
 
@@ -367,75 +442,4 @@ Nowadays, the most popular font rasterization library which supports both Window
   <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Subpixel_e.png" />
   </details>
 
----
-
-### Raster (Bitmap) vs. Vector
-
-<details>
-  <summary>Zooming raster vs. vector</summary>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/VectorBitmapExample.svg/220px-VectorBitmapExample.svg.png" />
-</details>
-
-
-#### Raster (bitmap)
-
-<details>
-  <summary>Bitmap structure example: </summary>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Rgb-raster-image.svg/220px-Rgb-raster-image.svg.png" />
-</details>
-
-- [Raster](https://en.wikipedia.org/wiki/Raster_graphics) graphics, or bitmap image, is the most common repesentation of graphics which is a dot matrix data structure. 
-- Typical formats: Jpeg, Png, WebP, Bmp, PPM, etc.
-- Usage: photos, images, canvas.
-
-  <details>
-    <summary>Bitmap sample: </summary>
-    <a href="https://raw.githubusercontent.com/GarfieldZHU/ray-tracer-rs/master/image_sample/final_scene_high_resolution.ppm">Image in raw text PPM format: </a>
-  </details>
-  
-  <details>
-    <summary>Equivalent PNG: </summary>
-    <img src="https://github.com/GarfieldZHU/ray-tracer-rs/blob/master/image_sample/final_scene_high_resolution.png?raw=true" />
-  </details>
-
-
-#### Vector
-
-- [Vector](https://en.wikipedia.org/wiki/Vector_graphics) graphics are defined in terms of of points on a Cartesian plane. 
-- Typical formats: SVG, EPS, PDF, etc.
-- Usage: geometry, printing, logos, icons, illustrations.
-
-  <details>
-    <summary>SVG samples: </summary>
-    <a href="https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/">W3C SVG file samples: </a>
-  </details>
-
-
-
-#### Comparison
-
-When to use?
-
-- For high resolution displays, vector graphics is more efficient. Raster graphics could be large when resolution is high. 
-- For large amount of objects, raster graphics is more efficient. Vector graphics need store each object as a model but raster only stores the overall canvas. 
-
-
-##### SVG vs. canvas
-
-[SVG](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics), AKA Scalable Vector Graphics.
-
-- It is XML-based vector image format by W3C since 1999.
-- Based on XML, which is also on DOM and could be manipulated. 
-
-
-[Canvas](https://en.wikipedia.org/wiki/Canvas_element) element.
-
-- It is part of HTML5 standard and allows for dynamic, scriptable rendering of 2D shapes and bitmap images. (Initialized by Apple in WebKit since 2004)
-- Based on script. Browser does not concentrate on it once finished draw.
-- Require re-paint after manipulate elements.
-
-<details>
-  <summary>Performance comparison: </summary>
-  <img src="./.assets/svg_vs_canvas.png" />
-</details>
 
