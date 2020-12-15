@@ -116,7 +116,19 @@ Applied homogeneous matrix, we have a transformation named "[Affine transformati
   <p>Of cource, the three transformations can be combined in one. </p>
 </details>
 
+### Transformation chaining
 
+Matrix multiply is left calculation, like `Matrix_1 x vector`.
+
+Calculation order is right to left:
+
+> M4 x M3 x M2 x M1 x vector
+
+From M1, M2, M3, M4... Or calulate with associative law.
+
+> (M4 x M3 x M2 x M1) x vector
+
+> -> M5 x vector
 
 ### In practise
 
