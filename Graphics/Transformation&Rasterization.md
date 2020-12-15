@@ -214,6 +214,8 @@ TBD
 </details>
 
 - [Raster](https://en.wikipedia.org/wiki/Raster_graphics) graphics, or bitmap image, is the most common repesentation of graphics which is a dot matrix data structure. 
+- Typically data structure: fixed size 2D matrix
+- Display algorithm: scaling
 - Typical formats: Jpeg, Png, WebP, Bmp, PPM, etc.
 - Usage: photos, images, canvas.
 
@@ -231,6 +233,8 @@ TBD
 #### Vector
 
 - [Vector](https://en.wikipedia.org/wiki/Vector_graphics) graphics are defined in terms of of points on a Cartesian plane. 
+- Typical data structure: Drawable objects. Point, Line, Rect, Circle, Curve, etc. 
+- Display algorithm: transformation, rasterization
 - Typical formats: SVG, EPS, PDF, etc.
 - Usage: geometry, printing, logos, icons, illustrations.
 
