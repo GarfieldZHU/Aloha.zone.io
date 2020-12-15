@@ -128,8 +128,17 @@ So the transformation matrix in 2D drawing functions will typically be like:
 
 [A, B, C, D, Tx, Ty]
 
-
-
+- PDF transformation:
+  ```java
+      Rect.transform(new Matrix(A, B, C, D, Tx, Ty))
+  ```
+- [SVG transformation](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform#Matrix):
+  ```xml
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <rect x="10" y="10" width="30" height="20" fill="red"
+            transform="matrix(3 1 -1 3 30 40)" />
+    </svg>
+  ```
 
 ### For 3D
 
