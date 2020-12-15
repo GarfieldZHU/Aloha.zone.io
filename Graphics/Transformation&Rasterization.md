@@ -385,8 +385,18 @@ Nowadays, the most popular font rasterization library which supports both Window
 </details>
 
 - [Raster](https://en.wikipedia.org/wiki/Raster_graphics) graphics, or bitmap image, is the most common repesentation of graphics which is a dot matrix data structure. 
-- Typical formats: Jpeg, Png, WebP, Bmp, etc.
+- Typical formats: Jpeg, Png, WebP, Bmp, PPM, etc.
 - Usage: photos, images, canvas.
+
+  <details>
+    <summary>Bitmap sample: </summary>
+    <a href="https://raw.githubusercontent.com/GarfieldZHU/ray-tracer-rs/master/image_sample/final_scene_high_resolution.ppm">Image in raw text PPM format: </a>
+  </details>
+  
+  <details>
+    <summary>Equivalent PNG: </summary>
+    <img src="https://github.com/GarfieldZHU/ray-tracer-rs/blob/master/image_sample/final_scene_high_resolution.png?raw=true" />
+  </details>
 
 
 #### Vector
@@ -394,6 +404,12 @@ Nowadays, the most popular font rasterization library which supports both Window
 - [Vector](https://en.wikipedia.org/wiki/Vector_graphics) graphics are defined in terms of of points on a Cartesian plane. 
 - Typical formats: SVG, EPS, PDF, etc.
 - Usage: geometry, printing, logos, icons, illustrations.
+
+  <details>
+    <summary>SVG samples: </summary>
+    <a href="https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/">W3C SVG file samples: </a>
+  </details>
+
 
 
 #### Comparison
@@ -411,6 +427,7 @@ When to use?
 - It is XML-based vector image format by W3C since 1999.
 - Based on XML, which is also on DOM and could be manipulated. 
 
+
 [Canvas](https://en.wikipedia.org/wiki/Canvas_element) element.
 
 - It is part of HTML5 standard and allows for dynamic, scriptable rendering of 2D shapes and bitmap images. (Initialized by Apple in WebKit since 2004)
@@ -419,6 +436,6 @@ When to use?
 
 <details>
   <summary>Performance comparison: </summary>
-  <img src="../.assets/svg_vs_canvas.png" />
+  <img src="./.assets/svg_vs_canvas.png" />
 </details>
 
