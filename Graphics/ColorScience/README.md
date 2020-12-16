@@ -21,7 +21,7 @@ What is color? How we describe color?
   
   We say S-cone, M-cone, L-cone, and they are activated by blue, green and red.
   
-  ![wave length of color receptors](../.assets/colorcell.jpg)
+  ![wave length of color receptors](https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/colorcell.jpg)
   
   They just like filter for lights.
 
@@ -45,7 +45,7 @@ What is color? How we describe color?
   
   <details>
     <summary>Hue ring</summary>
-    <img src="../.assets/huering.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/huering.png" />
   </details>
   
   See more in [color space](#42-color-space) section.
@@ -57,12 +57,12 @@ What is color? How we describe color?
 Color is relative. Our eyes is simple to be cheated.
 <details>
   <summary>Is A and B same? </summary>
-  <img src="../.assets/color_relative.png" />
+  <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/color_relative.png" />
 </details>
 
 <details>
   <summary>Now we hide the black and white blocks. </summary>
-  <img src="../.assets/relative_color.gif" />
+  <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/relative_color.gif" />
 </details>
 
 ### 3. Color Model 
@@ -81,7 +81,7 @@ Red, Green, Blue.
 
 Cyan, Yellow, Magenta, **blacK**.
 
-![cmyk](../.assets/cmyk.PNG)
+![cmyk](https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/cmyk.PNG)
 
 The more you mix, the darker it will be. 
 
@@ -123,9 +123,9 @@ For cheapness. Mixing C, M, Y, we can get black. But in printing, we typically u
 - Tooltips and wave length
 <details>
   <summary>Tooltips of reading colorspace graph:</summary>
-  <img src="../.assets/colorspace_tooltips.PNG" />
+  <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/colorspace_tooltips.PNG" />
 
-  <img src="../.assets/colorspace_wavelength.PNG" />
+  <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/colorspace_wavelength.PNG" />
 </details>
 
 
@@ -149,7 +149,7 @@ For cheapness. Mixing C, M, Y, we can get black. But in printing, we typically u
 
 `White & gold, or blue & black ? `
 
-![White balance](../.assets/white_balance.jpg)
+![White balance](https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/white_balance.jpg)
 
 <details>
   <summary>White balance: </summary>
@@ -178,7 +178,7 @@ HSV cylinder
 
 - Hue ring
 
-![Hue ring](../.assets/hue_rgb.jpg)
+![Hue ring](https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/hue_rgb.jpg)
 
 ###### b. Saturation
 
@@ -197,7 +197,7 @@ Common color pickers are based on HSV/HSL.
 
 <details>
   <summary>Color picker: </summary>
-  <img src="../.assets/color_picker.png" />
+  <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/color_picker.png" />
 </details>
 
 It is actually a section view of the cylinder. 
@@ -213,7 +213,7 @@ Typically, we see four standards in consuming monitors: sRGB, DCI-P3, AdobeRGB, 
 
 <details>
   <summary>Common gamuts: </summary>
-  <img src="../.assets/gamut.jfif" />
+  <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/gamut.jfif" />
 </details>
 
 - [sRGB](https://en.wikipedia.org/wiki/SRGB)
@@ -289,7 +289,7 @@ In a scenario color changes gradiently in short range, bit depth makes a differe
 
   <details>
     <summary>8-bit vs. 10-bit: </summary>
-    <img src="./.assets/color_depth.webp" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/color_depth.webp" />
   </details>
 
 - [FRC](https://en.wikipedia.org/wiki/Frame_rate_control)，Frame Rate Control
