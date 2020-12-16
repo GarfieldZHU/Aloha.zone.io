@@ -13,9 +13,16 @@
     <summary>Scale an image at x axis </summary>
     <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/scale.png" />
   
-    <p>Each point (x0, y0) becomes (x1, y1) after scaling, then we define scaling matrix S(x,y): </p>
+    <p>Each point (x0, y0) becomes (x1, y1) after scaling, we have: </p>
+  
+    <p>"<b><i>y1 = y0</i></b>"</p>
+    <p>"<b><i>x1 = x0 * 0.5 </i></b>"</p>
+    
+    <p>then we define scaling matrix S(x,y): </p>
   
     <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/scale_matrix.png" />
+    
+    <p>In this case, Sx = 0.5, Sy = 1.</p>
   </details>
 
 
