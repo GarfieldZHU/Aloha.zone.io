@@ -15,6 +15,10 @@ What is color? How we describe color?
 ![Color display spectrum](https://upload.wikimedia.org/wikipedia/commons/c/c4/Rendered_Spectrum.png)
 
 
+<br/>
+<br/>
+<br/>
+
 - [Trichromacy](https://en.wikipedia.org/wiki/Trichromacy)
 
   <img align="left" width="540" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/colorcell.jpg" />
@@ -33,7 +37,6 @@ What is color? How we describe color?
   <br/>
 
 
-<br/>
 <br/>
 <br/>
 
@@ -62,6 +65,10 @@ What is color? How we describe color?
   
   See more in [color space](#42-color-space) section.
 
+<br/>
+<br/>
+<br/>
+
 ### 2. Color Vision 
 
 #### Color relativeness
@@ -76,6 +83,11 @@ Color is relative. Our eyes is simple to be cheated.
   <summary>Now we hide the black and white blocks. </summary>
   <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/relative_color.gif" />
 </details>
+
+
+<br/>
+<br/>
+<br/>
 
 ### 3. Color Model 
 
@@ -112,6 +124,11 @@ Widely used in printing.
 - Why black? 
 
 For cheapness. Mixing C, M, Y, we can get black. But in printing, we typically use black, always mixing CMY is too expensive and it introduces black in this system for a cheap printing for non colorful contents.
+
+
+<br/>
+<br/>
+<br/>
 
 ### 4. Color Space and Gamut 
 
@@ -345,6 +362,11 @@ In a scenario color changes gradiently in short range, bit depth makes a differe
                 Be careful for 16 million colors, check if it tells a real 8bit or 6bit + FRC. If no obvious information as a real 8bit, not recommend unless a extreme high performance price ratio.
 
 * Test a screen with testing patterns: https://www.eizo.be/monitor-test/
+
+
+<br/>
+<br/>
+<br/>
 
 ### References
 - [Wikipedia](https://en.wikipedia.org/)
