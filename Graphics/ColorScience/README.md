@@ -32,6 +32,11 @@ What is color? How we describe color?
   <br/>
   <br/>
 
+
+<br/>
+<br/>
+<br/>
+
 - [Metamerism(同色异谱)](https://en.wikipedia.org/wiki/Metamerism_(color))
 
   Color is a biological phenominon. Now that human has only three color filters for nature lights, it means that some different combinations of lights could result in the same received waves in human's brains. 
