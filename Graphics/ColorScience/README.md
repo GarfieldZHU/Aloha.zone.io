@@ -88,7 +88,11 @@ Red, Green, Blue.
 
 Cyan, Yellow, Magenta, **blacK**.
 
-![cmyk](https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/cmyk.PNG)
+<img width="320" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/cmyk.PNG" />
+
+<br/>
+<br/>
+<br/>
 
 The more you mix, the darker it will be. 
 
@@ -179,13 +183,12 @@ HSV cylinder
 - Colorimetric correlate: dominant wavelength
 - Artist's correlate: the chosen pigment color
 
-- Newton's color circle:
+- Newton's color circle & CSS hue ring:
 
-![Newton's color circle](https://upload.wikimedia.org/wikipedia/commons/c/c0/Newton%27s_color_circle.png)
 
-- Hue ring
+  <img align="left" width="420" src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Newton%27s_color_circle.png" />
 
-![Hue ring](https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/hue_rgb.jpg)
+  <img width="480" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/hue_rgb.jpg" />
 
 ###### b. Saturation
 
