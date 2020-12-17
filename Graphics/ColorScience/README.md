@@ -17,13 +17,16 @@ What is color? How we describe color?
 
 - [Trichromacy](https://en.wikipedia.org/wiki/Trichromacy)
 
+  <img align="left" width="540" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/colorcell.jpg" />
+
   The Human's retina contains three types of color receptors (called cone cells in vertebrates) with different absorption spectra.
   
   We say S-cone, M-cone, L-cone, and they are activated by blue, green and red.
   
-  ![wave length of color receptors](https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/colorcell.jpg)
-  
   They just like filter for lights.
+
+  <br/>
+  <br/>
 
 - [Metamerism(同色异谱)](https://en.wikipedia.org/wiki/Metamerism_(color))
 
