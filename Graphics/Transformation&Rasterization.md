@@ -188,7 +188,7 @@ TBD
 - Display resolution
   <details>
     <summary>The display resolution standard: </summary>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Vector_Video_Standards8.svg/750px-Vector_Video_Standards8.svg.png" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Vector_Video_Standards8.svg/2880px-Vector_Video_Standards8.svg.png" />
   </details>
 
 - Native resolution
