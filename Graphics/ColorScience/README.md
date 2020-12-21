@@ -115,6 +115,11 @@ The more you mix, the darker it will be.
 
 Widely used in printing.
 
+<details>
+  <summary>Printing with CMYK pigments: </summary>
+  <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/color_model_cmyk.png" />
+</details>
+
 - Subtractive color (mixing)
   
   ![CMY mixing](https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/SubtractiveColor.svg/330px-SubtractiveColor.svg.png)
@@ -193,11 +198,27 @@ For cheapness. Mixing C, M, Y, we can get black. But in printing, we typically u
 </details>
 
 
+##### RGB
+
+Define red, green and blue as orthogonal, we could have a cubic RGB space.
+
+<details>
+  <summary>RGB cube space: </summary>
+  <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/color_space_rgb.png" />
+</details>
+
+
 ##### HSL/HSV
 
-HSV cylinder
+<details>
+  <summary>HSV cylinder: </summary>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/HSV_color_solid_cylinder_saturation_gray.png/296px-HSV_color_solid_cylinder_saturation_gray.png" />
+</details>
 
-![HSV](https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/HSV_color_solid_cylinder_saturation_gray.png/296px-HSV_color_solid_cylinder_saturation_gray.png)
+<details>
+  <summary>HSV cone: </summary>
+  <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/color_space_hsv.png" />
+</details>
 
 ###### a. Hue
 
@@ -320,6 +341,11 @@ When we say RGB in web, we say a 8-bit color depth for R,G,B channels (also say 
 In a scenario color changes gradiently in short range, bit depth makes a difference obviously.
 
   <details>
+    <summary>Color banding will occur, when color depth is not deep enough with a dramatic color change: </summary>
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/color_banding.PNG" />
+  </details>
+
+  <details>
     <summary>8-bit vs. 10-bit: </summary>
     <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/color_depth.webp" />
   </details>
@@ -371,5 +397,6 @@ In a scenario color changes gradiently in short range, bit depth makes a differe
 ### References
 - [Wikipedia](https://en.wikipedia.org/)
 - [GAMES101 - Morden Computer Graphics - Lingqi Yan](https://www.bilibili.com/video/BV1X7411F744?p=1)
+- [Computational photography @ ZJU](http://www.cad.zju.edu.cn/home/gfzhang/course/computational-photography/)
 - [The basics of color and color management](https://www.youtube.com/watch?v=fq-kNtwifFk&list=PLMsVycIbp_YsQVHP0CSjNDSBuaznyGC6l&index=3) @ [ColorPlaza TV](https://www.youtube.com/channel/UCIwTmFi6wFyHee9JNQ6YbTw)
 - [Color WorkSpace: Using sRGB or AdobeRGB?](https://www.youtube.com/watch?v=UKfg8GtT75k) @ [ColorPlaza TV](https://www.youtube.com/channel/UCIwTmFi6wFyHee9JNQ6YbTw)
