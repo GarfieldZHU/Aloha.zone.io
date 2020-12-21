@@ -15,15 +15,30 @@ What is color? How we describe color?
 ![Color display spectrum](https://upload.wikimedia.org/wikipedia/commons/c/c4/Rendered_Spectrum.png)
 
 
+<br/>
+<br/>
+<br/>
+
 - [Trichromacy](https://en.wikipedia.org/wiki/Trichromacy)
+
+  <img align="left" width="540" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/colorcell.jpg" />
 
   The Human's retina contains three types of color receptors (called cone cells in vertebrates) with different absorption spectra.
   
   We say S-cone, M-cone, L-cone, and they are activated by blue, green and red.
   
-  ![wave length of color receptors](../.assets/colorcell.jpg)
-  
   They just like filter for lights.
+
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+
+
+<br/>
+<br/>
 
 - [Metamerism(同色异谱)](https://en.wikipedia.org/wiki/Metamerism_(color))
 
@@ -45,10 +60,14 @@ What is color? How we describe color?
   
   <details>
     <summary>Hue ring</summary>
-    <img src="../.assets/huering.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/huering.png" />
   </details>
   
   See more in [color space](#42-color-space) section.
+
+<br/>
+<br/>
+<br/>
 
 ### 2. Color Vision 
 
@@ -57,13 +76,18 @@ What is color? How we describe color?
 Color is relative. Our eyes is simple to be cheated.
 <details>
   <summary>Is A and B same? </summary>
-  <img src="../.assets/color_relative.png" />
+  <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/color_relative.png" />
 </details>
 
 <details>
   <summary>Now we hide the black and white blocks. </summary>
-  <img src="../.assets/relative_color.gif" />
+  <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/relative_color.gif" />
 </details>
+
+
+<br/>
+<br/>
+<br/>
 
 ### 3. Color Model 
 
@@ -81,7 +105,11 @@ Red, Green, Blue.
 
 Cyan, Yellow, Magenta, **blacK**.
 
-![cmyk](../.assets/cmyk.PNG)
+<img width="320" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/cmyk.PNG" />
+
+<br/>
+<br/>
+<br/>
 
 The more you mix, the darker it will be. 
 
@@ -96,6 +124,11 @@ Widely used in printing.
 - Why black? 
 
 For cheapness. Mixing C, M, Y, we can get black. But in printing, we typically use black, always mixing CMY is too expensive and it introduces black in this system for a cheap printing for non colorful contents.
+
+
+<br/>
+<br/>
+<br/>
 
 ### 4. Color Space and Gamut 
 
@@ -123,9 +156,9 @@ For cheapness. Mixing C, M, Y, we can get black. But in printing, we typically u
 - Tooltips and wave length
 <details>
   <summary>Tooltips of reading colorspace graph:</summary>
-  <img src="../.assets/colorspace_tooltips.PNG" />
+  <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/colorspace_tooltips.PNG" />
 
-  <img src="../.assets/colorspace_wavelength.PNG" />
+  <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/colorspace_wavelength.PNG" />
 </details>
 
 
@@ -149,7 +182,7 @@ For cheapness. Mixing C, M, Y, we can get black. But in printing, we typically u
 
 `White & gold, or blue & black ? `
 
-![White balance](../.assets/white_balance.jpg)
+![White balance](https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/white_balance.jpg)
 
 <details>
   <summary>White balance: </summary>
@@ -172,13 +205,12 @@ HSV cylinder
 - Colorimetric correlate: dominant wavelength
 - Artist's correlate: the chosen pigment color
 
-- Newton's color circle:
+- Newton's color circle & CSS hue ring:
 
-![Newton's color circle](https://upload.wikimedia.org/wikipedia/commons/c/c0/Newton%27s_color_circle.png)
 
-- Hue ring
+  <img align="left" width="420" src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Newton%27s_color_circle.png" />
 
-![Hue ring](../.assets/hue_rgb.jpg)
+  <img width="480" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/hue_rgb.jpg" />
 
 ###### b. Saturation
 
@@ -197,7 +229,7 @@ Common color pickers are based on HSV/HSL.
 
 <details>
   <summary>Color picker: </summary>
-  <img src="../.assets/color_picker.png" />
+  <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/color_picker.png" />
 </details>
 
 It is actually a section view of the cylinder. 
@@ -213,7 +245,7 @@ Typically, we see four standards in consuming monitors: sRGB, DCI-P3, AdobeRGB, 
 
 <details>
   <summary>Common gamuts: </summary>
-  <img src="../.assets/gamut.jfif" />
+  <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/gamut.jfif" />
 </details>
 
 - [sRGB](https://en.wikipedia.org/wiki/SRGB)
@@ -289,7 +321,7 @@ In a scenario color changes gradiently in short range, bit depth makes a differe
 
   <details>
     <summary>8-bit vs. 10-bit: </summary>
-    <img src="./.assets/color_depth.webp" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/color_depth.webp" />
   </details>
 
 - [FRC](https://en.wikipedia.org/wiki/Frame_rate_control)，Frame Rate Control
@@ -330,6 +362,11 @@ In a scenario color changes gradiently in short range, bit depth makes a differe
                 Be careful for 16 million colors, check if it tells a real 8bit or 6bit + FRC. If no obvious information as a real 8bit, not recommend unless a extreme high performance price ratio.
 
 * Test a screen with testing patterns: https://www.eizo.be/monitor-test/
+
+
+<br/>
+<br/>
+<br/>
 
 ### References
 - [Wikipedia](https://en.wikipedia.org/)

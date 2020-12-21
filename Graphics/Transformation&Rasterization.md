@@ -11,29 +11,36 @@
 - Scaling
   <details>
     <summary>Scale an image at x axis </summary>
-    <img src="./.assets/scale.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/scale.png" />
   
-    <p>Each point (x0, y0) becomes (x1, y1) after scaling, then we define scaling matrix S(x,y): </p>
+    <p>Each point (x0, y0) becomes (x1, y1) after scaling, we have: </p>
   
-    <img src="./.assets/scale_matrix.png" />
+    <p>"<b><i>y1 = y0</i></b>"</p>
+    <p>"<b><i>x1 = x0 * 0.5 </i></b>"</p>
+    
+    <p>then we define scaling matrix S(x,y): </p>
+  
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/scale_matrix.png" />
+    
+    <p>In this case, Sx = 0.5, Sy = 1.</p>
   </details>
 
 
 - Rotation
   <details>
     <summary>Rotate an image (origin point as center) </summary>
-    <img src="./.assets/rotation.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/rotation.png" />
     <p>Suppose the rotate matrix R(θ) has: </p>
-    <img src="./.assets/rotate_condition.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/rotate_condition.png" />
   
     <p><b>Prove: </b></p>
     <p>(1, 0) becomes (cosθ, sinθ)</p>
-    <img src="./.assets/rotate_prove_1.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/rotate_prove_1.png" />
     <p>(0, 1) becomes (-sinθ, cosθ)</p>
-    <img src="./.assets/rotate_prove_2.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/rotate_prove_2.png" />
   
     <p>Then, we have the definition of R </p>
-    <img src="./.assets/rotate_matrix.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/rotate_matrix.png" />
   </details>
 
 - Linear transformation
@@ -41,16 +48,16 @@
   Scaling and rotation are both shown as a linear form of matrix. 
   <details>
     <summary>Linear transformation</summary>
-    <img src="./.assets/linear_1.png" />
-    <img src="./.assets/linear_2.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/linear_1.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/linear_2.png" />
   </details>
 
 - Translation
 
   <details>
     <summary>Translation is just the simple movement of the object in coordinate. </summary>
-    <img src="./.assets/translate.png" />
-    <img src="./.assets/translate_matrix.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/translate.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/translate_matrix.png" />
   </details>
 
 ### Homogeneous coordinates 
@@ -59,8 +66,8 @@ A translation is different from linear transformation. Now it must be two matrix
 
 <details>
   <summary>A matrix with both linear transformation and translation.</summary>
-  <img src="./.assets/combined.png" />
-  <img src="./.assets/translate_matrix.png" />
+  <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/combined.png" />
+  <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/translate_matrix.png" />
 </details>
 
 But we want one matrix to express them together. Now we introduce a new tool: [homogeneous coordinates](https://en.wikipedia.org/wiki/Homogeneous_coordinates).
@@ -79,7 +86,7 @@ Accordingly, the transformation matrix will be 3D matrix as well:
 
 <details>
   <summary>Transform matrix in homogeneous coordinates:</summary>
-  <img src="./.assets/homogeneous.png" />
+  <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/homogeneous.png" />
 </details>
 
 The homogeneous transform grants us the characteristics below: 
@@ -87,7 +94,7 @@ The homogeneous transform grants us the characteristics below:
 1. "w" value will not be changed for vectors.
   <details>
     <summary>Translate vector :</summary>
-    <img src="./.assets/translate_vector.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/translate_vector.png" />
   </details>
 
 2. Vector + Vector = Vector
@@ -106,17 +113,29 @@ Applied homogeneous matrix, we have a transformation named "[Affine transformati
 
 <details>
   <summary>Affine transformation:</summary>
-  <img src="./.assets/affine.png" />
+  <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/affine.png" />
 </details>
 
 <details>
   <summary>With this utility, we can have expression the above three transformations in homogeneous style: </summary>
-  <img src="./.assets/transform_in_affine.png" />
+  <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/transform_in_affine.png" />
 
   <p>Of cource, the three transformations can be combined in one. </p>
 </details>
 
+### Transformation chaining
 
+Matrix multiply is left calculation, like `Matrix_1 x vector`.
+
+Calculation order is right to left:
+
+> M4 x M3 x M2 x M1 x vector
+
+From M1, M2, M3, M4... Or calulate with associative law.
+
+> (M4 x M3 x M2 x M1) x vector
+
+> -> M5 x vector
 
 ### In practise
 
@@ -128,8 +147,17 @@ So the transformation matrix in 2D drawing functions will typically be like:
 
 [A, B, C, D, Tx, Ty]
 
-
-
+- PDF transformation:
+  ```java
+      Rect.transform(new Matrix(A, B, C, D, Tx, Ty))
+  ```
+- [SVG transformation](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform#Matrix):
+  ```xml
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <rect x="10" y="10" width="30" height="20" fill="red"
+            transform="matrix(3 1 -1 3 30 40)" />
+    </svg>
+  ```
 
 ### For 3D
 
@@ -145,6 +173,8 @@ Affine transformation in 3D is just similar with 2D. Just make the transformatio
 
 TBD
 
+---
+
 ## Rasterization
 
 ### Resolution
@@ -158,7 +188,7 @@ TBD
 - Display resolution
   <details>
     <summary>The display resolution standard: </summary>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Vector_Video_Standards8.svg/750px-Vector_Video_Standards8.svg.png" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Vector_Video_Standards8.svg/2880px-Vector_Video_Standards8.svg.png" />
   </details>
 
 - Native resolution
@@ -189,12 +219,89 @@ TBD
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Pixel_geometry_01_Pengo.jpg/330px-Pixel_geometry_01_Pengo.jpg" />
 
     <p>P30 Pro</p>
-    <img src="./.assets/subpixels.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/subpixels.png" />
 
     <p>Google Nexus One</p>
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Nexus_one_screen_microscope.jpg/330px-Nexus_one_screen_microscope.jpg" />
   </details>
 
+
+### Raster (Bitmap) vs. Vector
+
+<details>
+  <summary>Zooming raster vs. vector</summary>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/VectorBitmapExample.svg/220px-VectorBitmapExample.svg.png" />
+</details>
+
+
+#### Raster (bitmap)
+
+<details>
+  <summary>Bitmap structure example: </summary>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Rgb-raster-image.svg/220px-Rgb-raster-image.svg.png" />
+</details>
+
+- [Raster](https://en.wikipedia.org/wiki/Raster_graphics) graphics, or bitmap image, is the most common repesentation of graphics which is a dot matrix data structure. 
+- Typically data structure: fixed size 2D matrix
+- Display algorithm: scaling
+- Typical formats: Jpeg, Png, WebP, Bmp, PPM, etc.
+- Usage: photos, images, canvas.
+
+  <details>
+    <summary>Bitmap sample: </summary>
+    <a href="https://raw.githubusercontent.com/GarfieldZHU/ray-tracer-rs/master/image_sample/final_scene_high_resolution.ppm">Image in raw text PPM format: </a>
+  </details>
+  
+  <details>
+    <summary>Equivalent PNG: </summary>
+    <img src="https://github.com/GarfieldZHU/ray-tracer-rs/blob/master/image_sample/final_scene_high_resolution.png?raw=true" />
+  </details>
+
+
+#### Vector
+
+- [Vector](https://en.wikipedia.org/wiki/Vector_graphics) graphics are defined in terms of of points on a Cartesian plane. 
+- Typical data structure: Drawable objects. Point, Line, Rect, Circle, Curve, etc. 
+- Display algorithm: transformation, rasterization
+- Typical formats: SVG, EPS, PDF, etc.
+- Usage: geometry, printing, logos, icons, illustrations.
+
+  <details>
+    <summary>SVG samples: </summary>
+    <a href="https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/">W3C SVG file samples: </a>
+  </details>
+
+
+
+#### Comparison
+
+When to use?
+
+- For high resolution displays, vector graphics is more efficient. Raster graphics could be large when resolution is high. 
+- For large amount of objects, raster graphics is more efficient. Vector graphics need store each object as a model but raster only stores the overall canvas. 
+
+
+##### SVG vs. canvas
+
+[SVG](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics), AKA Scalable Vector Graphics.
+
+- It is XML-based vector image format by W3C since 1999.
+- Based on XML, which is also on DOM and could be manipulated. 
+
+
+[Canvas](https://en.wikipedia.org/wiki/Canvas_element) element.
+
+- It is part of HTML5 standard and allows for dynamic, scriptable rendering of 2D shapes and bitmap images. (Initialized by Apple in WebKit since 2004)
+- Based on script. Browser does not concentrate on it once finished draw.
+- Require re-paint after manipulate elements.
+
+<details>
+  <summary>Performance comparison: </summary>
+  <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/svg_vs_canvas.png" />
+</details>
+
+
+--- 
 
 ### Basic rasterization
 
@@ -213,31 +320,31 @@ Then we'll have a painted screen window, which is similar to rasterization.
 - Step 1:
   <details>
     <summary>Put a geometric figure (like triangle) in the screen space. </summary>
-    <img src="./.assets/rasterize_01.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/rasterize_01.png" />
   </details>
 
 - Step 2:
   <details>
     <summary>Sampling: consider each pixel (center of pixel space) is inside or outside the triangle. </summary>
-    <img src="./.assets/rasterize_02.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/rasterize_02.png" />
   </details>
 
 - Step 3:
   <details>
     <summary>Use bounding box to reduce sampling area. </summary>
-    <img src="./.assets/rasterize_03.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/rasterize_03.png" />
   </details>
 
 - Step 4:
   <details>
     <summary>Get the pixels inside the triangle. </summary>
-    <img src="./.assets/rasterize_04.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/rasterize_04.png" />
   </details>
 
 - Step 5:
   <details>
     <summary>Display the color in those pixels to show the triangle. </summary>
-    <img src="./.assets/rasterize_05.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/rasterize_05.png" />
   </details>
 
 - Now we get a rasterized figure. But it is really jaggy. It could be improved by a higher resolutions. (See `MSPaint`)
@@ -249,22 +356,22 @@ Then we'll have a painted screen window, which is similar to rasterization.
 - Bad "Sampling":
   <details>
     <summary>Antialising is just a sampling, a low frequency sampling on sharp images will get jaggy or [Moiré pattern](https://en.wikipedia.org/wiki/Moir%C3%A9_pattern) </summary>
-    <img src="./.assets/AA_08.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/AA_08.png" />
   </details>
 
 - How sampling frequency losses the original signal:
   <details>
     <summary>If your resolution is not that high, you should see a 'blurred' image. </summary>
-    <img src="./.assets/AA_01.png" />
-    <img src="./.assets/AA_02.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/AA_01.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/AA_02.png" />
   </details>
 
 
 - Blurr image before sampling:
   <details>
     <summary>If your resolution is not that high, you should see a 'blurred' image. </summary>
-    <img src="./.assets/AA_00_a.png" />
-    <img src="./.assets/AA_00_b.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/AA_00_a.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/AA_00_b.png" />
   </details>
 
 #### Antialisaing
@@ -272,26 +379,26 @@ Then we'll have a painted screen window, which is similar to rasterization.
 - Use [low-pass filter](https://en.wikipedia.org/wiki/Low-pass_filter) to blur the filter the high frequency signals:
   <details>
     <summary>Use convolution (or average color in the unit). </summary>
-    <img src="./.assets/AA_03.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/AA_03.png" />
   </details>
 
 - SSAA/MSAA (Super/Multi-Sampling Anti-Aliasing):
   <details>
     <summary>Use a higher sampling ratio in single pixel.</summary>
-    <img src="./.assets/AA_04.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/AA_04.png" />
   </details>
 
   <details>
     <summary>Compare the different sampling effect. </summary>
     <p>Use single sampling in pixel: </p>
-    <img src="./.assets/AA_05.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/AA_05.png" />
     <p>Use multi-sampling in pixel: </p>
-    <img src="./.assets/AA_06.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/AA_06.png" />
   </details>
 
   <details>
     <summary>Convolution/Average to low resolution.</summary>
-    <img src="./.assets/AA_07.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/AA_07.png" />
   </details>
 
 ### Font rasterization
@@ -300,7 +407,7 @@ Refer to [Font rasterization on Wiki](https://en.wikipedia.org/wiki/Font_rasteri
 
 Fonts are now vectors, then they could be scaled from extreme small to very large. Rasterization for fonts are map a vector path to a pixel matrix.
 
-![rasterization](./.assets/font_rasterize.webp)
+![rasterization](https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/font_rasterize.webp)
 
 Raw rasterized font without antialiasing:
 
@@ -343,7 +450,7 @@ Raw rasterized font without antialiasing:
   
     <details>
       <summary>Sample</summary>
-      <img src="./.assets/fonthinting.png" />
+      <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/fonthinting.png" />
     </details>
 
   
@@ -367,58 +474,4 @@ Nowadays, the most popular font rasterization library which supports both Window
   <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Subpixel_e.png" />
   </details>
 
----
-
-### Raster (Bitmap) vs. Vector
-
-<details>
-  <summary>Zooming raster vs. vector</summary>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/VectorBitmapExample.svg/220px-VectorBitmapExample.svg.png" />
-</details>
-
-
-#### Raster (bitmap)
-
-<details>
-  <summary>Bitmap structure example: </summary>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Rgb-raster-image.svg/220px-Rgb-raster-image.svg.png" />
-</details>
-
-- [Raster](https://en.wikipedia.org/wiki/Raster_graphics) graphics, or bitmap image, is the most common repesentation of graphics which is a dot matrix data structure. 
-- Typical formats: Jpeg, Png, WebP, Bmp, etc.
-- Usage: photos, images, canvas.
-
-
-#### Vector
-
-- [Vector](https://en.wikipedia.org/wiki/Vector_graphics) graphics are defined in terms of of points on a Cartesian plane. 
-- Typical formats: SVG, EPS, PDF, etc.
-- Usage: geometry, printing, logos, icons, illustrations.
-
-
-#### Comparison
-
-When to use?
-
-- For high resolution displays, vector graphics is more efficient. Raster graphics could be large when resolution is high. 
-- For large amount of objects, raster graphics is more efficient. Vector graphics need store each object as a model but raster only stores the overall canvas. 
-
-
-##### SVG vs. canvas
-
-[SVG](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics), AKA Scalable Vector Graphics.
-
-- It is XML-based vector image format by W3C since 1999.
-- Based on XML, which is also on DOM and could be manipulated. 
-
-[Canvas](https://en.wikipedia.org/wiki/Canvas_element) element.
-
-- It is part of HTML5 standard and allows for dynamic, scriptable rendering of 2D shapes and bitmap images. (Initialized by Apple in WebKit since 2004)
-- Based on script. Browser does not concentrate on it once finished draw.
-- Require re-paint after manipulate elements.
-
-<details>
-  <summary>Performance comparison: </summary>
-  <img src="../.assets/svg_vs_canvas.png" />
-</details>
 
