@@ -11,7 +11,7 @@
 - Scaling
   <details>
     <summary>Scale an image at x axis </summary>
-    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/scale.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/scale.png?raw=true" />
   
     <p>Each point (x0, y0) becomes (x1, y1) after scaling, we have: </p>
   
@@ -20,7 +20,7 @@
     
     <p>then we define scaling matrix S(x,y): </p>
   
-    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/scale_matrix.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/scale_matrix.png?raw=true" />
     
     <p>In this case, Sx = 0.5, Sy = 1.</p>
   </details>
@@ -29,18 +29,18 @@
 - Rotation
   <details>
     <summary>Rotate an image (origin point as center) </summary>
-    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/rotation.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/rotation.png?raw=true" />
     <p>Suppose the rotate matrix R(θ) has: </p>
-    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/rotate_condition.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/rotate_condition.png?raw=true" />
   
     <p><b>Prove: </b></p>
     <p>(1, 0) becomes (cosθ, sinθ)</p>
-    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/rotate_prove_1.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/rotate_prove_1.png?raw=true" />
     <p>(0, 1) becomes (-sinθ, cosθ)</p>
-    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/rotate_prove_2.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/rotate_prove_2.png?raw=true" />
   
     <p>Then, we have the definition of R </p>
-    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/rotate_matrix.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/rotate_matrix.png?raw=true" />
   </details>
 
 - Linear transformation
@@ -48,16 +48,16 @@
   Scaling and rotation are both shown as a linear form of matrix. 
   <details>
     <summary>Linear transformation</summary>
-    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/linear_1.png" />
-    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/linear_2.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/linear_1.png?raw=true" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/linear_2.png?raw=true" />
   </details>
 
 - Translation
 
   <details>
     <summary>Translation is just the simple movement of the object in coordinate. </summary>
-    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/translate.png" />
-    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/translate_matrix.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/translate.png?raw=true" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/translate_matrix.png?raw=true" />
   </details>
 
 ### Homogeneous coordinates 
@@ -66,8 +66,8 @@ A translation is different from linear transformation. Now it must be two matrix
 
 <details>
   <summary>A matrix with both linear transformation and translation.</summary>
-  <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/combined.png" />
-  <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/translate_matrix.png" />
+  <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/combined.png?raw=true" />
+  <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/translate_matrix.png?raw=true" />
 </details>
 
 But we want one matrix to express them together. Now we introduce a new tool: [homogeneous coordinates](https://en.wikipedia.org/wiki/Homogeneous_coordinates).
@@ -86,7 +86,7 @@ Accordingly, the transformation matrix will be 3D matrix as well:
 
 <details>
   <summary>Transform matrix in homogeneous coordinates:</summary>
-  <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/homogeneous.png" />
+  <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/homogeneous.png?raw=true" />
 </details>
 
 The homogeneous transform grants us the characteristics below: 
@@ -94,7 +94,7 @@ The homogeneous transform grants us the characteristics below:
 1. "w" value will not be changed for vectors.
   <details>
     <summary>Translate vector :</summary>
-    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/translate_vector.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/translate_vector.png?raw=true" />
   </details>
 
 2. Vector + Vector = Vector
@@ -113,12 +113,12 @@ Applied homogeneous matrix, we have a transformation named "[Affine transformati
 
 <details>
   <summary>Affine transformation:</summary>
-  <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/affine.png" />
+  <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/affine.png?raw=true" />
 </details>
 
 <details>
   <summary>With this utility, we can have expression the above three transformations in homogeneous style: </summary>
-  <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/transform_in_affine.png" />
+  <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/transform_in_affine.png?raw=true" />
 
   <p>Of cource, the three transformations can be combined in one. </p>
 </details>
@@ -219,7 +219,7 @@ TBD
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Pixel_geometry_01_Pengo.jpg/330px-Pixel_geometry_01_Pengo.jpg" />
 
     <p>P30 Pro</p>
-    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/subpixels.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/subpixels.png?raw=true" />
 
     <p>Google Nexus One</p>
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Nexus_one_screen_microscope.jpg/330px-Nexus_one_screen_microscope.jpg" />
@@ -297,7 +297,7 @@ When to use?
 
 <details>
   <summary>Performance comparison: </summary>
-  <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/svg_vs_canvas.png" />
+  <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/svg_vs_canvas.png?raw=true" />
 </details>
 
 
@@ -320,31 +320,31 @@ Then we'll have a painted screen window, which is similar to rasterization.
 - Step 1:
   <details>
     <summary>Put a geometric figure (like triangle) in the screen space. </summary>
-    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/rasterize_01.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/rasterize_01.png?raw=true" />
   </details>
 
 - Step 2:
   <details>
     <summary>Sampling: consider each pixel (center of pixel space) is inside or outside the triangle. </summary>
-    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/rasterize_02.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/rasterize_02.png?raw=true" />
   </details>
 
 - Step 3:
   <details>
     <summary>Use bounding box to reduce sampling area. </summary>
-    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/rasterize_03.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/rasterize_03.png?raw=true" />
   </details>
 
 - Step 4:
   <details>
     <summary>Get the pixels inside the triangle. </summary>
-    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/rasterize_04.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/rasterize_04.png?raw=true" />
   </details>
 
 - Step 5:
   <details>
     <summary>Display the color in those pixels to show the triangle. </summary>
-    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/rasterize_05.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/rasterize_05.png?raw=true" />
   </details>
 
 - Now we get a rasterized figure. But it is really jaggy. It could be improved by a higher resolutions. (See `MSPaint`)
@@ -356,22 +356,22 @@ Then we'll have a painted screen window, which is similar to rasterization.
 - Bad "Sampling":
   <details>
     <summary>Antialising is just a sampling, a low frequency sampling on sharp images will get jaggy or [Moiré pattern](https://en.wikipedia.org/wiki/Moir%C3%A9_pattern) </summary>
-    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/AA_08.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/AA_08.png?raw=true" />
   </details>
 
 - How sampling frequency losses the original signal:
   <details>
     <summary>If your resolution is not that high, you should see a 'blurred' image. </summary>
-    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/AA_01.png" />
-    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/AA_02.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/AA_01.png?raw=true" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/AA_02.png?raw=true" />
   </details>
 
 
 - Blurr image before sampling:
   <details>
     <summary>If your resolution is not that high, you should see a 'blurred' image. </summary>
-    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/AA_00_a.png" />
-    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/AA_00_b.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/AA_00_a.png?raw=true" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/AA_00_b.png?raw=true" />
   </details>
 
 #### Antialisaing
@@ -379,26 +379,26 @@ Then we'll have a painted screen window, which is similar to rasterization.
 - Use [low-pass filter](https://en.wikipedia.org/wiki/Low-pass_filter) to blur the filter the high frequency signals:
   <details>
     <summary>Use convolution (or average color in the unit). </summary>
-    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/AA_03.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/AA_03.png?raw=true" />
   </details>
 
 - SSAA/MSAA (Super/Multi-Sampling Anti-Aliasing):
   <details>
     <summary>Use a higher sampling ratio in single pixel.</summary>
-    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/AA_04.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/AA_04.png?raw=true" />
   </details>
 
   <details>
     <summary>Compare the different sampling effect. </summary>
     <p>Use single sampling in pixel: </p>
-    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/AA_05.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/AA_05.png?raw=true" />
     <p>Use multi-sampling in pixel: </p>
-    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/AA_06.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/AA_06.png?raw=true" />
   </details>
 
   <details>
     <summary>Convolution/Average to low resolution.</summary>
-    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/AA_07.png" />
+    <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/AA_07.png?raw=true" />
   </details>
 
 ### Font rasterization
@@ -407,7 +407,7 @@ Refer to [Font rasterization on Wiki](https://en.wikipedia.org/wiki/Font_rasteri
 
 Fonts are now vectors, then they could be scaled from extreme small to very large. Rasterization for fonts are map a vector path to a pixel matrix.
 
-![rasterization](https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/font_rasterize.webp)
+![rasterization](https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/font_rasterize.webp?raw=true)
 
 Raw rasterized font without antialiasing:
 
@@ -450,7 +450,7 @@ Raw rasterized font without antialiasing:
   
     <details>
       <summary>Sample</summary>
-      <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/fonthinting.png" />
+      <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/fonthinting.png?raw=true" />
     </details>
 
   
