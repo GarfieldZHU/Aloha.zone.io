@@ -21,7 +21,7 @@ What is color? How we describe color?
 
 - [Trichromacy](https://en.wikipedia.org/wiki/Trichromacy)
 
-  <img align="left" width="540" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/colorcell.jpg?raw=true" />
+  <img align="left" width="450" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/colorcell.jpg?raw=true" />
 
   The Human's retina contains three types of color receptors (called cone cells in vertebrates) with different absorption spectra.
   
