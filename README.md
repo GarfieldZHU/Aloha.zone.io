@@ -32,7 +32,7 @@
     * [Wasm - Game of life](./wasm/rust-wasm/wasm-game-of-life)
 
 ## Graphics
-* [Color Science](./Graphics/ColorScience)
+* [Color Science](./Graphics/ColorScience/README.md)
 * [Trasnformation & Rasteriazation](./Graphics/Transformation&Rasterization.md)
 * [Ray tracing](./Graphics/RayTracing)
 * [Vulkan](./Graphics/Vulkan)
