@@ -32,8 +32,8 @@
     * [Wasm - Game of life](./wasm/rust-wasm/wasm-game-of-life)
 
 ## Graphics
-* [Color Science](./Graphics/ColorScience/README.md)
-* [Trasnformation & Rasteriazation](./Graphics/Transformation&Rasterization.md)
+* [Color Science](./Graphics/ColorScience)
+* [Trasnformation & Rasteriazation](./Graphics/TransformationRasterization)
 * [Ray tracing](./Graphics/RayTracing)
 * [Vulkan](./Graphics/Vulkan)
 * [Course and practise materials](./Graphics)
