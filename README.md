@@ -36,6 +36,7 @@
 * [Trasnformation & Rasteriazation](./Graphics/TransformationRasterization)
 * [Ray tracing](./Graphics/RayTracing)
 * [Vulkan](./Graphics/Vulkan)
+* [Digital Photography](./Graphics/Digital_Photography)
 * [Course and practise materials](./Graphics)
 * [Notes](./Graphics/Notes.md)
 
