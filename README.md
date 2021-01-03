@@ -28,6 +28,8 @@
 * [Access file system](./TypeScript/FileSystem.md)
 
 ## Web-assembly
+* [WASM](./wasm)
+    * [vDOM with wasm](https://github.com/GarfieldZHU/WA-vDom)
 * [Rust wasm](./wasm/rust-wasm)
     * [Wasm - Game of life](./wasm/rust-wasm/wasm-game-of-life)
 
