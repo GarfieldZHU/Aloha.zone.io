@@ -1,6 +1,6 @@
-# Web assembly
+# WebAssembly
 
-Learning notes and practises of web assembly.
+Learning notes and practises of WebAssembly.
 
 ---
 
