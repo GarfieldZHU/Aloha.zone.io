@@ -46,6 +46,11 @@
 * [MIT 6.828 / 6.S081 materials](./OS/MIT_6_828)
 * [Implement toy OS in Rust](https://github.com/GarfieldZHU/ROS)
 
+## Distributed System 
+* [Materials](./DistributedSystem)
+* [MIT 6.824](https://pdos.csail.mit.edu/6.824/index.html)
+* [Visualized Raft](http://thesecretlivesofdata.com/raft/)
+
 ## HTML & JavaScript
 * [More about HTML](./Browser/HTML)
 * [More about JavaScript](./Browser/JavaScript)
