@@ -4,7 +4,8 @@
 
 - [Understandable Distributed Consensus (A visualized Raft algorithm)](http://thesecretlivesofdata.com/raft/)
 - Materials for raft: [The Raft Consensus Algorithm ](https://raft.github.io/)
-- [LogCabin](https://github.com/logcabin/logcabin): A distributed storage system built on Raft 
+- [LogCabin](https://github.com/logcabin/logcabin): A distributed storage system built on Raft
+- [etcd](https://github.com/etcd-io/etcd): Distributed reliable key-value store for the most critical data of a distributed system
 - [Raft in Rust](https://tikv.org/blog/implement-raft-in-rust/) @[TiKV](https://github.com/tikv/tikv)
 
 
