@@ -49,6 +49,7 @@
 ## Distributed System 
 * [Materials](./DistributedSystem)
 * [MIT 6.824](https://pdos.csail.mit.edu/6.824/index.html)
+- [Course - Talent Plan @ PingCAP](https://university.pingcap.com/talent-plan/)
 * [Visualized Raft](http://thesecretlivesofdata.com/raft/)
 * [Raft-Rust](https://github.com/GarfieldZHU/raft-rust), my simple implementation
 
