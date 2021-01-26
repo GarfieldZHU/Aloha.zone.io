@@ -17,6 +17,7 @@
 * [Rust Sokoban game](./Rust/Sokoban)
 * [Write OS in Rust](./Rust/OS)
 * [Mini Redis with Tokio](./Rust/Tokio)
+* [Learning notes in practice](./Rust/Notes.md)
 
 ## TypeScript
 * [TypeScript learning material](./TypeScript)
