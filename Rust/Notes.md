@@ -106,8 +106,8 @@ Think different from **class** concept in C++ or Java, data and method are separ
   
    That's how polymorphism works in Rust. Use `t: dyn Trait` as the type of signature, the `t.someMethod()` will be dynamically decided using which implemention of Trait.
      
-     Example:
-      ```rust
+   Example:
+   ```rust
       struct Circle {
         radius: f64
       }
@@ -149,8 +149,7 @@ Think different from **class** concept in C++ or Java, data and method are separ
         print_area_generic(&circle); // 12.5664
         print_area_generic(&rectangle); // 15
       }
-     ```
-
+   ```
 
 
    
