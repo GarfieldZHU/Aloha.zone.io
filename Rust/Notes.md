@@ -2,11 +2,11 @@
 
 Some interesting facts and knowledge points in learning Rust.
 
-### Struct and Trait
+## Struct and Trait
 
 Think different from **class** concept in C++ or Java, data and method are separated in Rust. 
 
-##### 1. No inheritance, but composition for struct. 
+#### 1. No inheritance, but composition for struct. 
    
    For data in struct, Rust do not have inheritance, but recommend composition. 
    
@@ -40,7 +40,7 @@ Think different from **class** concept in C++ or Java, data and method are separ
    * See [the answer on StackOverflow](https://stackoverflow.com/questions/32552593/is-it-possible-for-one-struct-to-extend-an-existing-struct-keeping-all-the-fiel).
  
  
-##### 2. Trait and `dyn`
+#### 2. Trait and `dyn`
    
    Trait is a group of shared behavior, which looks like the concept `interface`. 
    
@@ -67,7 +67,7 @@ Think different from **class** concept in C++ or Java, data and method are separ
   * See [the answer for *dyn*](https://stackoverflow.com/questions/50650070/what-does-dyn-mean-in-a-type) on StackOverflow.
 
 
-##### 3. Trait Bounds and Supertrait
+#### 3. Trait Bounds and Supertrait
    
 - [Bounds](https://doc.rust-lang.org/rust-by-example/generics/bounds.html)
 
@@ -94,7 +94,7 @@ Think different from **class** concept in C++ or Java, data and method are separ
   It's easy to understand since the supertraits just like the syntax of "extends" of "interface" (not class) in Java. It means: 1) implement the subtrait (child interface) must implement all methods in supertrait (parent interface); 2) one trait can have multiple supertrait.
 
 
-##### 4. Polymorphism
+#### 4. Polymorphism
   
   Polymorphism is real an important mechansim to make abstraction and reduce redundant code, no matter in OOP or FP. Though we have no inheritance for struct, but we can do polymorphism. 
   
@@ -152,4 +152,27 @@ Think different from **class** concept in C++ or Java, data and method are separ
    ```
 
 
+
+#### 5. Delegate boxed/wrapped struct to trait object
+
+   * See [this answer](https://stackoverflow.com/questions/33041736/trait-implementation-for-both-a-trait-object-and-for-direct-implementors-of-the) on StackOverflow.
+
+   It is widely used for convenience, we may have some structs encapulate the other types with trait implemented. And we want the implemented trait could be used on the wrapper struct. 
    
+   The most common case is like `Box<T>`, `Rc<T>`, `Arc<T>`.
+   
+   A widely used practise is implement trait for wrapper structs to delegate the implementation, like this:
+
+   ```rust
+   impl<S: Solid + ?Sized> Solid for Box<S> {
+       fn intersect(&self, ray: f32) -> f32 {
+           (**self).intersect(ray)
+           // Some people prefer this less-ambiguous form
+           // S::intersect(self, ray)
+       }
+   }
+   ```
+   
+   Tips: bound `?Sized` is necessary to make it could be optionally sized to support "S" as could be a trait type.
+   
+ 
