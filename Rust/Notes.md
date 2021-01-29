@@ -62,7 +62,25 @@ Think different from **class** concept in C++ or Java, data and method are separ
      To resolve this, `dyn` is introduced since 1.27. Read [RFC 2113](https://github.com/rust-lang/rfcs/blob/master/text/2113-dyn-trait-syntax.md) for more details.
      <br/>
      It makes the real type of the trait object (used as type) to be decided at runtime via [dynamic dispatch](https://en.wikipedia.org/wiki/Dynamic_dispatch)
-  
+     
+     ```rust
+      trait Printable {
+          fn stringify(&self) -> String;
+      }
+
+      impl Printable for i32 {
+          fn stringify(&self) -> String { self.to_string() }
+      }
+
+      fn print(a: Box<dyn Printable>) {
+          println!("{}", a.stringify());
+      }
+
+      fn main() {
+          print(Box::new(10) as Box<dyn Printable>);
+      }     
+     
+     ```
   
   * See [the answer for *dyn*](https://stackoverflow.com/questions/50650070/what-does-dyn-mean-in-a-type) on StackOverflow.
 
