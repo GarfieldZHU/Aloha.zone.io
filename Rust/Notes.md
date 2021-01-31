@@ -111,6 +111,27 @@ Think different from **class** concept in C++ or Java, data and method are separ
   
   It's easy to understand since the supertraits just like the syntax of "extends" of "interface" (not class) in Java. It means: 1) implement the subtrait (child interface) must implement all methods in supertrait (parent interface); 2) one trait can have multiple supertrait.
 
+  ```rust
+   trait Person {
+       fn name(&self) -> String;
+   }
+
+   // Person is a supertrait of Student.
+   // Implementing Student requires you to also impl Person.
+   trait Student: Person {
+       fn university(&self) -> String;
+   }
+
+   trait Programmer {
+       fn fav_language(&self) -> String;
+   }
+
+   // CompSciStudent (computer science student) is a subtrait of both Programmer 
+   // and Student. Implementing CompSciStudent requires you to impl both supertraits.
+   trait CompSciStudent: Programmer + Student {
+       fn git_username(&self) -> String;
+   }
+  ```
 
 #### 4. Polymorphism
   
