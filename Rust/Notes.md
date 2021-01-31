@@ -131,6 +131,17 @@ Think different from **class** concept in C++ or Java, data and method are separ
    trait CompSciStudent: Programmer + Student {
        fn git_username(&self) -> String;
    }
+   
+   /** Showcase of using an object with multiple supertraits */
+   fn comp_sci_student_greeting(student: &dyn CompSciStudent) -> String {
+    format!(
+        "My name is {} and I attend {}. My favorite language is {}. My Git username is {}",
+        student.name(),
+        student.university(),
+        student.fav_language(),
+        student.git_username()
+    )
+  }
   ```
 
 #### 4. Polymorphism
