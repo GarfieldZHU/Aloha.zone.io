@@ -2,6 +2,8 @@
 
 ### [Raft](https://en.wikipedia.org/wiki/Raft_(algorithm))
 
+- [Raft algorithm paper](https://raft.github.io/raft.pdf)
+
 - [Understandable Distributed Consensus (A visualized Raft algorithm)](http://thesecretlivesofdata.com/raft/)
 - Materials for raft: [The Raft Consensus Algorithm ](https://raft.github.io/)
 - [LogCabin](https://github.com/logcabin/logcabin): A distributed storage system built on Raft
