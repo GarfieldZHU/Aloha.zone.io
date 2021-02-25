@@ -13,6 +13,7 @@
 ## Rust 
 * [Rust learning material](./Rust)
 * [Rustling practise answer](./Rust/rustling-answers)
+* [Rust track on exercism.io](https://github.com/GarfieldZHU/rust-track)
 * [Too Many linked lists in Rust](./Rust/Linked_Lists)
 * [Rust Sokoban game](./Rust/Sokoban)
 * [Write OS in Rust](./Rust/OS)
