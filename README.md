@@ -76,3 +76,5 @@
 [![](https://github.com/GarfieldZHU/my-vulkan/workflows/Vulkan-project/badge.svg)](https://github.com/GarfieldZHU/my-vulkan/actions?query=workflow%3AVulkan-project)
 
 [![](https://github.com/GarfieldZHU/Tiny-Redis/workflows/tiny-redis/badge.svg)](https://github.com/GarfieldZHU/Tiny-Redis/actions?query=workflow%3tiny-redis)
+
+[![](https://github.com/GarfieldZHU/rust-track/workflows/rust-track/badge.svg)](https://github.com/GarfieldZHU/rust-track/actions?query=workflow%3rust-track)
