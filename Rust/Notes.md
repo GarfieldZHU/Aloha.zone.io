@@ -1,5 +1,19 @@
 # Rust notes
 
+<!-- TOC -->
+
+- [Rust notes](#rust-notes)
+  - [Struct and Trait](#struct-and-trait)
+      - [1. No inheritance, but composition for struct.](#1-no-inheritance-but-composition-for-struct)
+      - [2. Trait and `dyn`](#2-trait-and-dyn)
+      - [3. Trait Bounds and Supertrait](#3-trait-bounds-and-supertrait)
+      - [4. Polymorphism](#4-polymorphism)
+      - [5. Delegate boxed/wrapped struct to trait object](#5-delegate-boxedwrapped-struct-to-trait-object)
+  - [Formatter](#formatter)
+      - [Fill / Alignment](#fill--alignment)
+
+<!-- /TOC -->
+
 Some interesting facts and knowledge points in learning Rust.
 
 ## Struct and Trait
@@ -227,14 +241,14 @@ Think different from **class** concept in C++ or Java, data and method are separ
    
  
  
- ## Formatter
+## Formatter
  
  [Formatter](https://doc.rust-lang.org/std/fmt/struct.Formatter.html) trait makes it really simply to construct specific strings. 
  
  It is really useful for building strings or in a CLI tools.  
  
  
- #### Fill / Alignment
+#### Fill / Alignment
  
  We need to align (to left or right) the strings with indents or some specific characters to an assigned length, or fill some characters to strings.
  
@@ -294,12 +308,12 @@ Think different from **class** concept in C++ or Java, data and method are separ
 
  ```
  
+
  
- 
- #### Reference
+#### Reference
  
  - [Formatter](https://doc.rust-lang.org/std/fmt/struct.Formatter.html)
  - [StackOverflow - *What is the easiest way to pad a string with 0 to the left?*](https://stackoverflow.com/questions/50458144/what-is-the-easiest-way-to-pad-a-string-with-0-to-the-left)
  
  
- 
+
