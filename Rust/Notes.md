@@ -226,3 +226,80 @@ Think different from **class** concept in C++ or Java, data and method are separ
    Tips: bound `?Sized` is necessary to make it could be optionally sized to support "S" as could be a trait type.
    
  
+ 
+ ## Formatter
+ 
+ [Formatter](https://doc.rust-lang.org/std/fmt/struct.Formatter.html) trait makes it really simply to construct specific strings. 
+ 
+ It is really useful for building strings or in a CLI tools.  
+ 
+ 
+ #### Fill / Alignment
+ 
+ We need to align (to left or right) the strings with indents or some specific characters to an assigned length, or fill some characters to strings.
+ 
+ Using formatter with fill/alignment syntax is really helpful. It typically looks like `{:0>8}`
+ 
+ - Format syntax for fill/alignment: 
+ ```rust
+   assert_eq!("00000110", format!("{:0>8}", "110"));
+   //                                |||
+   //                                ||+-- width
+   //                                |+--- align
+   //                                +---- fill
+ ```
+ 
+ The align bit supports the align mode to left, center and right.
+ ```
+   < - the argument is left-aligned in width columns
+   ^ - the argument is center-aligned in width columns
+   > - the argument is right-aligned in width columns
+```
+
+ 
+ Example scenario:
+ 
+ We are implementing `Display` trait for a date time struct, like:
+ ```rust
+     struct MyDateTime {
+       year: i32,
+       month: i32,
+       day: i32,
+       hour: i32,
+       minute: i32,
+       seconds: i32,
+     }
+ ```
+ The data is in `i32` structure. To display them in a standard format like "dd/MM/yyyy - hh:mm:ss", we need to fill some "0"s for the single-bit data. e.g. "__01/02/2000 - 03:04:05__".
+ 
+ So we can format the data: 
+    1. align to right; 
+    2. make length to be 2 for day/month/hour/minute/second, and 4 for year; 
+    3. fill the bits with "0"s to satify the length;
+
+ Now we have such a formatter for display:
+  ```rust
+      impl fmt::Display for MyDateTime {
+        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+          write!(f, "{:0>2}/{:0>2}/{:0>4} - {:0>2}:{:0>2}:{:0>2}", 
+            self.day, 
+            self.month, 
+            self.year, 
+            self.hour, 
+            self.minute, 
+            self.second,
+          )
+        }
+      }
+
+ ```
+ 
+ 
+ 
+ #### Reference
+ 
+ - [Formatter](https://doc.rust-lang.org/std/fmt/struct.Formatter.html)
+ - [StackOverflow - *What is the easiest way to pad a string with 0 to the left?*](https://stackoverflow.com/questions/50458144/what-is-the-easiest-way-to-pad-a-string-with-0-to-the-left)
+ 
+ 
+ 
