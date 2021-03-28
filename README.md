@@ -41,6 +41,7 @@
 * [Ray tracing](./Graphics/RayTracing)
 * [Vulkan](./Graphics/Vulkan)
 * [Digital Photography](./Graphics/Digital_Photography)
+* [JPEG decoder](https://github.com/MROS/jpeg_tutorial)
 * [Course and practise materials](./Graphics)
 * [Notes](./Graphics/Notes.md)
 
