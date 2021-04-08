@@ -18,3 +18,28 @@ const bar = (a: boolean, b: number, c: number) => false
 type t1 = Param<typeof foo>   // [number, string]
 type t2 = Param<typeof bar>   // [boolean, number, number]
 ```
+
+
+### Coviarance & contravariance 
+
+#### Samples
+
+- Sub union as React props in TypeScript
+  Given a React component requires a prop with a union type: A | B | C, the user uses the component provides an instance with type of the narrower union type: A | C. 
+  Is this safe?
+  
+  ```typescript
+  type Props = { bar: A | B | C } 
+  const Foo: React.FC<Props> = (props) => {
+    // ... do with props.bar
+  }
+
+  // use case:
+  type TestType = A | C
+  const myBar: TestType
+  
+  render(<Foo bar={myBar} />) // ?? Type safe
+  
+  ```
+
+- 
