@@ -50,7 +50,7 @@ Example of some really useful ones:
   Then we can have `Pick<T, 'c'>` = { c: boolean }
                Or, `Pick<T, 'a', 'b'>` = { a: string, b: number }
 
-- **ReturnType&lt;T&gt; **
+- **ReturnType&lt;T&gt;**
   
   Get the return type of a function/lambda type.
   
