@@ -33,24 +33,24 @@ Refer to [official utility types](https://www.typescriptlang.org/docs/handbook/u
 
 Example of some really useful ones:
 
-- **Partial<T>**
+- **Partial&lt;T&gt;**
   
   Given `T` = { a: string, b: number } is an interface with several parameters. We want to build a type with all props options.
 
   Then we have `Partial<T>` = { a?: string, b?: number }
 
-- **Required<T>**
+- **Required&lt;T&gt;**
   
   The opposite to `Partial`
 
-- **Pick<Type, Keys>**
+- **Pick&lt;T, K&gt;**
   
   Given `T` = { a: string, b: number， c: boolean[] }， pick only some props from it.
 
   Then we can have `Pick<T, 'c'>` = { c: boolean }
                Or, `Pick<T, 'a', 'b'>` = { a: string, b: number }
 
-- **ReturnType<Type>**
+- **ReturnType&lt;T&gt; **
   
   Get the return type of a function/lambda type.
   
@@ -59,6 +59,35 @@ Example of some really useful ones:
   Then we have `ReturnType<T>` = { foo: number, bar: string }
 
 - etc.
+
+
+#### Custom useful types
+
+With keyword `typeof`, `keyof`, `infer`, ... We can extend and derive almost any types from existing types. 
+
+In specific use cases, there will be some cusomized types to resovle problem:
+
+- React.js
+  
+  Typescript helps gooding props typing for React. 
+  
+  - **PropType&lt;T, K&gt;**
+     
+    Given the props type of a component, get the type of one specific property. (It helps a lot if we require this property in the upper level component)
+     
+    ```typescript
+      /** Given a object type, and a property name, get the type of that object property
+       *  Example:
+       *    type Foo = { a: number, b: { x: string[], y: (y: string) => boolean }, c: () => void }
+       *    type A = PropType<Foo, 'a'>                   // number
+       *    type B = PropType<Foo, 'b'>                   // { x: string[], y: (y: string) => boolean }
+       *    type C = PropType<Foo, 'c'>                   // () => void
+       *    type Bx = PropType<PropType<Foo, 'b'>, 'x'>   // string[]
+       *    type By = PropType<PropType<Foo, 'b'>, 'y'>   // (y: string) => boolean
+       */ 
+      export type PropType<TObj, TProp extends keyof TObj> = TObj[TProp]
+    ```
+
 
 ### Coviarance & contravariance 
 
