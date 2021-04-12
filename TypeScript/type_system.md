@@ -87,7 +87,29 @@ In specific use cases, there will be some cusomized types to resovle problem:
        */ 
       export type PropType<TObj, TProp extends keyof TObj> = TObj[TProp]
     ```
-
+    
+  - **ReactFCPropsType&lt;T, K&gt;**
+    
+    Givent a third party React component library, we may suffer that the lib does not export the type of the component props but we do need it. 
+    
+    Defining types in code for 3rd party props may suffer compatibility problem when library updates its interface. We can just infer the type and make it easy to find the type mismatch when compiling.
+    
+    ```typescript
+      /** Given a type of React function component, get the type of the props of it.
+       *  It could be used if some 3rd party component does not externally export the props type, but we need it.
+       *  (Use `typeof` to assign the type of React.FC component as generic parameter)
+       *  Example:
+       *    ```
+       *      import { Tree, Button } from 'antd'
+       *
+       *      type TreeProps = ReactFCPropsType<typeof Tree>      // The type of the props required by Tree
+       *      type ButtonProps = ReactFCPropsType<typeof Button>  // The type of the props required by Button
+       *    ```
+       */
+      export type ReactFCPropsType<TReactFC> = TReactFC extends (props: infer U, ...args: any[]) => any
+        ? U
+        : never
+    ```
 
 ### Coviarance & contravariance 
 
