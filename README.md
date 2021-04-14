@@ -76,12 +76,12 @@
 
 ## Builds status:
 
-[![](https://github.com/GarfieldZHU/Aloha-study-room/workflows/Rust-wasm/badge.svg)](https://github.com/GarfieldZHU/Aloha-study-room/actions?query=workflow%3ARust-wasm)
+| tutorial project        | build status           | 
+| ------------- |:-------------| 
+| [rust wasm](https://github.com/GarfieldZHU/Aloha.zone.io/tree/master/wasm/rust-wasm/wasm-game-of-life)      | [![](https://github.com/GarfieldZHU/Aloha-study-room/workflows/Rust-wasm/badge.svg)](https://github.com/GarfieldZHU/Aloha-study-room/actions?query=workflow%3ARust-wasm) |
+| [ray tracer](https://github.com/GarfieldZHU/ray-tracer-rs)      | [![](https://github.com/GarfieldZHU/ray-tracer-rs/workflows/Ray-tracer/badge.svg)](https://github.com/GarfieldZHU/ray-tracer-rs/actions?query=workflow%3ARay-tracer) | 
+| [vulkan tutorial](https://github.com/GarfieldZHU/my-vulkan) | [![](https://github.com/GarfieldZHU/my-vulkan/workflows/Vulkan-project/badge.svg)](https://github.com/GarfieldZHU/my-vulkan/actions?query=workflow%3AVulkan-project) |
+| [Redis by Tokio](https://github.com/GarfieldZHU/Tiny-Redis) | [![](https://github.com/GarfieldZHU/Tiny-Redis/workflows/tiny-redis/badge.svg)](https://github.com/GarfieldZHU/Tiny-Redis/actions?query=workflow%3tiny-redis) |
+| [rust-track practice](https://github.com/GarfieldZHU/my-vulkan) | [![](https://github.com/GarfieldZHU/rust-track/workflows/rust-track/badge.svg)](https://github.com/GarfieldZHU/rust-track/actions?query=workflow%3rust-track) |
 
-[![](https://github.com/GarfieldZHU/ray-tracer-rs/workflows/Ray-tracer/badge.svg)](https://github.com/GarfieldZHU/ray-tracer-rs/actions?query=workflow%3ARay-tracer)
 
-[![](https://github.com/GarfieldZHU/my-vulkan/workflows/Vulkan-project/badge.svg)](https://github.com/GarfieldZHU/my-vulkan/actions?query=workflow%3AVulkan-project)
-
-[![](https://github.com/GarfieldZHU/Tiny-Redis/workflows/tiny-redis/badge.svg)](https://github.com/GarfieldZHU/Tiny-Redis/actions?query=workflow%3tiny-redis)
-
-[![](https://github.com/GarfieldZHU/rust-track/workflows/rust-track/badge.svg)](https://github.com/GarfieldZHU/rust-track/actions?query=workflow%3rust-track)
