@@ -34,6 +34,8 @@
     * [vDOM with wasm](https://github.com/GarfieldZHU/WA-vDom)
 * [Rust wasm](./wasm/rust-wasm)
     * [Wasm - Game of life](./wasm/rust-wasm/wasm-game-of-life)
+* [WASI](./wasm/wasi)
+    * [My WASM Lab](https://github.com/Turing-s-Cat/wasm-lab)
 
 ## Graphics
 * [Color Science](./Graphics/ColorScience)
