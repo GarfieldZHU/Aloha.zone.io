@@ -13,7 +13,9 @@ Learning notes and practises of WebAssembly.
 
 ### WASI
 
-The [WASI](https://wasi.dev/) (WebAssembly System Interface) is a modular system interface for WebAssembly. Read guide to 
+The [WASI](https://wasi.dev/) (WebAssembly System Interface) is a modular system interface for WebAssembly. 
+
+- [WASI Annoucementment](https://hacks.mozilla.org/2019/03/standardizing-wasi-a-webassembly-system-interface/)
 
 
 ### Runtime
