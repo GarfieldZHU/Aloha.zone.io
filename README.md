@@ -1,6 +1,6 @@
-# [Aloha zone](https://garfieldzhu.github.io/Aloha.zone.io/)
+# [Awesome Aloha](https://garfieldzhu.github.io/Aloha.zone.io/) [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-[![MIT licensed](https://img.shields.io/github/license/GarfieldZHU/Aloha-study-room)](./LICENSE)
+[![CC0-1.0 License licensed](https://img.shields.io/github/license/GarfieldZHU/Aloha-study-room)](./LICENSE)
 [![GitHub language count](https://img.shields.io/github/languages/count/GarfieldZHU/Aloha-study-room)](.)
 [![Last commit](https://img.shields.io/github/last-commit/GarfieldZHU/Aloha-study-room)](.)
 
