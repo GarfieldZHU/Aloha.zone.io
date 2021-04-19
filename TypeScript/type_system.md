@@ -60,6 +60,9 @@ Example of some really useful ones:
 
 - etc.
 
+#### Third party extended type utility lib
+
+- [utility-types](https://github.com/piotrwitek/utility-types)
 
 #### Custom useful types
 
