@@ -116,6 +116,34 @@ In specific use cases, there will be some cusomized types to resovle problem:
 
 ### Coviarance & contravariance 
 
+[Covariance and contravariance](https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)) is what describes how [subtyping](https://en.wikipedia.org/wiki/Subtyping) works in a programming language. 
+
+#### Coviarance in generic
+
+##### Upper/lower boundary constraints
+
+1. In Java
+   
+   We have bound descriptor `extends` and `super` in Java
+   
+   ```Java
+   // Lower bounds is very common in the languages support generic
+   List<? extends Animal>
+   // Upper bounds is not common, Java uses "super" keyword
+   List<? super Animal>
+   ```
+   
+2. In Typescript
+   
+   Up-to-date, Typescript does not have a upper-bound generic type contraints yet. The open issue is: [TypeScript#9252](https://github.com/microsoft/TypeScript/issues/9252)
+   
+   However, with the existing TS type utilies, we have a workaround to support upper boundary: say `Partial<T>`
+
+   
+   See the case discussed: [here](https://github.com/Microsoft/TypeScript/issues/4889#issuecomment-200388292), think:
+   
+   `Partial<T>` is equivalent with `<S super T>` ? 
+
 #### Samples
 
 - Sub union as React props in TypeScript
