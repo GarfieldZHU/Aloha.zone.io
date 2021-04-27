@@ -162,6 +162,36 @@ See the example below:
   ```
 </details>
 
+<details>
+  <summary>It is Object array here, why Object is right? </summary>
+  
+  ```java
+    public static void f() {
+        String a = new String();
+        Object b = a;  // Typical polymorphism
+        a = "hi";
+        b = Integer.valueOf(42);  // Awesome! 
+    }
+  ```
+  
+  What's the difference? 
+  
+  - Array has multiple values? 
+  - `b[0]` and `b[1]` cannot have different types?
+  - We say "String[] should not be assigned to Object[]", why "assign String to Object" is the core of OOP?
+
+</details>
+
+<details>
+  <summary>Answer</summary>
+  
+  - In OOP, we say String is a typically subtype of Object.
+  - Assign subtype to super-type is always correct.
+  - <u>***But, WATCH OUT! String[] is not the subtype of Object[] !***</u>
+  
+
+</details>
+
 #### Coviarance in generic
 
 ##### Upper/lower boundary constraints
