@@ -118,6 +118,23 @@ In specific use cases, there will be some cusomized types to resovle problem:
 
 [Covariance and contravariance](https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)) is what describes how [subtyping](https://en.wikipedia.org/wiki/Subtyping) works in a programming language. 
 
+#### A Java problem
+
+See the example below:
+
+- Is it compilable?
+- Is it runnable?
+- Which line will report error?
+
+```java
+    public static void f() {
+        String[] a = new String[2];
+        Object[] b = a;
+        a[0] = "hi";
+        b[1] = Integer.valueOf(42);
+    }
+```
+
 #### Coviarance in generic
 
 ##### Upper/lower boundary constraints
