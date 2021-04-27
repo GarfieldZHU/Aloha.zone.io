@@ -118,13 +118,14 @@ In specific use cases, there will be some cusomized types to resovle problem:
 
 [Covariance and contravariance](https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)) is what describes how [subtyping](https://en.wikipedia.org/wiki/Subtyping) works in a programming language. 
 
-#### A Java problem
+#### 1. A Java problem
 
 See the example below:
 
 - Is it compilable?
 - Is it runnable?
 - Which line will report error?
+- Which line should be better to found the error?
 
 ```java
     public static void f() {
@@ -134,6 +135,32 @@ See the example below:
         b[1] = Integer.valueOf(42);
     }
 ```
+
+<details>
+  <summary>Answer</summary>
+  
+  ```java
+    public static void f() {
+        String[] a = new String[2];
+        Object[] b = a;
+        a[0] = "hi";
+        b[1] = Integer.valueOf(42);  // <--- Runtime exception: java.lang.ArrayStoreException
+    }
+  ```
+</details>
+
+<details>
+  <summary>Why not like this?</summary>
+  
+  ```java
+    public static void f() {
+        String[] a = new String[2];
+        Object[] b = a;  // ~~~~~~~ Compile error: "a": String[] could not be assigned to "b": Object[]
+        a[0] = "hi";
+        b[1] = Integer.valueOf(42);  
+    }
+  ```
+</details>
 
 #### Coviarance in generic
 
