@@ -192,14 +192,14 @@ See the example below:
 
 </details>
 
-#### Coviarance in arrays
+#### 2. Coviarance in arrays
 
-#### Coviarance in function typing
+#### 3. Coviarance in function typing
 
-#### Coviarance in inheritance
+#### 4. Coviarance in inheritance
 
 
-#### Coviarance in generic
+#### 5. Coviarance in generic
 
 ##### Upper/lower boundary constraints
 
@@ -225,7 +225,7 @@ See the example below:
    
    `Partial<T>` is equivalent with `<S super T>` ? 
 
-#### Samples
+#### 6. Samples
 
 - Sub union as React props in TypeScript
   Given a React component requires a prop with a union type: A | B | C, the user uses the component provides an instance with type of the narrower union type: A | C. 
