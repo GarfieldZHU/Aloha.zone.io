@@ -192,6 +192,13 @@ See the example below:
 
 </details>
 
+#### Coviarance in arrays
+
+#### Coviarance in function typing
+
+#### Coviarance in inheritance
+
+
 #### Coviarance in generic
 
 ##### Upper/lower boundary constraints
