@@ -192,6 +192,8 @@ See the example below:
 
 </details>
 
+In conclusion, we could say T[A] is subtype of T[B], regardless T's definition but only know A is subtype of B.
+
 #### 2. Coviarance in arrays
 
 #### 3. Coviarance in function typing
