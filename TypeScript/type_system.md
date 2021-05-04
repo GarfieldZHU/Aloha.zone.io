@@ -196,6 +196,8 @@ In conclusion, we could say T[A] is subtype of T[B], regardless T's definition b
 
 #### 2. Coviarance in arrays
 
+Back to the question above, the problem comes to `String[]` is not subtype of `Object[]`?
+
 #### 3. Coviarance in function typing
 
 #### 4. Coviarance in inheritance
