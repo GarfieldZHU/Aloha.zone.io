@@ -249,4 +249,35 @@ Back to the question above, the problem comes to `String[]` is not subtype of `O
   
   ```
 
-- 
+- How **Reflection** breaks your code?
+  
+  Reflection is the concept occurs in Java and C#. For dynamic language, it is more common being used naturally with literal objects.
+  
+  Like `for (const key in obj) ...` 
+  
+  It is really useful, but it is really a runtime feature and heavily breaks static typing system. Remember use it where you understand and be careful with typing.
+  
+  Example:
+  ```typescript
+  // Base type
+  type Base = {
+    id: string;
+    name: string;
+  }
+  
+  // literal object derives the `Base`
+  const obj: Base = {
+    id:       'abc',
+    name:     'test',
+    category: 'foo',
+    item:     'bar',
+  }
+  
+  // JSON stringify method will iterate the runtime instance of `obj`, instead of the part of `Base`
+  const json = JSON.stringify(obj)
+  // JSON.parse is also runtime method, which makes us lost typing information.
+  const restored = JSON.parse(json) /* as Base  */ 
+  ``` 
+  
+  
+
