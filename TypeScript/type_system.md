@@ -249,7 +249,9 @@ Back to the question above, the problem comes to `String[]` is not subtype of `O
   
   ```
 
-- How **Reflection** breaks your code?
+- Remember runtime features will corrupt your static typing. 
+  
+  Like **Reflection**, it will make the type inference missing at where the reflection begins.
   
   Reflection is the concept occurs in Java and C#. For dynamic language, it is more common being used naturally with literal objects.
   
