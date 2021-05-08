@@ -231,6 +231,42 @@ Back to the question above, the problem comes to `String[]` is not subtype of `O
 
 #### 6. Samples
 
+- In React component
+  React functional component is recommended. The variance of React props should be understood to avoid unnecessary problems.
+  
+  See the example below in real practice, where is the problem?
+  ```typescript
+  // React component definition:
+  type Elem = {
+    id: string;
+  }
+  type Props = {
+      elem: Elem;
+      onClick: (elem: Elem) => void;
+  }
+
+  // React FC
+  const A: React.FC<Props> = (props: Props) => {
+    const { elem, onClick, }
+    const guiElement = {
+      ...elem,
+      // Extended GUI properties
+      name: `element - ${elem.id}`,
+      desc: `description for - ${elem.id}`,
+    }
+    
+    // Event handler callback
+    const clickHandler = React.useCallback((_e) => {
+      onClick(guiElement)
+    }, [])
+  
+    return <button onClick={clickHandler}>
+      {guiElement.id}
+    </button>
+  }
+  ```
+
+
 - Sub union as React props in TypeScript
   Given a React component requires a prop with a union type: A | B | C, the user uses the component provides an instance with type of the narrower union type: A | C. 
   Is this safe?
