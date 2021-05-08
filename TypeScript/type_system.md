@@ -269,7 +269,7 @@ Back to the question above, the problem comes to `String[]` is not subtype of `O
 
   ```typescript
   // Use the above component
-  const customElem: Elem = {
+  const customElem = {
     id: '0hd3ga1fa3h2664g',
     count: 99, 
     name: 'bar',
@@ -281,8 +281,8 @@ Back to the question above, the problem comes to `String[]` is not subtype of `O
   }
   
   ReactDOM.render(<MyComp 
-    elem={customElem}
-    onClick={cb}
+    elem={customElem} // is this correct?
+    onClick={cb}      // is this correct?
   />)
   ```
 
