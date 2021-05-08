@@ -246,7 +246,7 @@ Back to the question above, the problem comes to `String[]` is not subtype of `O
   }
 
   // React FC
-  const A: React.FC<Props> = (props: Props) => {
+  const MyComp: React.FC<Props> = (props: Props) => {
     const { elem, onClick, }
     const guiElement = {
       ...elem,
@@ -264,8 +264,27 @@ Back to the question above, the problem comes to `String[]` is not subtype of `O
       {guiElement.id}
     </button>
   }
+  
   ```
 
+  ```typescript
+  // Use the above component
+  const customElem: Elem = {
+    id: '0hd3ga1fa3h2664g',
+    count: 99, 
+    name: 'bar',
+  }
+  
+  const cb = (e: Elem) => {
+    alert((e as any).name)     // ?
+    alert(JSON.stringify(e))   // ?
+  }
+  
+  ReactDOM.render(<MyComp 
+    elem={customElem}
+    onClick={cb}
+  />)
+  ```
 
 - Sub union as React props in TypeScript
   Given a React component requires a prop with a union type: A | B | C, the user uses the component provides an instance with type of the narrower union type: A | C. 
