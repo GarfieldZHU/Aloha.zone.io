@@ -288,7 +288,7 @@ Back to the question above, the problem comes to `String[]` is not subtype of `O
   
   Simplify it, look at: 
   
-  [Sample on playground](https://www.typescriptlang.org/play?#code/C4TwDgpgBAogNhAtlAvFA3gKCjqBLAEwC4oBnYAJzwDsBzAbkwF9NNRIoAFCgezFNQZsuCAkQl4SRrig9qAYQAWAQzoQSAClFIAlKgB8UAG49CjFpgDGc8lACCgjWF78S3PqT0pDWZkA}
+  [Sample on playground](https://www.typescriptlang.org/play?#code/C4TwDgpgBAogNhAtlAvFA3gKCjqBLAEwC4oBnYAJzwDsBzAbkwF9NNRIoAFCgezFNQZsuCAkQl4SRrig9qAYQAWAQzoQSAClFIAlKgB8UAG49CjFpgDGc8lACCgjWF78S3PqT0pDWZkA)
 
 - Sub union as React props in TypeScript
   Given a React component requires a prop with a union type: A | B | C, the user uses the component provides an instance with type of the narrower union type: A | C. 
