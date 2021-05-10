@@ -194,11 +194,13 @@ See the example below:
 
 In conclusion, we could say T[A] is subtype of T[B], regardless T's definition but only know A is subtype of B.
 
-#### 2. Coviarance in arrays
+#### 2. Covariance， contravariance
+
+#### 3. Covariance in arrays
 
 Back to the question above, the problem comes to `String[]` is not subtype of `Object[]`?
 
-#### 3. Coviarance in function typing
+#### 4. Covariance in function typing
 
 The correct behavior for function typing is:
 - The return type is covariant.
@@ -208,10 +210,10 @@ See the [sample](https://www.typescriptlang.org/play?ssl=36&ssc=13&pln=36&pc=18#
 
 TS config `strictFunctionType` will control if the function parameter is acknowledged as covariance or contravariance. 
 
-#### 4. Coviarance in inheritance
+#### 5. Covariance in inheritance
 
 
-#### 5. Coviarance in generic
+#### 6. Covariance in generic
 
 ##### Upper/lower boundary constraints
 
@@ -237,7 +239,7 @@ TS config `strictFunctionType` will control if the function parameter is acknowl
    
    `Partial<T>` is equivalent with `<S super T>` ? 
 
-#### 6. Samples
+#### 7. Samples
 
 - In React component
   React functional component is recommended. The variance of React props should be understood to avoid unnecessary problems.
