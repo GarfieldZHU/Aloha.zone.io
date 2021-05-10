@@ -194,7 +194,28 @@ See the example below:
 
 In conclusion, we could say T[A] is subtype of T[B], regardless T's definition but only know A is subtype of B.
 
-#### 2. Covariance， contravariance
+#### 2. Covariant， contravariant, bivariant and invariant
+
+[Convariance and contravariance](https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)) are describing the relationship of types after a type calculation. 
+
+- In TypeScript, we use keyword `type` and generic to construct new types from existing, which is called **Type Constructor**. 
+
+  e.g. `type C<T> = T[]`
+
+  It happens at compile time only, which totally disappears at JavaScript runtime. 
+  
+  We say type `C` defines a collection mapping from **T** to **C&lt;T&gt;**. 
+  
+- The subtype between such type mapping or constrution `C` is called "***Variance***".
+  
+  Given collection `A` is subtype/subset of `B`, we say `A ⊆ B` in math:
+  
+  Variance is the relationshipt between mapped collections `C<A>` and `C<B>`
+  
+  - Covariance
+  - Contravariance
+  - Biariance
+  - Invariance
 
 #### 3. Covariance in arrays
 
