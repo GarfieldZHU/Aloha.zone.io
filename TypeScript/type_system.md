@@ -194,6 +194,8 @@ See the example below:
 
 In conclusion, we could say T[A] is subtype of T[B], regardless T's definition but only know A is subtype of B.
 
+<br/>
+
 #### 2. Covariant， contravariant, bivariant and invariant
 
 [Convariance and contravariance](https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)) are describing the relationship of types after a type calculation. 
@@ -212,14 +214,40 @@ In conclusion, we could say T[A] is subtype of T[B], regardless T's definition b
   
   Variance is the relationshipt between mapped collections `C<A>` and `C<B>`
   
+  In math, we use `⊆`, `⊇` to represent the subset/superset relationship. In CS, we use `<:` for [subtyping](https://en.wikipedia.org/wiki/Subtyping).
+  
   - Covariance
+    
+    It keeps the subset relationship.
+    
+    `A <: B` => `C<A> <: C<B>`
+    
   - Contravariance
+
+    It reverses the relationship. The original child set is constructed to be superset.
+
+    `A <: B` => `C<A> :> C<B>`
+
   - Biariance
+
+    Both relationship applied.
+    
+    `A <: B` => `C<A> <: C<B>` AND `C<A> :> C<B>`
+
   - Invariance
+
+    No variance anymore after remap.
+    
+    `A <: B` => `C<A> ⊄ C<B>` AND `C<B> ⊄ C<A>`
+    
+
+<br/>
 
 #### 3. Covariance in arrays
 
 Back to the question above, the problem comes to `String[]` is not subtype of `Object[]`?
+
+<br/>
 
 #### 4. Covariance in function typing
 
@@ -231,8 +259,12 @@ See the [sample](https://www.typescriptlang.org/play?ssl=36&ssc=13&pln=36&pc=18#
 
 TS config `strictFunctionType` will control if the function parameter is acknowledged as covariance or contravariance. 
 
+<br/>
+
 #### 5. Covariance in inheritance
 
+
+<br/>
 
 #### 6. Covariance in generic
 
@@ -259,6 +291,8 @@ TS config `strictFunctionType` will control if the function parameter is acknowl
    See the case discussed: [here](https://github.com/Microsoft/TypeScript/issues/4889#issuecomment-200388292), think:
    
    `Partial<T>` is equivalent with `<S super T>` ? 
+
+<br/>
 
 #### 7. Samples
 
