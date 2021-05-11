@@ -19,6 +19,8 @@ type t1 = Param<typeof foo>   // [number, string]
 type t2 = Param<typeof bar>   // [boolean, number, number]
 ```
 
+<br/>
+
 ### Type Constructor / Type Utilities
 
 TypeScript allows builds new types from old ones and define some type infer to generate types from existing types. 
@@ -115,6 +117,9 @@ In specific use cases, there will be some cusomized types to resovle problem:
         ? U
         : never
     ```
+
+<br/>
+<br/>
 
 ### Coviarance & contravariance 
 
