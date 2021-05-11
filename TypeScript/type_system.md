@@ -21,9 +21,11 @@ type t2 = Param<typeof bar>   // [boolean, number, number]
 
 ### Type Utilities
 
-TypeScript allows calculate type and define some type infer to generate types from existing types. 
+TypeScript allows builds new types from old ones and define some type infer to generate types from existing types. 
 
-It is really useful to use such type utilities to build more strong and reliable types.
+It is a typical feature called [Type Constructor](https://en.wikipedia.org/wiki/Type_constructor) in [type theory](https://en.wikipedia.org/wiki/Type_theory).
+
+Type constructors are really useful to use such type utilities to build more strong and reliable types.
 
 #### Built-in utilities types
 
