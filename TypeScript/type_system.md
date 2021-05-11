@@ -3,6 +3,8 @@
 
 TypeScript has a real cool and strong type system. Let's make good use of it.
 
+---
+
 ### Infer
 The keyword `infer` one of the most powerful keywords for building types, which helps us to extract any type from any nested types.
 
@@ -20,6 +22,8 @@ type t2 = Param<typeof bar>   // [boolean, number, number]
 ```
 
 <br/>
+
+---
 
 ### Type Constructor / Type Utilities
 
@@ -119,7 +123,7 @@ In specific use cases, there will be some cusomized types to resovle problem:
     ```
 
 <br/>
-<br/>
+---
 
 ### Coviarance & contravariance 
 
