@@ -265,7 +265,19 @@ Back to the question above, the problem comes to `String[]` is not subtype of `O
 
 The correct behavior for function typing is:
 - The return type is covariant.
+   
+  Given `A <: B`, we have `() => A  <:  () <: B`.
+
 - The parameters' types are contravariant.
+
+  Given `A <: B`, we have `(a: A) => void  :>  (b: B) => void`.
+  
+- Above rules work together. 
+   
+  Given `A <: B` and `C <: D`, 
+  
+  we have `(b: B) => C  :>  (a: A) => D`.
+
 
 See the [sample](https://www.typescriptlang.org/play?ssl=36&ssc=13&pln=36&pc=18#code/PTAEFEA8EMFsAcA2BTUBaUArAltAXgBYCuAUCKAMID2AdgC4BO0AbtA7vaNDQCaVWt23OiTJgACimgBnVAGNE2OQGtQAImo0AZtgDma0HSqgiNOQWQrDF9dMZK6AMVNy62WgBUAnvGTSDRqCyqHQ2AO5sNNg0utJcutDRAHSi0XTIDFrQcqgAglGw0IigAN4koBWgFnoEdABcoDREsABGGSQAvqn0GVk5oAAiVLqgyJDpvHH52IXFZZWgLWzKDQAUAJSgALwAfKDMVNg8nd3pmdmoAOIMyF4EVKZ8YxM8cUMj85VaVFRrm7v7Q7HLokNK9C6gAASRGkyi8o3GyEmg2GpXKlSWDD+2z2ByOJ1E5C0LjctFAAAMtOTQIV4TDUNBQDxsFotBkkXRDD4GTQaFQ6NBSTR1NDYV4DGECEoCDToPCWjdoKpQqhBBwRHJaHZQFptqBViM1jxhg13v89maGk1WhkcWiFpqaNriGK9SUOlw4qK4eiKjc6EQGMLdKsXXD1klqrpagSSI7tboAIx60MPXgNa63e6PdYZm53NN8AElUD+wPCktR2oNRMABlAHpkoEzBceDdE8c5ugATCns+nm-n+zxc6BprM7SWy0HSlVkDV6qA6w3PWOCkV23GtV2AMwp7gzIoNcdFUcn4rF0vIAMzyvz6OL5eNqbr4ogzugXQAFn3r+Pr9HFth0nK8bwrOcFxretn0HLNC03EgtANRNNlAcgAA1RCQntUIwrCDR3XCwEwxCDS-IjQEALCISCAA). 
 
