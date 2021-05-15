@@ -259,6 +259,68 @@ In conclusion, we could say T[A] is subtype of T[B], regardless T's definition b
 
 Back to the question above, the problem comes to `String[]` is not subtype of `Object[]`?
 
+1. Covariance, contravariance, invariance?
+2. In Java, we see it is covariance. `String[]` is allowed to be assigned to `Object[]`. 
+  
+   But obviously, it's not correct when write the array is writtable. 
+   
+3. If we say the array is read only, covariance is correct now. 
+   
+   ```Java
+   /* readonly*/ Object[] a = new String[] {"foo", "bar", "test"};
+   System.out.println(a[0], a[1], a[2]);
+   ```
+   
+<details>
+  <summary>Answer</summary>
+  
+  - A readable and writeable array should be ***INVARIANT***.
+  - A readonly array is **covariant**.
+
+</details>
+
+<details>
+  <summary>Extension</summary>
+  
+  - So this is typical static typing problem in Java (as well as C#). 
+  - Guess Why? 
+
+    <details>
+    <summary>Root cause</summary>
+      - Yes, generics. Java and C# does not support [Generics](https://en.wikipedia.org/wiki/Generic_programming) in old time. 
+        
+        They use parent typing like the generic bounding to make functions accept more generic types.
+        
+      ```Java
+          boolean equalArrays (Object[] a1, Object[] a2);
+          void shuffleArray(Object[] a);
+      ```
+      - It should be defined like this. 
+      
+      ```Java
+          <T extends Comparable<T>> boolean equalArrays (T[] a1, T[] a2);
+          <T> void shuffleArray(T[] a);
+      ```
+      
+      - Today, the legacy feature is a burden now. 
+        
+        Use it must take care of if the array is writable to avoid runtime errors.
+        
+        Or use some immutable/readonly array instead rather a raw object array. (of course, they introduces overhead before Java/C# introdues raw immutable data type primitives)
+        
+        ```cs
+        IEnumerable<object> // replace "object[]"
+        ```
+        
+        ```Java
+        List<Object> items = Collections.unmodifiableList(Arrays.asList("a", "b", "c"));
+        ```
+
+    </details>
+</details>
+  
+  
+
 <br/>
 
 #### 4. Covariance in function typing
