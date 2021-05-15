@@ -403,6 +403,7 @@ TS config `strictFunctionType` will control if the function parameter is acknowl
   }
   type Props = {
       elem: Elem;
+      generate: () => Elem;
       onClick: (elem: Elem) => void;
   }
 
@@ -418,6 +419,7 @@ TS config `strictFunctionType` will control if the function parameter is acknowl
     
     // Event handler callback
     const clickHandler = React.useCallback((_e) => {
+      console.log(generate())
       onClick(guiElement)
     }, [])
   
@@ -436,20 +438,24 @@ TS config `strictFunctionType` will control if the function parameter is acknowl
     name: 'bar',
   }
   
+  const g = () => customElem
+  
   const cb = (e: typeof customElem) => {
     alert((e as any).name)     // ?
     alert(JSON.stringify(e))   // ?
+    alert(e.name.split(' '))   // ?
   }
   
   ReactDOM.render(<MyComp 
     elem={customElem} // is this correct?
+    generate={g}      // is this correct?
     onClick={cb}      // is this correct?
   />)
   ```
   
   Simplify it, look at: 
   
-  [Sample on playground](https://www.typescriptlang.org/play?noUncheckedIndexedAccess=true&downlevelIteration=true&noUnusedLocals=true&noUnusedParameters=true&importHelpers=true&strict=true&noFallthroughCasesInSwitch=true&noPropertyAccessFromIndexSignature=true&isolatedModules=false&stripInternal=false#code/PTAEBEFMDMEsDtYBdYHt4CgFMgJ2gIYDGkoAogDaQC2oA3hqE6LACYBcoAzkrggOYBuDAF8s8HPmKkAwgFceqapRqhIADxzxWXclVoNmoeAWqROPPvCGjxkwiVABxObBW0NWnXtWHmrSC4iC14BYTEMInQeUABlWGo5CgIcGSUAB1AAXlAACkh9TncAGlAiACNOfMKfagBKbIA+UAA3VDYGrOa-Jij4GP5Xd04XN31s+kYjZgA6OYKaYqnp0ACgzgByAHcd3Y2lozEjCtzBsZo62wwMEFAAVS4CfkhI6KQ1GvlFZXGcnpYOKANgBGUHA-bLYymcxAgBM8PhEIifRi6BkAAsCNYYXkFtQRkN9J1mm02IwctUaATzvUmpNjtFUFQZhRUPxchtmgArLjoTalABSsQA8gA5GaWASwaAAT0p9UuERuYAASpAAI6uXCkABEJVxNXcxNa7VYOuVzlgLUg8FAOq+SCU+oNVOchIudNJZow8USyVSGXlpTRmOxdSAA)
+  [Sample on playground](https://www.typescriptlang.org/play?noUncheckedIndexedAccess=true&downlevelIteration=true&noUnusedLocals=true&noUnusedParameters=true&importHelpers=true#code/PTAEBEFMDMEsDtYBdYHt4CgFMgJ2gIYDGkoAogDaQC2oA3hqE6LACYBcoAzkrggOYBuDAF8s8HPmKkAwgFceqapRqhIADxzxWXclVoNmoeAWqROPPvCGjxkwiVABxObBW0NWnXtWHmrSC4iC14BYTEMInQeUAAlSGIkGSUAB1AAXlAACkZmSH1OdwAaUFymfkh4PAIcTiyASgyAPh9qIrLQIgAjOvyaQv1G9JaAN1Q2dqGWvyYo+Bj+V3cM0Aqq3BrIBo65rlQqADoKVH4sxbdBna6svup62wwMEFAAVS4CCsjopDUC0HlFMp9CsZiwOKAAOQARhhUIh7SMJjMnAhACZ0ej4Q9dj90DIABYEazmJg3P4uC40KagMZsRiZMn9ZxLQbNeg7aL7SBHE5ZCEtABWe3gKJKACkAMoAeQAcgdLAJYNAAJ6Mu73IzPAAqqFAXVwCQA1qAkPjYLoAO74yqdY5cAQm62gAAGCqISAAYnJ4O60PAtcqUpBnZ1rURDRz5lyeadbgcAkEDqFqA17hEcatKtVatlqRTlhgGdTQc8nFmNjhQARnC8AJK-GiVJAdA1IOS4eDsoxGNgoghdIhY7v+QLBSFzLRIIfMMQRZ7xACOrgNoAARMVh6TqRujGqBlSjMMaeNWKunmAnLARjamKuAUglDuGmz8-oStlbpxXwej7TT+fQAAWlAABBLh7X4Ts7wUB8gRoVdN03B813cBDEMQ81OlQXADXdA4AOAsCIKg58j2-ag0PQ5DV1IlpUPQphMKiHDIDwgjQPA2BILXPdmUpO42T-BDqN49xqSElhLVwdB+Hw+JEmSagUjVEo1mzSASjxQliXuIA)
 
 - Sub union as React props in TypeScript
   Given a React component requires a prop with a union type: A | B | C, the user uses the component provides an instance with type of the narrower union type: A | C. 
