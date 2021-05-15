@@ -436,7 +436,7 @@ TS config `strictFunctionType` will control if the function parameter is acknowl
     name: 'bar',
   }
   
-  const cb = (e: Elem) => {
+  const cb = (e: typeof customElem) => {
     alert((e as any).name)     // ?
     alert(JSON.stringify(e))   // ?
   }
