@@ -275,7 +275,12 @@ Back to the question above, the problem comes to `String[]` is not subtype of `O
   <summary>Answer</summary>
   
   - A readable and writeable array should be ***INVARIANT***.
+    
+    That's why we say `String[]` is not subtype of `Object[]`
+
   - A readonly array is **covariant**.
+
+    Instead, we can say `readonly String[]` is a subtype of `readonly Object[]`
 
 </details>
 
