@@ -287,12 +287,13 @@ Back to the question above, the problem comes to `String[]` is not subtype of `O
 
     <details>
     <summary>Root cause</summary>
-      - Yes, generics. Java and C# does not support [Generics](https://en.wikipedia.org/wiki/Generic_programming) in old time. 
+  
+      - Yes, GENERICS. Java and C# does not support generics in old time. 
         
         They use parent typing like the generic bounding to make functions accept more generic types.
         
       ```Java
-          boolean equalArrays (Object[] a1, Object[] a2);
+          boolean equalArrays (Object[] a1, Object[] a2); // equal function should be readonly, which is safe.
           void shuffleArray(Object[] a);
       ```
       - It should be defined like this. 
@@ -308,9 +309,13 @@ Back to the question above, the problem comes to `String[]` is not subtype of `O
         
         Or use some immutable/readonly array instead rather a raw object array. (of course, they introduces overhead before Java/C# introdues raw immutable data type primitives)
         
+        In C# :
+        
         ```cs
         IEnumerable<object> // replace "object[]"
         ```
+        
+        In Java :
         
         ```Java
         List<Object> items = Collections.unmodifiableList(Arrays.asList("a", "b", "c"));
