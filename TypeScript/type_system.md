@@ -385,7 +385,33 @@ We know that overriding should have the same mehtod signature, but it also allow
     }
   ```
   
-- 
+- Contravariant method parameter type
+  
+  Like the above section, we can guess that contravariant in method parameter type is also a type-safe overriding.
+  
+  **YES. IT IS TYPE SAFE. **
+  
+  But languages rarely implement it.  :(
+  
+  In Java, C++, C#, it will be regarded as overloading instead of a overriding.
+  
+    ```Java
+    class Animal {
+      void setAnimal(Animal a) {
+        // ...
+      }
+    }
+    
+    // Child class
+    class Cat extends Animal {
+      // It's still correct. But it's not overriding. It's a overloading in Java.
+      // This method could not be hit by a call of "cat.setAnimal(animal)" unless `animal` is not an instance of Animal.
+      void setAnimal(Object a) {
+        // ...
+      }
+    }
+  ```
+
 
 <br/>
 
