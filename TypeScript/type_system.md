@@ -389,9 +389,9 @@ We know that overriding should have the same mehtod signature, but it also allow
   
   Like the above section, we can guess that contravariant in method parameter type is also a type-safe overriding.
   
-  **YES. IT IS TYPE SAFE. **
+  **YES. IT IS TYPE SAFE.**
   
-  But languages rarely implement it.  :(
+  But languages rarely implement it.  😅
   
   In Java, C++, C#, it will be regarded as overloading instead of a overriding.
   
