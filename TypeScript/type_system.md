@@ -359,6 +359,33 @@ TS config `strictFunctionType` will control if the function parameter is acknowl
 
 #### 5. Covariance in inheritance
 
+In OO languages (cpp, Java, C#, etc.), **OVERRIDE** is key concept in subclass to implement a different method from super class.
+
+We know that overriding should have the same mehtod signature, but it also allows **covariance** in some languages. 
+
+- Covariant method return type
+  
+  In function part, we already know that return type is covariant ( Given `A` &lt;: `B`, we have `() => A ` &lt;: ` () => B`. )
+  
+  In inheritance, overriding a method with its subtype method is a covariance in heritance. (Java and C++ support this, C# does not)
+  
+  ```Java
+    class Animal {
+      Animal getAnimal() {
+        // ...
+      }
+    }
+    
+    // Child class
+    class Cat extends Animal {
+      @overrides
+      Cat getAnimal() {
+        ...
+      }
+    }
+  ```
+  
+- 
 
 <br/>
 
