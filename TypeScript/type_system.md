@@ -417,8 +417,46 @@ We know that overriding should have the same mehtod signature, but it also allow
 
 #### 6. Covariance in generic
 
-##### Upper/lower boundary constraints
+There are two main approaches for generic type: 
 
+- Declaration-site variance annotations (C#)
+- Use-site variance annotations (Java)
+   
+            
+##### Declaration-site variance annotations
+
+C# uses keyword `in`(covariant) and `out`(contravariant) to mark the types. 
+```cs
+interface IEnumerator<out T>
+{
+    T Current { get; }
+    bool MoveNext();
+} 
+```
+It will report error when declare the interface with using `out T` as type of an input parameter.
+
+Scala uses `+`(covariant) and `-`(contravariant) as keywords.
+            
+```scala
+sealed abstract class List[+A] extends AbstractSeq[A] {
+    def head: A
+    def tail: List[A]
+
+    /** Adds an element at the beginning of this list. */
+    def ::[B >: A] (x: B): List[B] =
+        new scala.collection.immutable.::(x, this)
+    /** ... */
+}
+```
+            
+##### Use-site variance annotations
+
+It checks the variance covariance when generic type is instantiated. 
+            
+Given `type A<T> = T`, it should reports error when instantiated a `A<Test>` when `Test` does not match `T`'s requirement.
+            
+A typical implementation is "**upper/lower boundary constraints**"
+            
 1. In Java
    
    We have bound descriptor `extends` and `super` in Java
