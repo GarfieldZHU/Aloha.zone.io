@@ -1,5 +1,26 @@
 # Type System
 
+<!-- TOC -->
+
+- [Type System](#type-system)
+    - [Infer](#infer)
+    - [Type Constructor / Type Utilities](#type-constructor--type-utilities)
+      - [Built-in utilities types](#built-in-utilities-types)
+      - [Third party extended type utility lib](#third-party-extended-type-utility-lib)
+      - [Custom useful types](#custom-useful-types)
+    - [Coviarance & contravariance](#coviarance--contravariance)
+      - [1. A Java problem](#1-a-java-problem)
+      - [2. Covariant， contravariant, bivariant and invariant](#2-covariant-contravariant-bivariant-and-invariant)
+      - [3. Covariance in arrays](#3-covariance-in-arrays)
+      - [4. Covariance in function typing](#4-covariance-in-function-typing)
+      - [5. Covariance in inheritance](#5-covariance-in-inheritance)
+      - [6. Covariance in generic](#6-covariance-in-generic)
+        - [Declaration-site variance annotations](#declaration-site-variance-annotations)
+        - [Use-site variance annotations](#use-site-variance-annotations)
+      - [7. Samples](#7-samples)
+
+<!-- /TOC -->
+
 
 TypeScript has a real cool and strong type system. Let's make good use of it.
 
