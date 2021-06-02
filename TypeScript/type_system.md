@@ -443,6 +443,10 @@ There are two main approaches for generic type:
 - Declaration-site variance annotations (C#)
 - Use-site variance annotations (Java)
    
+Conclude from the above sections, we may found that:
+
+1) The generic for type of input parameters, should be covariant.
+2) The generic for type of output parameters, should be contravariant.
             
 ##### Declaration-site variance annotations
 
