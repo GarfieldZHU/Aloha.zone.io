@@ -85,6 +85,14 @@ Color is relative. Our eyes is simple to be cheated.
 </details>
 
 
+#### Color constancy
+
+<details>
+  <summary>Is the strawberry is red?</summary>
+  NO!  IT'S ACTUALLY GRAY!
+  <img src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/strawberry.jpeg?raw=true" />
+</details>
+
 <br/>
 <br/>
 <br/>
