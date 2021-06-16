@@ -9,6 +9,8 @@
 #### Courses
 [GAMES101-现代计算机图形学入门-闫令琪](https://www.bilibili.com/video/BV1X7411F744?p=1)
 
+[MIT-6.837 Computer Graphics](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-837-computer-graphics-fall-2012/lecture-notes/)
+
 [CS178: Digital Photography @ Stanford](http://graphics.stanford.edu/courses/cs178/)
 
 [Computational photography @ ZJU](http://www.cad.zju.edu.cn/home/gfzhang/course/computational-photography/)
