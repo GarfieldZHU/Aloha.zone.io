@@ -92,6 +92,11 @@ Example of some really useful ones:
 #### Third party extended type utility lib
 
 - [utility-types](https://github.com/piotrwitek/utility-types)
+  
+  Some very cool type utility which helps a lot. Some are now part of TypeScript built-in. 
+  
+  Especially some [Flow's Utility Types](https://github.com/piotrwitek/utility-types#flows-utility-types-1), which brings those useful stuffs from [Flow](https://flow.org/en/docs/types/utilities/)'s.
+ 
 
 #### Custom useful types
 
