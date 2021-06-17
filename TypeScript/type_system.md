@@ -152,7 +152,7 @@ In specific use cases, there will be some cusomized types to resovle problem:
 
 ---
 
-### Covariance & contravariance 
+### Covariance & contravariance (协变与逆变)
 
 [Covariance and contravariance](https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)) is what describes how [subtyping](https://en.wikipedia.org/wiki/Subtyping) works in a programming language. 
 
