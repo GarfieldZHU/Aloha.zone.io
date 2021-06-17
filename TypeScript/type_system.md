@@ -8,7 +8,7 @@
       - [Built-in utilities types](#built-in-utilities-types)
       - [Third party extended type utility lib](#third-party-extended-type-utility-lib)
       - [Custom useful types](#custom-useful-types)
-    - [Coviarance & contravariance](#coviarance--contravariance)
+    - [Covariance & contravariance](#covariance--contravariance-协变与逆变)
       - [1. A Java problem](#1-a-java-problem)
       - [2. Covariant， contravariant, bivariant and invariant](#2-covariant-contravariant-bivariant-and-invariant)
       - [3. Covariance in arrays](#3-covariance-in-arrays)
