@@ -10,7 +10,7 @@
       - [Custom useful types](#custom-useful-types)
     - [Covariance & contravariance](#covariance--contravariance-协变与逆变)
       - [1. A Java problem](#1-a-java-problem)
-      - [2. Covariant， contravariant, bivariant and invariant](#2-covariant-contravariant-bivariant-and-invariant)
+      - [2. Covariant, contravariant, bivariant and invariant](#2-covariant-contravariant-bivariant-and-invariant)
       - [3. Covariance in arrays](#3-covariance-in-arrays)
       - [4. Covariance in function typing](#4-covariance-in-function-typing)
       - [5. Covariance in inheritance](#5-covariance-in-inheritance)
@@ -234,7 +234,7 @@ In conclusion, we could say T[A] is subtype of T[B], regardless T's definition b
 
 <br/>
 
-#### 2. Covariant， contravariant, bivariant and invariant
+#### 2. Covariant, contravariant, bivariant and invariant
 
 [Convariance and contravariance](https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)) are describing the relationship of types after a type calculation. 
 
