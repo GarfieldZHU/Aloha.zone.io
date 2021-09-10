@@ -28,4 +28,4 @@
 [JPEG Tutorial](https://github.com/MROS/jpeg_tutorial)
 
 #### SVG & Canvas
-
+[SVG & Canvas notes](./SVG-Canvas)
