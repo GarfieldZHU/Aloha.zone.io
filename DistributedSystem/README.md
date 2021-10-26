@@ -12,7 +12,7 @@
 
 
 
-### Distributed System - 6.824 @ MIT
-
-The MIT course for Distributed System: [CS-6.824](https://pdos.csail.mit.edu/6.824/index.html)
+### Distributed System lecture
+- The MIT course for Distributed System: [CS-6.824](https://pdos.csail.mit.edu/6.824/index.html)
+- University of Cambridge - by [Martin Keppmann](https://martin.kleppmann.com/) (author of DDIA): [YouTube playlist](https://www.youtube.com/playlist?list=PLeKd45zvjcDFUEv_ohr_HdUFe97RItdiB)
 
