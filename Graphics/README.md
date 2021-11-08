@@ -9,7 +9,7 @@
 #### Courses
 [GAMES101-现代计算机图形学入门-闫令琪](https://www.bilibili.com/video/BV1X7411F744?p=1)
 
-[GAMES103-基于物理的计算机动画入门-王辛民](http://games-cn.org/games103)  # ONGODING
+[GAMES103-基于物理的计算机动画入门-王辛民](https://www.bilibili.com/video/BV12Q4y1S73g) 
 
 [MIT-6.837 Computer Graphics](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-837-computer-graphics-fall-2012/lecture-notes/)
 
