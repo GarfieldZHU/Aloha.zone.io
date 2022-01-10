@@ -106,7 +106,7 @@ Suppose we have a mono repo as the parent of the above lib.
 Per [NodeJS's rule](https://nodejs.org/api/modules.html#loading-from-node_modules-folders), 
 
 <details>
-  <summary>Look this!<summary>
+  <summary>Look this!</summary>
     
 If the module identifier passed to `require()` is not a core module, and does not begin with `'/'`, `'../'`, or `'./'`, then Node.js starts at the parent directory of the current module, and adds `/node_modules`, and attempts to load the module from that location. Node.js will not append node_modules to a path already ending in node_modules.
 
