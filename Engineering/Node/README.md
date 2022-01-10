@@ -50,4 +50,15 @@ var glob = require("glob")  // ??? why
   
 These are **PHANTOM DEPENDENCIES**
   
+  <details>
+    <summary>So, impacts? </summary>
+
+- Incompatible versions
+  Your version of `glob` is not decided by your project, but by 3rd party `rimraf`.
+  Upgrade lockfile could make you in trouble.
+- Missing dependencies
+  `rimraf` is a dev dependency, but `brace-expansion` is defined. 
+  It could work in dev environment, but for production, it is missing in node_modules.
+
+  </details>
 </details>
