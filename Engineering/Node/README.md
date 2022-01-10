@@ -103,11 +103,13 @@ Suppose we have a mono repo as the parent of the above lib.
 - What's going?
   You can call "semver" in `my-library` then.
 
-Per [NodeJS's rule](https://nodejs.org/api/modules.html#loading-from-node_modules-folders), 
 
 <details>
-  <summary>Look this!</summary>
-    
+  <summary>Look this rule!</summary>
+<br/>
+  
+[NodeJS's rule](https://nodejs.org/api/modules.html#loading-from-node_modules-folders)
+
 If the module identifier passed to `require()` is not a core module, and does not begin with `'/'`, `'../'`, or `'./'`, then Node.js starts at the parent directory of the current module, and adds `/node_modules`, and attempts to load the module from that location. Node.js will not append node_modules to a path already ending in node_modules.
 
 If it is not found there, then it moves to the parent directory, and so on, until the root of the file system is reached.
