@@ -13,5 +13,9 @@ It aims to resolve the historic problems [phantom dependencies](https://rushjs.i
 
 In project management, the dependency graph is typical a [Directed Acyclic Graph](https://en.wikipedia.org/wiki/Directed_acyclic_graph) (aka DAG).
 
+#### NodeJS special rule
+
+NodeJS represents this graph physically on disk via file system. The tree could not represents the DAG well, so it introduces a [special resolution rule](https://nodejs.org/api/modules.html#modules_all_together) to help it with overheads of extra edges. It is what we called **phantom dependencies**.
+
 
 
