@@ -15,7 +15,39 @@ In project management, the dependency graph is typical a [Directed Acyclic Graph
 
 #### NodeJS special rule
 
-NodeJS represents this graph physically on disk via file system. The tree could not represents the DAG well, so it introduces a [special resolution rule](https://nodejs.org/api/modules.html#modules_all_together) to help it with overheads of extra edges. It is what we called **phantom dependencies**.
+NodeJS represents this graph physically on disk via file system. The tree could not represents the DAG well, so it introduces a [special resolution rule](https://nodejs.org/api/modules.html#modules_all_together) to help it with overheads of extra edges. But it will lead to **phantom dependencies** below.
 
 
+#### [Phantom Dependendy](https://rushjs.io/pages/advanced/phantom_deps/)
+- A sample package.json
+```json
+{
+  "name": "my-library",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "dependencies": {
+    "minimatch": "^3.0.4"
+  },
+  "devDependencies": {
+    "rimraf": "^2.6.2"
+  }
+}
+```
 
+- A sample script
+```js
+var minimatch = require("minimatch")
+var expand = require("brace-expansion");  // ??? why
+var glob = require("glob")  // ??? why
+```
+
+<details>
+  <summary>Why ?</summary>
+
+- `brace-expansion` and `glob` are dependencies of `rimraf`
+- NPM has flattened their folders to be under my-library/node_modules 
+- Thus, it could be found by the NodeJS rule for "require".
+  
+These are **PHANTOM DEPENDENCIES**
+  
+</details>
