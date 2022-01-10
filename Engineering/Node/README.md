@@ -18,7 +18,7 @@ In project management, the dependency graph is typical a [Directed Acyclic Graph
 NodeJS represents this graph physically on disk via file system. The tree could not represents the DAG well, so it introduces a [special resolution rule](https://nodejs.org/api/modules.html#modules_all_together) to help it with overheads of extra edges. But it will lead to **phantom dependencies** below.
 
 
-#### [Phantom Dependendy](https://rushjs.io/pages/advanced/phantom_deps/)
+#### [Phantom Dependency](https://rushjs.io/pages/advanced/phantom_deps/)
 - A sample package.json
 ```json
 {
@@ -62,3 +62,68 @@ These are **PHANTOM DEPENDENCIES**
 
   </details>
 </details>
+
+
+#### Phantom `node_modules` Folder
+
+Suppose we have a mono repo as the parent of the above lib.
+
+- my-monorepo/package.json:
+```js
+
+{
+  "name": "my-monorepo",
+  "version": "0.0.0",
+  "scripts": {
+    "deploy-app": "node ./deploy-app.js"
+  },
+  "devDependencies": {
+    "semver": "~5.6.0"
+  }
+}
+```
+
+- Then we have such directory
+```
+- my-monorepo/
+  - package.json
+  - node_modules/
+    - semver/
+    - ...
+  - my-library/
+    - package.json
+    - lib/
+      - index.js
+    - node_modules/
+      - brace-expansion
+      - minimatch
+      - ...
+```
+
+- What's going?
+  You can call "semver" in `my-library` then.
+
+Per [NodeJS's rule](https://nodejs.org/api/modules.html#loading-from-node_modules-folders), 
+
+<details>
+  <summary>Look this!<summary>
+    
+If the module identifier passed to `require()` is not a core module, and does not begin with `'/'`, `'../'`, or `'./'`, then Node.js starts at the parent directory of the current module, and adds `/node_modules`, and attempts to load the module from that location. Node.js will not append node_modules to a path already ending in node_modules.
+
+If it is not found there, then it moves to the parent directory, and so on, until the root of the file system is reached.
+
+For example, if the file at `'/home/ry/projects/foo.js'` called `require('bar.js')`, then Node.js would look in the following locations, in this order:
+
+- /home/ry/projects/node_modules/bar.js
+- /home/ry/node_modules/bar.js
+- /home/node_modules/bar.js
+- /node_modules/bar.js
+    
+> It can sometimes find node_modules folders that aren’t even under your Git working directory!
+    
+</details>
+
+
+
+
+
