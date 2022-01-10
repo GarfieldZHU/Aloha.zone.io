@@ -42,7 +42,7 @@ var glob = require("glob")  // ??? why
 ```
 
 <details>
-  <summary>Why ?</summary>
+  <summary>Why ? Feature? Bug? </summary>
 
 - `brace-expansion` and `glob` are dependencies of `rimraf`
 - NPM has flattened their folders to be under my-library/node_modules 
