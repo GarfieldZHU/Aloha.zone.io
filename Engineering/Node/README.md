@@ -46,6 +46,13 @@ var glob = require("glob")  // ??? why
 
 - `brace-expansion` and `glob` are dependencies of `rimraf`
 - NPM has flattened their folders to be under my-library/node_modules 
+  
+  <details>
+    <summary>Node flat mode since V3</summary>
+  <img src="../assets/node_flat_mode.jpeg" />
+  </details>
+
+
 - Thus, it could be found by the NodeJS rule for "require".
   
 These are **PHANTOM DEPENDENCIES**
