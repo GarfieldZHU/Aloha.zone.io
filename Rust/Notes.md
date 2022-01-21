@@ -103,7 +103,7 @@ Think different from **class** concept in C++ or Java, data and method are separ
    
 - [Bounds](https://doc.rust-lang.org/rust-by-example/generics/bounds.html)
 
-   The above section mentioned `dyn` which decorates a trait to be a type. It's useful not always enough. 
+   The above section mentioned `dyn` which decorates a trait to be a type. It's useful, but not always enough. 
    
    Generics are much more expressive in type definition, and we can also need stipulate what functionality a generic type implements. 
    
