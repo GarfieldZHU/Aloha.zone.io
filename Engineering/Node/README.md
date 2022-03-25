@@ -133,8 +133,9 @@ For example, if the file at `'/home/ry/projects/foo.js'` called `require('bar.js
 </details>
 
 
+---
 
-#### PNPM's node_modules directory
+### PNPM's node_modules directory
 
 <details>
   <summary>This is a sample <b>node_modules</b> of PNPM: </summary>
