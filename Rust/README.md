@@ -26,6 +26,7 @@ A cheet sheet contains index/links to the key Rust syntax, library, tools, etc.
 
 The advanced and **Unsafe** part of Rust as dark art. 
 
+#### vi. Read the [Rust Course](https://course.rs/about-book.html) for fun.
 
 
 ## Projects/Practices
@@ -60,3 +61,8 @@ The advanced and **Unsafe** part of Rust as dark art.
 #### vii. Mini Redis
 
 - [Practise Tokio by writting a Mini Redis](./Tokio)
+
+
+#### ix. Learn PNG by Rust
+
+- [PNGme](https://picklenerd.github.io/pngme_book/setup.html)
