@@ -33,3 +33,21 @@ user2	| password123	| 57DB1253B68B6802B59A969F750FA32B60CB5CC8A3CB19B87DAC28F541
 #### Workflow
 
 ![](https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Crypto/.assets/store_pwd.jpeg)
+
+
+## Attacks
+
+To protect crypotography methods from external attacks, we should be care about the attack methods. 
+
+### Timing Attacks
+
+A timing attack is a side-channel attack in which the attacker attempts to compromise a cryptosystem by analyzing the time taken to execute cryptographic algorithms. 
+
+<br/>
+
+A typical case is Java's [String.equals](https://www.w3schools.com/java/ref_string_equals.asp). It exists when first different character is found and could be attacked theoretically by this technology. 
+
+#### Timing attacks references
+- [Wikipedia](https://en.wikipedia.org/wiki/Timing_attack)
+- [@Shotgun 's answer](https://www.zhihu.com/question/20156213)
+- [Timing Attacks - Tanglei.Name](https://coolshell.cn/articles/21003.html)
