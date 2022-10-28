@@ -17,6 +17,9 @@
 
 [Computational photography @ ZJU](http://www.cad.zju.edu.cn/home/gfzhang/course/computational-photography/)
 
+#### Books
+[Game Math - 3D Math Primer for Graphics and Game Developer](https://gamemath.com/book/)
+
 #### Practises
 [Ray tracing in one weekend](https://raytracing.github.io/)
 
