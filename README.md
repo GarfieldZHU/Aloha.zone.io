@@ -78,6 +78,9 @@
 * [Optimize rendering](./Browser/RenderingOptimization)
 
 
+## Data formats
+* [JSON vs YAML vs TOML vs XML](./DataFormat)
+
 ---
 
 ## Builds status:
