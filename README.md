@@ -47,7 +47,6 @@
 * [Course and practise materials](./Graphics)
 * [Notes](./Graphics/Notes.md)
 * [GPU](./Graphics/GPU)
-   * [Story of NVIDIA](./Graphics/GPU/Story_NVIDIA.md)
 
 ## Operating System
 * [MIT 6.828 / 6.S081 materials](./OS/MIT_6_828)
