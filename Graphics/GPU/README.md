@@ -19,15 +19,50 @@ See the history of the stock [Nvidia](https://www.google.com/finance/quote/NVDA:
 
 
 #### 1. Begining
+* 1993: Founded in Santa Clara, California, USA.
+<br><img width="240" src="https://www.nvidia.com/content/nvidiaGDC/us/en_US/about-nvidia/corporate-timeline/_jcr_content/root/responsivegrid/copy_of_nv_carousel__292630713/item_1669209935575.coreimg.100.850.jpeg/1688446141198/nvidia-timeline-3d-graphics-1993.jpeg" />
+* Founders: Jensen Huang, Chris Malachowsky, Curtis Priem.
+* Produce Graphic Cards for bussiness customers.
+* 3D Graphics for gaming and multimedia markets.
 
 #### 2. Developing
 
-#### 3. Gaming
+* ***1999: GeForce 256, the first GPU.***
+<br><img width="240" src="https://www.nvidia.com/content/nvidiaGDC/us/en_US/about-nvidia/corporate-timeline/_jcr_content/root/responsivegrid/copy_of_nv_carousel__292630713/item_1669209940663.coreimg.100.850.jpeg/1688446141218/nvidia-timeline-gpu-1999.jpeg" />
+* 1999: Nasdaq IPO.
+* 2000: 3DFX (Voodoo, first customer-facing graphic card), the competitor, went bankrupt.
+  <br> Nvidia acquired 3DFX.
+* As OEM, Nvidia produced GPUs for PC manufacturers.
 
-#### 4. Blockchain
+#### 3. New Vision
 
-#### 5. AI/Machine Learning
+* Facing to gaming market. (GeForce)
+* Decoupling the GPU from the PC. Face to customers directly.
+* ***2008: CUDA, the first GPU computing platform.***
+<br><img width="240" src="https://www.nvidia.com/content/nvidiaGDC/us/en_US/about-nvidia/corporate-timeline/_jcr_content/root/responsivegrid/copy_of_nv_carousel__292630713/item_1669209938611.coreimg.100.850.jpeg/1688446141370/nvidia-timeline-cuda-2006.jpeg" />
+* Iterate GPU every 2-year. Keeping optimize the performance.
 
+#### 4. AI, Auto-pilot, Blockchain, Cloud
+
+* 2015: CUDA enforced the Deep Learning neural network.
+* 2016: Nvidia Drive PX, the first AI Auto-pilot platform.
+* 2018: Nvidia announced Nvidia RTX™ for real-time ray tracing.
+<br><img width="240" src="https://www.nvidia.com/content/nvidiaGDC/us/en_US/about-nvidia/corporate-timeline/_jcr_content/root/responsivegrid/copy_of_nv_carousel__292630713/nv_teaser_copy.coreimg.100.850.jpeg/1690308833559/nvidia-rtx-professional.jpeg" />
+* The raising of Blockchain and Cloud Computing make Nvidia widely adopted.
+
+#### 5. Bitcoin, Mining age
+
+* 2020: Bitcoin price raised to $20,000. The RTX 30 series was released.
+* The mining age makes the GPU price doubled, trippled and even higher. 30 series are almost all mining cards.
+<br><img width="240" src="https://media.istockphoto.com/id/1248674191/photo/bitcoin-gold-cryptocurrency-trading-chart.jpg?s=612x612&w=0&k=20&c=Zj-t9bYp9FChMLXGMRqt2l41KGjYp1jZaehbCKjJWcw=" />
+
+#### 6. AI, Big Language Model, Metaverse
+
+* 2021: GPT-3, the first big language model, was released.
+* 2022: The ChatGPT is publicly announce. The big language model is popular.
+* 2022: NVIDIA Omniverse™ platform is released as fundational role of building metaverse.
+* As the core infrastructure of training LLM, Nvidia is again on the top of the tide.
+<br><img width="240" src="https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/chatgpt.webp"/>
 
 ### Product Series
 
@@ -40,6 +75,9 @@ Nvidia had many product series, now it has 3 main series:
   - See [Nvidia Tesla](https://www.nvidia.com/en-us/data-center/tesla/). e.g. H100, A100, V100, etc.
   - AWS Deep Learning instances are based on Tesla. See [AWS GPU Instances](https://docs.aws.amazon.com/dlami/latest/devguide/gpu.html)
 - Others: Jetson, Ada, Tegra, etc.
+
+<br/>
+<br/>
 
 ## Introduce GPU
 
@@ -191,6 +229,9 @@ Generally, we say in 32-bit floating point.
 | GeForce RTX 4090 | 82.58 |
 | Tesla H100 | 67 |
 
+
+<br/>
+<br/>
 
 ## Use GPU
 
