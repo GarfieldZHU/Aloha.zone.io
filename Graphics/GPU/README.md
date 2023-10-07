@@ -102,6 +102,8 @@ Nvidia had many product series, now it has 3 main series:
 | Many diverse instruction sets | A few highly optimized instruction sets |
 | Explicit thread management | Threads are managed by hardware |
 
+<br><img width="480" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/compare.png?raw=true" />
+
 <br/>
 
 ### 🔖 Read GPU Spec
@@ -110,7 +112,6 @@ To better understand how the GPU performs, we should learn to read the spec of G
 
 We can find the centralized parameter specs of GPUs at the 3rd party: https://www.techpowerup.com/gpu-specs/
 
-
 Or the details in the official website of the GPU manufacturer (NVidia, AMD, and Intel), e.g.
 
 - [Intel Arc A770](https://www.intel.com/content/www/us/en/products/sku/229151/intel-arc-a770-graphics-16gb/specifications.html)
@@ -118,6 +119,7 @@ Or the details in the official website of the GPU manufacturer (NVidia, AMD, and
 - [Nvidia Geforce RTX 4090](https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4090/)
 - [Nvidia Tesla H100](https://www.nvidia.com/en-us/data-center/h100/)
 
+<br/>
 
 #### Cores
 
@@ -134,12 +136,24 @@ Or the details in the official website of the GPU manufacturer (NVidia, AMD, and
 | [Tesla H100](https://www.nvidia.com/en-us/data-center/h100/) | 14592 | 1.845 GHz (Boost) |
 
 
+##### [CUDA Cores](https://www.nvidia.com/en-us/geforce/technologies/cuda/) (Nvidia)
 
-##### Cuda Cores (Nvidia)
+Generally, The GPU cores are the shading units for rendering pipeline. But for Nvidia, it is called `CUDA Cores` with the strength of parallel computing with cores.
 
-- [CUDA Cores](https://www.nvidia.com/en-us/geforce/technologies/cuda/): Nvidia
+- They are highly parallel, meaning they can work on multiple tasks simultaneously.
+- They have a high memory bandwidth, meaning they can quickly and easily access large amounts of data.
+- They are designed specifically for algorithms that can be parallelized.
+
+##### [Tensor Cores](https://www.nvidia.com/en-us/geforce/technologies/cuda/) (Nvidia)
+
+> Essentially, Tensor cores are processing units that accelerate the process of matrix multiplication.
+
+The computational complexity increases multifold as the size and dimensions of the matrix (tensor) go up. Machine Learning, Deep learning, Ray Tracing are tasks that involve an excessive amount of multiplication.
+
+<br><img width="480" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/tensor.jpeg?raw=true"/>
 
 
+<br/>
 
 #### Bus, Clock & Memory
 
@@ -175,8 +189,8 @@ The memory of GPU is called **VRAM** (Video RAM).
   - Size: Nowaday, the mainstream is 8GB, 12GB, 16GB, 24GB etc.
           <br/> Just like the RAM. The larger, the better. 🤣
           <br/> The larger VRAM support:
-    - [Graphic] Higher quality textures (4K, 8K, etc.)
-    - [Graphic] More complex geometry (higher poly count, tessellation, etc.)
+    - [Graphics] Higher quality textures (4K, 8K, etc.)
+    - [Graphics] More complex geometry (higher poly count, tessellation, etc.)
     - [Deep Learning] Larger dataset and batch sizes
     - [Deep Learning] More complex and larger models
 
@@ -184,22 +198,23 @@ The memory of GPU is called **VRAM** (Video RAM).
   - Bus Width: Or `Bit Width`, `Memory Interface Width`.
     It is the number of bits that can be transferred simultaneously.
   - Bandwidth: The overall width of the memory bus. It is the product of the bus width and the clock speed.
-    - Formula: `Bandwidth = Bus Width * Clock Speed`
+    - Formula: `Bandwidth = Bus Width * Clock Frequency * Architecture Multiplier`
     - Unit: GB/s, e.g. 320 GB/s
 
 
+<br/>
 
 #### Shader & TMU & ROP
 
 For rendering pipeline:
 
-- GPU shader works for the shader programs on-GPU computation.
+- GPU shadering unit for the shader programs on-GPU computation, which are the regular cores of GPU.
 
 - TMU stands for Texture Mapping Unit. It is a component of the video card or GPU that is responsible for mapping textures to polygons.
 
 - ROP stands for Render Output Unit. It is a component of the video card or GPU that is responsible for writing the final pixel data to the frame buffer.
 
-
+<br/>
 
 #### TFLOPS
 
