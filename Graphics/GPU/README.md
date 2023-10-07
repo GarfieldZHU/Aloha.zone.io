@@ -3,6 +3,8 @@
 The infrastructure of modern technology topics (AI, Machine Learning, Blockchain, etc.)
 
 ---
+> @Author: [Garfield Zhu](https://github.com/GarfieldZHU/)
+
 
 ## Story about NVidia
 
@@ -11,12 +13,20 @@ The infrastructure of modern technology topics (AI, Machine Learning, Blockchain
 
 ### History
 
-#### 0. Stock History
-See the history of the stock [NVDA](https://www.google.com/finance/quote/NVDA:NASDAQ?window=MAX)
+#### 0. Stock - [Nasdaq: NVDA](https://www.google.com/finance/quote/NVDA:NASDAQ?window=MAX)
+See the history of the stock [Nvidia](https://www.google.com/finance/quote/NVDA:NASDAQ?window=MAX) first.
+<br> 🌊 The tide of cutting-edge technologies bring NVIDIA where it is today.
 
-#### 1. Begin
 
-#### 2. 
+#### 1. Begining
+
+#### 2. Developing
+
+#### 3. Gaming
+
+#### 4. Blockchain
+
+#### 5. AI/Machine Learning
 
 
 ### Product Series
@@ -47,6 +57,7 @@ Nvidia had many product series, now it has 3 main series:
 
 | CPU | GPU |
 | ------ | ------ |
+| General purpose | Specialized-purpose |
 | Task parallelism | Data parallelism |
 | A few heavyweight cores | Many lightweight cores |
 | High memory size | High memory throughput |
