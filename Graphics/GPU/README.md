@@ -45,7 +45,15 @@ Nvidia had many product series, now it has 3 main series:
 
 > GPUs began as specialized ASICs developed to accelerate specific 3D rendering tasks. Over time, these fixed-function engines became more programmable and more flexible. While graphics and the increasingly lifelike visuals of today’s top games remain their principal function, GPUs have evolved to become more general-purpose parallel processors as well, handling a growing range of applications.
 
+| CPU | GPU |
+| ------ | ------ |
+| Task parallelism | Data parallelism |
+| A few heavyweight cores | Many lightweight cores |
+| High memory size | High memory throughput |
+| Many diverse instruction sets | A few highly optimized instruction sets |
+| Explicit thread management | Threads are managed by hardware |
 
+<br/>
 
 ### 🔖 Read GPU Spec
 
