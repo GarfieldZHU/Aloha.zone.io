@@ -32,6 +32,8 @@ Nvidia had many product series, now it has 3 main series:
 
 ### Compare with CPU
 
+[CPU vs. GPU](https://www.intel.com/content/www/us/en/products/docs/processors/cpu-vs-gpu.html)
+
 ### Read GPU Spec
 
 To better understand how the GPU performs, we should learn to read the spec of GPU of the core metrics.
