@@ -8,8 +8,15 @@ The infrastructure of modern technology topics (AI, Machine Learning, Blockchain
 
 ![nvidia](https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/nvidia.png)
 
+
 ### History
 
+#### 0. Stock History
+See the history of the stock [NVDA](https://www.google.com/finance/quote/NVDA:NASDAQ?window=MAX)
+
+#### 1. Begin
+
+#### 2. 
 
 
 ### Product Series
