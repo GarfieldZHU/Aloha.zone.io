@@ -59,9 +59,12 @@ Or the details in the official website of the GPU manufacturer (NVidia, AMD, and
 | [RTX 4090](https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4090/) | 16384 | 2.52 GHz (Boost) |
 | [Tesla H100](https://www.nvidia.com/en-us/data-center/h100/) | 14592 | 1.845 GHz (Boost) |
 
+
+
 ##### Cuda Cores (Nvidia)
 
 - [CUDA Cores](https://www.nvidia.com/en-us/geforce/technologies/cuda/): Nvidia
+
 
 
 #### Bus, Clock & Memory
@@ -79,11 +82,15 @@ The bus is the connection between the GPU and the motherboard. It is the data hi
 
 - Bus width: 128-bit, 192-bit, 256-bit, 384-bit, etc.
 
+
+
 ##### Clock Speed
 
 The clock speed is the speed of the GPU. (in MHz)
 
 Just like the CPU. It contains the core clock speed and the memory clock speed.
+
+
 
 ##### Memory
 
@@ -105,6 +112,7 @@ The memory of GPU is called **VRAM** (Video RAM).
   - Bandwidth: The overall width of the memory bus. It is the product of the bus width and the clock speed.
     - Formula: `Bandwidth = Bus Width * Clock Speed`
     - Unit: GB/s, e.g. 320 GB/s
+
 
 
 #### Shader & TMU & ROP
