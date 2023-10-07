@@ -167,8 +167,13 @@ In short, RT cores add extra circuits to the more general purpose CUDA cores tha
 
 #### Bus, Clock & Memory
 
-![RTX 40](https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/RTX40.png?raw=true)
-![Hooper](https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/Hooper.png?raw=true)
+<details>
+<summary>The specs of bus, clock & memory</summary>
+<img width="640" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/RTX40.png?raw=true"/>
+<img width="640" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/Hooper.png?raw=true"/>
+
+</details>
+
 
 ##### Bus
 
