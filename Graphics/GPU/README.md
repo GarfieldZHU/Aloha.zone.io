@@ -57,7 +57,7 @@ Generally, we say in 32-bit floating point.
 | ------ | ------ |
 | PS5    |  10.28 |
 | XBOX Series X |  12.00 |
-| Nitendo Switch | 0.4 / 0.5 (Docked) |
+| Nintendo Switch | 0.4 / 0.5 (Docked) |
 | Intel UHD Graphics 770 | 0.742 |
 | Intel Arc A770 | 19.66 |
 | AMD Radeon RX 7800 XT | 37.32 |
