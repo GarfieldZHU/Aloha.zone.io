@@ -8,7 +8,7 @@ The infrastructure of modern technology topics (AI, Machine Learning, Blockchain
 
 ## Story about NVidia
 
-![nvidia](https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/nvidia.png)
+<br><img width="512" src="https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/nvidia.png" />
 
 
 ### History
