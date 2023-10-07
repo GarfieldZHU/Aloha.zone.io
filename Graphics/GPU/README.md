@@ -233,6 +233,23 @@ Generally, we say in 32-bit floating point.
 <br/>
 <br/>
 
-## Use GPU
+## Program with GPU
 
+### OpenGL & GLSL
+
+OpenGL (Open Graphics Library) is a cross-language, cross-platform API for rendering 2D and 3D vector graphics.
+
+GLSL(OpenGL Shading Language), is a high-level shading language based on the C programming language.
+
+### WebGL
+
+WebGL (Web Graphics Library) is a JavaScript API for rendering interactive 2D and 3D graphics within any compatible web browser without the use of plug-ins.
+
+
+### CUDA
+
+CUDA is a parallel computing platform and programming model developed by Nvidia for general computing on its own GPUs (graphics processing units).
+
+Different from the OpenGL, CUDA is a general-purpose parallel computing platform and programming model.
+OpenGL focuses on the graphic rendering, while CUDA is for parallel computing. (e.g. Deep Learning, Crypto Mining)
 
