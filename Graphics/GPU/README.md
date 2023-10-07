@@ -6,6 +6,8 @@ The infrastructure of modern technology topics (AI, Machine Learning, Blockchain
 
 ## Story about NVidia
 
+![nvidia](../.assets/nvidia.png)
+
 ### History
 
 
