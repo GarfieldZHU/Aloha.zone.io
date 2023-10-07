@@ -153,6 +153,15 @@ The computational complexity increases multifold as the size and dimensions of t
 <br><img width="480" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/tensor.jpeg?raw=true"/>
 
 
+##### [RT Cores](https://developer.nvidia.com/rtx/ray-tracing)
+
+Known as "Ray Tracing Cores". It is a hardware implementation of the ray tracing technique.
+
+Ray tracing calculation is a specific rendering pattern with ray related vector calcutions, refer to [Ray Tracing notes](https://garfieldzhu.github.io/Aloha.zone.io/Graphics/RayTracing/)
+<br><img width="480" src="https://d29g4g2dyqv443.cloudfront.net/sites/default/files/akamai/Ampere/ampere-innovation-RT-cores-2c50-D@2x.jpg"/>
+
+In short, RT cores add extra circuits to the more general purpose CUDA cores that can be included in the rendering pipeline when a ray-tracing calculation comes along.
+
 <br/>
 
 #### Bus, Clock & Memory
