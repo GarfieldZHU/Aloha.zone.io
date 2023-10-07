@@ -6,7 +6,7 @@ The infrastructure of modern technology topics (AI, Machine Learning, Blockchain
 
 ## Story about NVidia
 
-![nvidia](../.assets/nvidia.png)
+![nvidia](https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/nvidia.png)
 
 ### History
 
@@ -30,7 +30,7 @@ Nvidia had many product series, now it has 3 main series:
 
 ### How GPU works
 
-### Compare with CPU
+### ⚖️ Compare with CPU
 
 [CPU vs. GPU](https://www.intel.com/content/www/us/en/products/docs/processors/cpu-vs-gpu.html)
 
@@ -40,7 +40,7 @@ Nvidia had many product series, now it has 3 main series:
 
 
 
-### Read GPU Spec
+### 🔖 Read GPU Spec
 
 To better understand how the GPU performs, we should learn to read the spec of GPU of the core metrics.
 
@@ -79,8 +79,8 @@ Or the details in the official website of the GPU manufacturer (NVidia, AMD, and
 
 #### Bus, Clock & Memory
 
-![RTX 40](../.assets/RTX40.png)
-![Hooper](../.assets/Hooper.png)
+![RTX 40](https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/RTX40.png?raw=true)
+![Hooper](https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/Hooper.png?raw=true)
 
 ##### Bus
 
