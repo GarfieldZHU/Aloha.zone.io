@@ -41,6 +41,7 @@ See the history of the stock [Nvidia](https://www.google.com/finance/quote/NVDA:
 * ***2008: CUDA, the first GPU computing platform.***
 <br><img width="240" src="https://www.nvidia.com/content/nvidiaGDC/us/en_US/about-nvidia/corporate-timeline/_jcr_content/root/responsivegrid/copy_of_nv_carousel__292630713/item_1669209938611.coreimg.100.850.jpeg/1688446141370/nvidia-timeline-cuda-2006.jpeg" />
 * Iterate GPU every 2-year. Keeping optimize the performance.
+* 2010: General Purpose GPU (GPGPU) concept for scientific computing supported by CUDA API.
 
 #### 4. AI, Auto-pilot, Blockchain, Cloud
 
@@ -83,7 +84,7 @@ Nvidia had many product series, now it has 3 main series:
 
 ### Architecture
 
-### How GPU works
+
 
 ### ⚖️ Compare with CPU
 
@@ -252,6 +253,32 @@ Generally, we say in 32-bit floating point.
 | GeForce RTX 4070 Ti | 40.09 |
 | GeForce RTX 4090 | 82.58 |
 | Tesla H100 | 67 |
+
+
+<br/>
+
+### How GPU runs
+
+#### CPU runs code
+
+<img width="480" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/cpu.png?raw=true"/>
+
+
+#### Traditional GPU runs code
+
+<img width="480" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/gpu.png?raw=true"/>
+
+
+#### GPGPU
+
+<img width="480" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/gpgpu.png?raw=true"/>
+
+<details>
+<summary>GTX 980 (2014 - Maxwell)</summary>
+<img width="480" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/SMM.png?raw=true"/>
+<img width="480" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/RTX980.png?raw=true"/>
+
+</details>
 
 
 <br/>
