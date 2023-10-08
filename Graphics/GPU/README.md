@@ -88,22 +88,22 @@ Let's tear down a GTX 4080 GPU to see what's inside.
 
 <details>
 <summary>GTX 4080 - Full card</summary>
-<img width="512" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/4080_outside.jpeg?raw=true"/>
+<img width="1024" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/4080_outside.jpeg?raw=true"/>
 </details>
 
 <details>
 <summary>GTX 4080 - Board part </summary>
-<img width="512" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/4080_part.jpeg?raw=true"/>
+<img width="1024" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/4080_part.jpeg?raw=true"/>
 </details>
 
 <details>
 <summary>Open the panel </summary>
-<img width="512" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/4080_inner.jpeg?raw=true"/>
+<img width="1024" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/4080_inner.jpeg?raw=true"/>
 </details>
 
 <details>
 <summary>Focus the core</summary>
-<img width="512" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/4080_main.jpeg?raw=true"/>
+<img width="1024" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/4080_main.jpeg?raw=true"/>
 </details>
 
 <br/>
@@ -112,17 +112,17 @@ Other views:
 
 <details>
 <summary>Other card</summary>
-<img width="512" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/other_card.png?raw=true"/>
+<img width="1024" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/other_card.png?raw=true"/>
 </details>
 
 <details>
 <summary>Move closer</summary>
-<img width="512" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/focus.png?raw=true"/>
+<img width="1024" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/focus.png?raw=true"/>
 </details>
 
 <details>
 <summary>Low-end cards</summary>
-<img width="512" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/low_end.png?raw=true"/>
+<img width="1024" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/low_end.png?raw=true"/>
 </details>
 
 
@@ -134,41 +134,41 @@ Now, let's focus on the core chip (Nvidia):
 
 <details>
 <summary>Exploded view (Tesla V100)</summary>
-<img width="512" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/exploded.png?raw=true"/>
+<img width="1024" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/exploded.png?raw=true"/>
 </details>
 
 <details>
 <summary>Abstract view</summary>
-<img width="512" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/simple.png?raw=true"/>
+<img width="1024" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/simple.png?raw=true"/>
 </details>
 
 <details>
 <summary>Fermi - with SM (Streaming Multiprocessor) </summary>
-<img width="512" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/fermi.webp?raw=true"/>
+<img width="1024" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/fermi.webp?raw=true"/>
 <details>
 <summary>Streaming Multiprocessor from Cuda Cores </summary>
-<img width="512" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/fermi_unit.webp?raw=true"/>
+<img width="1024" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/fermi_unit.webp?raw=true"/>
 </details>
 </details>
 
 <details>
 <summary>Kepler - open SM </summary>
-<img width="512" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/kepler.webp?raw=true"/>
+<img width="1024" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/kepler.webp?raw=true"/>
 </details>
 
 <details>
 <summary>Pascal - more SM </summary>
-<img width="512" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/pascal.webp?raw=true"/>
+<img width="1024" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/pascal.webp?raw=true"/>
 </details>
 
 <details>
 <summary>Volta - Tensor core </summary>
-<img width="512" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/volta.png?raw=true"/>
+<img width="1024" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/volta.png?raw=true"/>
 </details>
 
 <details>
 <summary>Ampere - RT core </summary>
-<img width="512" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/ampere.jpeg?raw=true"/>
+<img width="1024" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/ampere.jpeg?raw=true"/>
 </details>
 
 
