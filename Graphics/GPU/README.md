@@ -77,8 +77,59 @@ Nvidia had many product series, now it has 3 main series:
   - AWS Deep Learning instances are based on Tesla. See [AWS GPU Instances](https://docs.aws.amazon.com/dlami/latest/devguide/gpu.html)
 - Others: Jetson, Ada, Tegra, etc.
 
+
+<br/>
+
+### Anecdotes
+
+<details>
+<summary>1. NVIDIA naming </summary>
+
+Nvidia's first chip was named as `dot-NV`. "NV" is the abbreviation of **NEXT**, for they enjoy developing the next generation of products.
+
+For corp name, they try to find a latin word with "NV" in it. They found "invidia" in Latin, the envy.
+They want to be the envy of the industry. So they remove the "i" and named the company as "Nvidia". 🤣
+
+Actually, they did it.
+
+</details>
+
+<details>
+<summary>2. NVIDIA vs. AMD ？</summary>
+<img width="1024" src="https://images.m.ofweek.com/Upload/News/2023-07/04/shu/1688435305239032603.jpg"/>
+
+* Jensen Huang (黄仁勋) and Lisa Su (苏姿丰) are both Americans born in Taiwan.
+* They are relatives. Su's maternal grandfather is the eldest brother of Huang's mother. Huang is the "uncle" of Su.
+* [Jensen Huang](https://zh.wikipedia.org/zh-hans/%E9%BB%83%E4%BB%81%E5%8B%B3)
+* [Lisa Su](https://zh.wikipedia.org/zh-hans/%E8%98%87%E5%A7%BF%E4%B8%B0)
+
+</details>
+
+
+<details>
+<summary>3. The nick names </summary>
+
+* Jensen Huang is called "老黄" and Lisa Su is called "苏妈" in China.
+* Jensen Huang is more popular as "皮衣刀客".
+  | Card | 3060	| 3060Ti | 3070 | 3070Ti | 3080 | 3080Ti | 3090 | 3090Ti |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | SM count | 28 | 38 | 46 | 48 | 68 | 80 | 82 | 84 |
+  | VRAM | 12GB | 8GB | 8GB | 8GB | 10GB | 12GB | 24GB | 24GB |
+
+  Semiconductor etching is error-prone, especially for 7nm, 5nm even 3nm process. The yield rate is not high.
+
+  The chips are design to be error tolerable. Each area on the chip is standalone and can be disabled via firmware if there is an error.
+  If the 84 SM chip has 2 SMs disabled, it will be written as a 82 SM chip and wrapped as 3090. 😆
+
+
+</details>
+
+
+
 <br/>
 <br/>
+
+
 
 ## Introduce GPU
 
