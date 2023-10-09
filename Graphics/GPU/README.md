@@ -8,11 +8,11 @@ The infrastructure of modern technology topics (AI, Machine Learning, Blockchain
 
 ## Story about NVidia
 
-<br><img width="512" src="https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/nvidia.png" />
+<br><img width="640" src="https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/nvidia.png" />
 
 <details>
 <summary>And... The Man</summary>
-<br><img width="512" src="https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/renxun.jpeg" />
+<br><img width="640" src="https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/renxun.jpeg" />
 </details>
 
 
@@ -117,8 +117,11 @@ Actually, they did it.
 <summary>3. The nick names </summary>
 <ul>
 <li> Jensen Huang is called "老黄" and Lisa Su is called "苏妈" in China. </li>
-<li> Jensen Huang is more popular as "皮衣刀客". </li>
-
+<li> Jensen Huang is more popular as "皮衣刀客": </li>
+<li> The "皮衣": </li>
+<img width="512" src="https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/laohuang.jpeg"/>
+<br/>
+<li> The "刀法": </li>
 <table>
     <tr>
         <td><b>Card</b></td>
@@ -163,6 +166,23 @@ Actually, they did it.
   The chips are design to be error tolerable. Each area on the chip is standalone and can be disabled via firmware if there is an error.
   If the 84 SM chip has 2 SMs disabled, it will be written as a 82 SM chip and wrapped as 3090. 😆
 </ul>
+</details>
+
+<details>
+<summary>4. The most popular CEO </summary>
+<ul>
+<li> The rank voted by Silicon Valley employees in Aug. 2023 </li>
+<img width="1024" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/ceo_rank.jpeg?raw=true"/>
+<li> Huang has a tatoo of "Nvidia" logo on his shoulder. </li>
+<img width="720" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/tatoo.webp?raw=true"/>
+<li> Huang made the correct decisions to push the Nvidia where it is now:
+<ol>
+<li>Forsee to gaming market as a "Billion". Build chip for gaming.</li>
+<li>Persist technology innovation to iterate the GPU.</li>
+<li>Make GPU general-purpose, become the hardware arsenal of new era.</li>
+</ol>
+</li>
+
 </details>
 
 
