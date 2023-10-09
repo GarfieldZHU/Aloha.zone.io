@@ -77,8 +77,9 @@ See the history of the stock [Nvidia](https://www.google.com/finance/quote/NVDA:
 
 The world's 6th largest company. (Oct. 2023)
 
-> https://tw.tradingview.com/markets/world-economy/worlds-largest-companies/
+See [World's Largest Companies](https://tw.tradingview.com/markets/world-economy/worlds-largest-companies/)
 
+Huang and Elon Musk:
 <br><img width="720" src="https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/elon.png"/>
 
 <br/>
@@ -362,6 +363,7 @@ Or the details in the official website of the GPU manufacturer (NVidia, AMD, and
 | [RTX 4090](https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4090/) | 16384 | 2.52 GHz (Boost) |
 | [Tesla H100](https://www.nvidia.com/en-us/data-center/h100/) | 14592 | 1.845 GHz (Boost) |
 
+<br/>
 
 ##### [CUDA Cores](https://www.nvidia.com/en-us/geforce/technologies/cuda/) (Nvidia)
 
@@ -375,6 +377,7 @@ Generally, The GPU cores are the shading units for rendering pipeline. But for N
 
 [CUDA](https://developer.nvidia.com/blog/tag/cuda/) (Compute Unified Device Architecture) is the official name of GPGPU. Now it is used as the Nvidia core name and the most popular API on GPGPU.
 
+<br/>
 
 ##### [Tensor Cores](https://www.nvidia.com/en-us/geforce/technologies/cuda/) (Nvidia)
 
@@ -389,6 +392,7 @@ The computational complexity increases multifold as the size and dimensions of t
 <img width="1024" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/tensor_core.gif?raw=true"/>
 </details>
 
+<br/>
 
 ##### [RT Cores](https://developer.nvidia.com/rtx/ray-tracing)
 
