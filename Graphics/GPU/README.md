@@ -10,6 +10,11 @@ The infrastructure of modern technology topics (AI, Machine Learning, Blockchain
 
 <br><img width="512" src="https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/nvidia.png" />
 
+<details>
+<summary>And... The Man</summary>
+<br><img width="512" src="https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/renxun.jpeg" />
+</details>
+
 
 ### History
 
