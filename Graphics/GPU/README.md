@@ -105,7 +105,6 @@ Actually, they did it.
 
 </details>
 
-
 <details>
 <summary>3. The nick names </summary>
 
@@ -121,9 +120,7 @@ Actually, they did it.
   The chips are design to be error tolerable. Each area on the chip is standalone and can be disabled via firmware if there is an error.
   If the 84 SM chip has 2 SMs disabled, it will be written as a 82 SM chip and wrapped as 3090. 😆
 
-
 </details>
-
 
 
 <br/>
@@ -176,8 +173,6 @@ Other views:
 <img width="1024" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/low_end.png?raw=true"/>
 </details>
 
-
-<br/>
 <br/>
 
 
@@ -226,6 +221,7 @@ Now, let's focus on the core chip (Nvidia):
 <img width="1024" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/ampere_more.png?raw=true"/>
 </details>
 
+<br>
 
 ### ⚖️ Compare with CPU
 
