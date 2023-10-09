@@ -6,7 +6,9 @@ The infrastructure of modern technology topics (AI, Machine Learning, Blockchain
 > @Author: [Garfield Zhu](https://github.com/GarfieldZHU/)
 
 
-## Story about NVidia
+## Story about NVIDIA
+
+The new star in "Trillion Club". (2023)
 
 <br><img width="640" src="https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/nvidia.png" />
 
@@ -69,6 +71,15 @@ See the history of the stock [Nvidia](https://www.google.com/finance/quote/NVDA:
 * 2022: NVIDIA Omniverse™ platform is released as fundational role of building metaverse.
 * As the core infrastructure of training LLM, Nvidia is again on the top of the tide.
 <br><img width="240" src="https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/chatgpt.webp"/>
+
+
+#### 7. Today
+
+The world's 6th largest company. (Oct. 2023)
+
+https://tw.tradingview.com/markets/world-economy/worlds-largest-companies/
+
+<br/>
 
 ### Product Series
 
