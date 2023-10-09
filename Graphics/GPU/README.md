@@ -67,7 +67,8 @@ See the history of the stock [Nvidia](https://www.google.com/finance/quote/NVDA:
 
 #### 6. AI, Big Language Model, Metaverse
 
-* 2021: GPT-3, the first big language model, was released.
+* 2017: Google announced their `Transformer` model for LLM. See [What is a transformer model](https://blogs.nvidia.com/blog/2022/03/25/what-is-a-transformer-model/)
+* 2021: GPT-3, one of the largest language model, was released by OpenAI.
 * 2022: The ChatGPT is publicly announce. The big language model is popular.
 * 2022: NVIDIA Omniverse™ platform is released as fundational role of building metaverse.
 * As the core infrastructure of training LLM, Nvidia is again on the top of the tide.
@@ -76,12 +77,12 @@ See the history of the stock [Nvidia](https://www.google.com/finance/quote/NVDA:
 
 #### 7. Today
 
-The world's 6th largest company. (Oct. 2023)
+* Moore's Law is fading today. Now it yields [Huang’s law](https://blogs.nvidia.com/blog/2020/12/14/gtc-china-keynote-dally-ai/) — that GPUs will double AI performance every year.
 
-See [World's Largest Companies](https://tw.tradingview.com/markets/world-economy/worlds-largest-companies/)
+* The world's 6th largest company (Oct. 2023). <br/> See [World's Largest Companies](https://tw.tradingview.com/markets/world-economy/worlds-largest-companies/)
+  <br><img width="720" src="https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/elon.png"/>
 
-Huang and Elon Musk:
-<br><img width="720" src="https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/elon.png"/>
+
 
 <br/>
 
