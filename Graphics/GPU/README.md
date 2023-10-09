@@ -164,11 +164,15 @@ Now, let's focus on the core chip (Nvidia):
 <details>
 <summary>Volta - Tensor core </summary>
 <img width="1024" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/volta.png?raw=true"/>
+
+<img width="1024" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/tensor_volda.gif?raw=true"/>
 </details>
 
 <details>
 <summary>Ampere - RT core </summary>
 <img width="1024" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/ampere.jpeg?raw=true"/>
+
+<img width="1024" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/ampere_more.png?raw=true"/>
 </details>
 
 
@@ -238,6 +242,11 @@ Generally, The GPU cores are the shading units for rendering pipeline. But for N
 The computational complexity increases multifold as the size and dimensions of the matrix (tensor) go up. Machine Learning, Deep learning, Ray Tracing are tasks that involve an excessive amount of multiplication.
 
 <br><img width="480" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/tensor.jpeg?raw=true"/>
+
+<details>
+<summary>Ampere - Tensor core </summary>
+<img width="1024" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/tensor_core.gif?raw=true"/>
+</details>
 
 
 ##### [RT Cores](https://developer.nvidia.com/rtx/ray-tracing)
