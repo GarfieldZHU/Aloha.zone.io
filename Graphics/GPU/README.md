@@ -152,6 +152,9 @@ Actually, they did it.
 
   Semiconductor etching is error-prone, especially for 7nm, 5nm even 3nm process. The yield rate is not high.
 
+<img width="512" src="https://www.twisted-meadows.com/wp-content/uploads/2022/04/101732.jpg"/>
+
+
   The chips are design to be error tolerable. Each area on the chip is standalone and can be disabled via firmware if there is an error.
   If the 84 SM chip has 2 SMs disabled, it will be written as a 82 SM chip and wrapped as 3090. 😆
 </ul>
