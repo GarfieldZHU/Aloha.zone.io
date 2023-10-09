@@ -50,7 +50,7 @@ See the history of the stock [Nvidia](https://www.google.com/finance/quote/NVDA:
 * Iterate GPU every 2-year. Keeping optimize the performance.
 * 2010: General Purpose GPU (GPGPU) concept for scientific computing supported by CUDA API.
 
-#### 4. AI, Auto-pilot, Blockchain, Cloud
+#### 4. AI, AR, VR, Auto-pilot, Blockchain, Cloud
 
 * 2015: CUDA enforced the Deep Learning neural network.
 * 2016: Nvidia Drive PX, the first AI Auto-pilot platform.
