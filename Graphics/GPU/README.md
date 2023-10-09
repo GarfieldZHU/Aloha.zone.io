@@ -77,7 +77,9 @@ See the history of the stock [Nvidia](https://www.google.com/finance/quote/NVDA:
 
 The world's 6th largest company. (Oct. 2023)
 
-https://tw.tradingview.com/markets/world-economy/worlds-largest-companies/
+> https://tw.tradingview.com/markets/world-economy/worlds-largest-companies/
+
+<br><img width="720" src="https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/elon.png"/>
 
 <br/>
 
@@ -182,25 +184,22 @@ Actually, they did it.
 <details>
 <summary>4. The most popular CEO </summary>
 <ul>
-<li> The rank voted by Silicon Valley employees in Aug. 2023 </li>
-<img width="1024" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/ceo_rank.jpeg?raw=true"/>
-<li> Huang has a tatoo of "Nvidia" logo on his shoulder. </li>
-<img width="720" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/tatoo.webp?raw=true"/>
-<li> Huang made the correct decisions to push the Nvidia where it is now:
-<ol>
-<li>Forsee to gaming market as a "Billion". Build chip for gaming.</li>
-<li>Persist technology innovation to iterate the GPU.</li>
-<li>Make GPU general-purpose, become the hardware arsenal of new era.</li>
-</ol>
-</li>
-
+    <li> The rank voted by Silicon Valley employees in Aug. 2023 </li>
+        <img width="1024" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/ceo_rank.jpeg?raw=true"/>
+    <li> Huang has a tatoo of "Nvidia" logo on his shoulder. (as he promised if the stock value reach $100) </li>
+        <img width="720" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/tatoo.webp?raw=true"/>
+    <li> Huang made the correct decisions to push the Nvidia where it is now:
+    <ol>
+        <li>Forsee to gaming market as a "Billion". Build chip for gaming.</li>
+        <li>Persist technology innovation to iterate the GPU.</li>
+        <li>Make GPU general-purpose, become the hardware arsenal of new era.</li>
+    </ol>
+    </li>
+</ul>
 </details>
 
-
 <br/>
 <br/>
-
-
 
 ## Introduce GPU
 
