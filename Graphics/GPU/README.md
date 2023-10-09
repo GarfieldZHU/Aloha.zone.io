@@ -282,6 +282,22 @@ Now, let's focus on the core chip (Nvidia):
 
 <br/>
 
+<details>
+<summary>An examples </summary>
+
+<p>
+CPU is like a workshop with one or serveral craftsmans. They are well-skilled and can do anythings if you give him a blueprint and enough time.
+</p>
+<p>
+GPU is like a pipeline with many workers. They are poorly-educated but can do the same thing in parallel. Given simple and specific guide, they can do the job very fast.
+</p>
+
+</details>
+
+
+<br/>
+
+
 ### 🔖 Read GPU Spec
 
 To better understand how the GPU performs, we should learn to read the spec of GPU of the core metrics.
