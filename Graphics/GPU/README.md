@@ -84,42 +84,77 @@ Nvidia had many product series, now it has 3 main series:
 
 <details>
 <summary>1. NVIDIA naming </summary>
-
-Nvidia's first chip was named as `dot-NV`. "NV" is the abbreviation of **NEXT**, for they enjoy developing the next generation of products.
-
+<p>
+Nvidia's first chip was named as `dot-NV`. "NV" is the abbreviation of <b><u>NEXT</u></b>, for they enjoy developing the next generation of products.
+</p>
+<p>
 For corp name, they try to find a latin word with "NV" in it. They found "invidia" in Latin, the envy.
 They want to be the envy of the industry. So they remove the "i" and named the company as "Nvidia". 🤣
-
+</p>
+<p>
 Actually, they did it.
+</p>
 
 </details>
 
 <details>
 <summary>2. NVIDIA vs. AMD ？</summary>
 <img width="1024" src="https://images.m.ofweek.com/Upload/News/2023-07/04/shu/1688435305239032603.jpg"/>
-
-* Jensen Huang (黄仁勋) and Lisa Su (苏姿丰) are both Americans born in Taiwan.
-* They are relatives. Su's maternal grandfather is the eldest brother of Huang's mother. Huang is the "uncle" of Su.
-* [Jensen Huang](https://zh.wikipedia.org/zh-hans/%E9%BB%83%E4%BB%81%E5%8B%B3)
-* [Lisa Su](https://zh.wikipedia.org/zh-hans/%E8%98%87%E5%A7%BF%E4%B8%B0)
-
+<ul>
+<li> Jensen Huang (黄仁勋) and Lisa Su (苏姿丰) are both Americans born in Taiwan. </li>
+<li> They are relatives. Su's maternal grandfather is the eldest brother of Huang's mother. Huang is the "uncle" of Su.  </li>
+<li> <a href="https://zh.wikipedia.org/zh-hans/%E9%BB%83%E4%BB%81%E5%8B%B3">Jensen Huang</a>  </li>
+<li> <a href="https://zh.wikipedia.org/zh-hans/%E8%98%87%E5%A7%BF%E4%B8%B0">Lisa Su </a> </li>
+</ul>
 </details>
 
 <details>
 <summary>3. The nick names </summary>
+<ul>
+<li> Jensen Huang is called "老黄" and Lisa Su is called "苏妈" in China. </li>
+<li> Jensen Huang is more popular as "皮衣刀客". </li>
 
-* Jensen Huang is called "老黄" and Lisa Su is called "苏妈" in China.
-* Jensen Huang is more popular as "皮衣刀客".
-  | Card | 3060	| 3060Ti | 3070 | 3070Ti | 3080 | 3080Ti | 3090 | 3090Ti |
-  | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-  | SM count | 28 | 38 | 46 | 48 | 68 | 80 | 82 | 84 |
-  | VRAM | 12GB | 8GB | 8GB | 8GB | 10GB | 12GB | 24GB | 24GB |
+<table>
+    <tr>
+        <td><b>Card</b></td>
+        <td>3060</td>
+        <td>3060Ti</td>
+        <td>3070</td>
+        <td>3070Ti</td>
+        <td>3080</td>
+        <td>3080Ti</td>
+        <td>3090</td>
+        <td>3090Ti</td>
+    </tr>
+    <tr>
+        <td><b>SM count</b></td>
+        <td>28</td>
+        <td>38</td>
+        <td>46</td>
+        <td>48</td>
+        <td>68</td>
+        <td>80</td>
+        <td>82</td>
+        <td>84</td>
+    </tr>
+    <tr>
+        <td><b>VRAM</b></td>
+        <td>12GB</td>
+        <td>8GB</td>
+        <td>8GB</td>
+        <td>8GB</td>
+        <td>10GB</td>
+        <td>12GB</td>
+        <td>24GB</td>
+        <td>24GB</td>
+    </tr>
+</table>
 
   Semiconductor etching is error-prone, especially for 7nm, 5nm even 3nm process. The yield rate is not high.
 
   The chips are design to be error tolerable. Each area on the chip is standalone and can be disabled via firmware if there is an error.
   If the 84 SM chip has 2 SMs disabled, it will be written as a 82 SM chip and wrapped as 3090. 😆
-
+</ul>
 </details>
 
 
