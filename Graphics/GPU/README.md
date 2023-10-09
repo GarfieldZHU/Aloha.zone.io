@@ -336,6 +336,11 @@ Generally, The GPU cores are the shading units for rendering pipeline. But for N
 - They have a high memory bandwidth, meaning they can quickly and easily access large amounts of data.
 - They are designed specifically for algorithms that can be parallelized.
 
+![CUDA](https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/cuda.jpeg?raw=true)
+
+[CUDA](https://developer.nvidia.com/blog/tag/cuda/) (Compute Unified Device Architecture) is the official name of GPGPU. Now it is used as the Nvidia core name and the most popular API on GPGPU.
+
+
 ##### [Tensor Cores](https://www.nvidia.com/en-us/geforce/technologies/cuda/) (Nvidia)
 
 > Essentially, Tensor cores are processing units that accelerate the process of matrix multiplication.
