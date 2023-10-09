@@ -458,6 +458,18 @@ Generally, we say in 32-bit floating point.
 
 <br/>
 
+
+#### Example
+
+Now, let's read a spec of RTX 4090:
+
+https://www.techpowerup.com/gpu-specs/geforce-rtx-4090.c3889
+
+![](https://tpucdn.com/gpu-specs/images/c/3889-i-o.jpg)
+
+<br/>
+
+
 ### How GPU runs
 
 #### CPU runs code
