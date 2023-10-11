@@ -10,11 +10,11 @@ The infrastructure of modern technology topics (AI, Machine Learning, Blockchain
 
 The new star in "Trillion Club". (2023)
 
-<br><img width="720" src="https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/nvidia.png" />
+<br><img width="640" src="https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/nvidia.png" />
 
 <details>
 <summary>And... The Man</summary>
-<br><img width="720" src="https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/renxun.jpeg" />
+<br><img width="640" src="https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/renxun.jpeg" />
 </details>
 
 <br/>
@@ -106,7 +106,7 @@ Nvidia had many product series, now it has 3 main series:
 <details>
 <summary>1. NVIDIA naming </summary>
 <p>
-Nvidia's first chip was named as `dot-NV`. "NV" is the abbreviation of <b><u>NEXT VERSION</u></b>, for they enjoy developing the next generation of products.
+Nvidia's first chip was named as `dot-NV`. "NV" is the abbreviation of <b><u>NEXT</u></b>, for they enjoy developing the next generation of products.
 </p>
 <p>
 For corp name, they try to find a latin word with "NV" in it. They found "invidia" in Latin, the envy.
@@ -212,14 +212,13 @@ Let's tear down a GTX 4080 GPU to see what's inside.
 
 <details>
 <summary>GTX 4080 - Full card</summary>
-<img width="1024" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/4080_outside.jpeg?raw=true"/>
+  <img width="1024" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/4080_outside.jpeg?raw=true"/>
 
-<details>
-<summary>Other OEMs:</summary>
-<img width="640" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/vulcan.png?raw=true"/>
-<img width="640" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/rog.png?raw=true"/>
-</details>
-
+  <details>
+    <summary>Other OEMs:</summary>
+    <img width="640" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/vulcan.png?raw=true"/>
+    <img width="640" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/rog.png?raw=true"/>
+  </details>
 </details>
 
 <details>
@@ -229,12 +228,23 @@ Let's tear down a GTX 4080 GPU to see what's inside.
 
 <details>
 <summary>Open the panel </summary>
+<img width="1024" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/heat_pipe.png?raw=true"/>
+</details>
+
+<details>
+<summary>PCB panel </summary>
 <img width="1024" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/4080_inner.jpeg?raw=true"/>
+
+  <details>
+    <summary>ROG Strix pcb: </summary>
+    <img width="1024" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/rog_pcb.png?raw=true"/>
+  </details>
 </details>
 
 <details>
 <summary>Focus the core</summary>
 <img width="1024" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/4080_main.jpeg?raw=true"/>
+
 </details>
 
 <br/>
@@ -249,6 +259,8 @@ Other views:
 <details>
 <summary>Move closer</summary>
 <img width="1024" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/focus.png?raw=true"/>
+
+<img width="1024" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/rog_focus.png?raw=true"/>
 </details>
 
 <details>
