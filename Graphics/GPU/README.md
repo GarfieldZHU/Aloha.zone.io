@@ -213,6 +213,13 @@ Let's tear down a GTX 4080 GPU to see what's inside.
 <details>
 <summary>GTX 4080 - Full card</summary>
 <img width="1024" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/4080_outside.jpeg?raw=true"/>
+
+<details>
+<summary>Other OEMs:</summary>
+<img width="640" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/vulcan.png?raw=true"/>
+<img width="640" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/rog.png?raw=true"/>
+</details>
+
 </details>
 
 <details>
