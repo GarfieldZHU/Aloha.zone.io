@@ -584,3 +584,47 @@ CUDA is a parallel computing platform and programming model developed by Nvidia 
 Different from the OpenGL, CUDA is a general-purpose parallel computing platform and programming model.
 OpenGL focuses on the graphic rendering, while CUDA is for parallel computing. (e.g. Deep Learning, Crypto Mining)
 
+
+- C sample:
+```c
+// CUDA C
+__global__ void myKernel() {
+  printf("Hello world\n");
+}
+
+int main(int argc, char const *argv[]) {
+    myKernel<<<4,2>>>();
+    return 0;
+}
+```
+
+- Python sample:
+```python
+# CUDA Python by numba
+
+from numba import cuda
+
+def cpu_print(N):
+    for i in range(0, N):
+        print(i)
+
+@cuda.jit
+def gpu_print(N):
+    idx = cuda.threadIdx.x + cuda.blockIdx.x * cuda.blockDim.x 
+    if (idx < N):
+        print(idx)
+
+def main():
+    print("gpu print:")
+    gpu_print[2, 4](8)
+    cuda.synchronize()
+    print("cpu print:")
+    cpu_print(8)
+
+if __name__ == "__main__":
+    main()
+```
+
+- [Cuda model intro](https://developer.nvidia.com/zh-cn/blog/cuda-model-intro-cn/)
+- [Cuda C beginner](https://dingfen.github.io/mpi&openmp/2021/10/08/cuda-beginer.html)
+- [Python Cuda](https://lulaoshi.info/gpu/python-cuda/cuda-intro.html/)
