@@ -585,7 +585,8 @@ Different from the OpenGL, CUDA is a general-purpose parallel computing platform
 OpenGL focuses on the graphic rendering, while CUDA is for parallel computing. (e.g. Deep Learning, Crypto Mining)
 
 
-- C sample:
+C sample:
+
 ```c
 // CUDA C
 __global__ void myKernel() {
@@ -598,7 +599,8 @@ int main(int argc, char const *argv[]) {
 }
 ```
 
-- Python sample:
+Python sample:
+
 ```python
 # CUDA Python by numba
 
