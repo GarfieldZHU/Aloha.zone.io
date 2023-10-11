@@ -10,11 +10,11 @@ The infrastructure of modern technology topics (AI, Machine Learning, Blockchain
 
 The new star in "Trillion Club". (2023)
 
-<br><img width="640" src="https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/nvidia.png" />
+<br><img width="720" src="https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/nvidia.png" />
 
 <details>
 <summary>And... The Man</summary>
-<br><img width="640" src="https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/renxun.jpeg" />
+<br><img width="720" src="https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/renxun.jpeg" />
 </details>
 
 <br/>
@@ -106,7 +106,7 @@ Nvidia had many product series, now it has 3 main series:
 <details>
 <summary>1. NVIDIA naming </summary>
 <p>
-Nvidia's first chip was named as `dot-NV`. "NV" is the abbreviation of <b><u>NEXT</u></b>, for they enjoy developing the next generation of products.
+Nvidia's first chip was named as `dot-NV`. "NV" is the abbreviation of <b><u>NEXT VERSION</u></b>, for they enjoy developing the next generation of products.
 </p>
 <p>
 For corp name, they try to find a latin word with "NV" in it. They found "invidia" in Latin, the envy.
