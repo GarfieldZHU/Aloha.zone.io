@@ -10,11 +10,11 @@ The infrastructure of modern technology topics (AI, Machine Learning, Blockchain
 
 The new star in "Trillion Club". (2023)
 
-<br><img width="640" src="https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/nvidia.png" />
+<br><img width="1024" src="https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/nvidia.png" />
 
 <details>
 <summary>And... The Man</summary>
-<br><img width="640" src="https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/renxun.jpeg" />
+<br><img width="1024" src="https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/renxun.jpeg" />
 </details>
 
 <br/>
