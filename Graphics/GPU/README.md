@@ -570,11 +570,14 @@ In general purpose GPU architecture, Nvidia leverages the CUDA cores (typically 
 
 OpenGL (Open Graphics Library) is a cross-language, cross-platform API for rendering 2D and 3D vector graphics.
 
-GLSL(OpenGL Shading Language), is a high-level shading language based on the C programming language.
+GLSL (OpenGL Shading Language), is a high-level shading language based on the C programming language.
 
-### WebGL
+### WebGL & WebGPU
 
 WebGL (Web Graphics Library) is a JavaScript API for rendering interactive 2D and 3D graphics within any compatible web browser without the use of plug-ins.
+
+- [Unlocking modern GPU access in the browser](https://developer.chrome.com/blog/webgpu-io2023/)
+- [WebGPU API](https://developer.mozilla.org/en-US/docs/Web/API/WebGPU_API)
 
 
 ### CUDA
