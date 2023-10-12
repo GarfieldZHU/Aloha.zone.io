@@ -577,7 +577,8 @@ GLSL (OpenGL Shading Language), is a high-level shading language based on the C 
 WebGL (Web Graphics Library) is a JavaScript API for rendering interactive 2D and 3D graphics within any compatible web browser without the use of plug-ins.
 
 - [Unlocking modern GPU access in the browser](https://developer.chrome.com/blog/webgpu-io2023/)
-- [WebGPU API](https://developer.mozilla.org/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU standard](https://gpuweb.github.io/gpuweb/)
+- [MDN - WebGPU API](https://developer.mozilla.org/en-US/docs/Web/API/WebGPU_API)
 
 
 ### CUDA
