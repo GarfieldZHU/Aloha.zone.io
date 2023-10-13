@@ -588,6 +588,7 @@ CUDA is a parallel computing platform and programming model developed by Nvidia 
 Different from the OpenGL, CUDA is a general-purpose parallel computing platform and programming model.
 OpenGL focuses on the graphic rendering, while CUDA is for parallel computing. (e.g. Deep Learning, Crypto Mining)
 
+<img width="720" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/CUDA_flow.png?raw=true"/>
 
 C sample:
 
