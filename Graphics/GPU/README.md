@@ -101,8 +101,6 @@ Nvidia had many product series, now it has 3 main series:
 
 <br/>
 
-[NVIDIA Marbles at Night | RTX Demo](https://youtu.be/NgcYLIvlp_k?si=GW1jlgYrbVaG0b3I)
-
 
 ### Anecdotes
 
@@ -426,6 +424,9 @@ Ray tracing calculation is a specific rendering pattern with ray related vector 
 <br><img width="480" src="https://d29g4g2dyqv443.cloudfront.net/sites/default/files/akamai/Ampere/ampere-innovation-RT-cores-2c50-D@2x.jpg"/>
 
 In short, RT cores add extra circuits to the more general purpose CUDA cores that can be included in the rendering pipeline when a ray-tracing calculation comes along.
+
+Ray tracing Demo: [NVIDIA Marbles at Night | RTX Demo](https://youtu.be/NgcYLIvlp_k?si=GW1jlgYrbVaG0b3I)
+
 
 <br/>
 
