@@ -101,10 +101,8 @@ Nvidia had many product series, now it has 3 main series:
 
 <br/>
 
+[NVIDIA Marbles at Night | RTX Demo](https://youtu.be/NgcYLIvlp_k?si=GW1jlgYrbVaG0b3I)
 
- [NVIDIA Marbles at Night | RTX Demo](https://blogs.nvidia.com/blog/2021/05/27/omniverse-marbles-rtx-playable-sample/)
-
- <iframe width="840" height="630" src="https://youtu.be/NgcYLIvlp_k?si=GW1jlgYrbVaG0b3I"> </iframe>
 
 ### Anecdotes
 
