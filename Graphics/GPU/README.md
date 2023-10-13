@@ -634,3 +634,10 @@ if __name__ == "__main__":
 - [Cuda model intro](https://developer.nvidia.com/zh-cn/blog/cuda-model-intro-cn/)
 - [Cuda C beginner](https://dingfen.github.io/mpi&openmp/2021/10/08/cuda-beginer.html)
 - [Python Cuda](https://lulaoshi.info/gpu/python-cuda/cuda-intro.html/)
+
+
+
+## Recommendation
+
+- [GTC 2023 Keynote with NVIDIA CEO Jensen Huang](https://www.youtube.com/watch?v=DiGB5uAYKAg)
+- [GPU - CMU](https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/GPU/gpu_cmu.pdf)
