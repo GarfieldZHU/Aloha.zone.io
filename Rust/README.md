@@ -66,3 +66,7 @@ The advanced and **Unsafe** part of Rust as dark art.
 #### ix. Learn PNG by Rust
 
 - [PNGme](https://picklenerd.github.io/pngme_book/setup.html)
+
+#### x. 100 Exercises To Learn Rust
+
+- [100 Exercises To Learn Rust](https://rust-exercises.com/01_intro/00_welcome)
