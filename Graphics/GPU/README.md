@@ -10,11 +10,11 @@ The infrastructure of modern technology topics (AI, Machine Learning, Blockchain
 
 The new star in "Trillion Club". (2023)
 
-<br><img width="1024" src="https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/nvidia.png" />
+<br/><img width="1024" src="https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/nvidia.png" />
 
 <details>
 <summary>And... The Man</summary>
-<br><img width="1024" src="https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/renxun.jpeg" />
+<br/><img width="1024" src="https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/renxun.jpeg" />
 </details>
 
 <br/>
@@ -23,12 +23,12 @@ The new star in "Trillion Club". (2023)
 
 #### 0. Stock - [Nasdaq: NVDA](https://www.google.com/finance/quote/NVDA:NASDAQ?window=MAX)
 See the history of the stock [Nvidia](https://www.google.com/finance/quote/NVDA:NASDAQ?window=MAX) first.
-<br> 🌊 The tide of cutting-edge technologies bring NVIDIA where it is today.
+<br/> 🌊 The tide of cutting-edge technologies bring NVIDIA where it is today.
 
 
 #### 1. Begining
 * 1993: Founded in Santa Clara, California, USA.
-<br><img width="240" src="https://www.nvidia.com/content/nvidiaGDC/us/en_US/about-nvidia/corporate-timeline/_jcr_content/root/responsivegrid/copy_of_nv_carousel__292630713/item_1669209935575.coreimg.100.850.jpeg/1688446141198/nvidia-timeline-3d-graphics-1993.jpeg" />
+<br/><img width="240" src="https://www.nvidia.com/content/nvidiaGDC/us/en_US/about-nvidia/corporate-timeline/_jcr_content/root/responsivegrid/copy_of_nv_carousel__292630713/item_1669209935575.coreimg.100.850.jpeg/1688446141198/nvidia-timeline-3d-graphics-1993.jpeg" />
 * Founders: Jensen Huang, Chris Malachowsky, Curtis Priem.
 * Produce Graphic Cards for bussiness customers.
 * 3D Graphics for gaming and multimedia markets.
@@ -36,10 +36,10 @@ See the history of the stock [Nvidia](https://www.google.com/finance/quote/NVDA:
 #### 2. Developing
 
 * ***1999: GeForce 256, the first GPU.***
-<br><img width="240" src="https://www.nvidia.com/content/nvidiaGDC/us/en_US/about-nvidia/corporate-timeline/_jcr_content/root/responsivegrid/copy_of_nv_carousel__292630713/item_1669209940663.coreimg.100.850.jpeg/1688446141218/nvidia-timeline-gpu-1999.jpeg" />
+<br/><img width="240" src="https://www.nvidia.com/content/nvidiaGDC/us/en_US/about-nvidia/corporate-timeline/_jcr_content/root/responsivegrid/copy_of_nv_carousel__292630713/item_1669209940663.coreimg.100.850.jpeg/1688446141218/nvidia-timeline-gpu-1999.jpeg" />
 * 1999: Nasdaq IPO.
 * 2000: 3DFX (Voodoo, first customer-facing graphic card), the competitor, went bankrupt.
-  <br> Nvidia acquired 3DFX.
+  <br/> Nvidia acquired 3DFX.
 * As OEM, Nvidia produced GPUs for PC manufacturers.
 
 #### 3. New Vision
@@ -47,7 +47,7 @@ See the history of the stock [Nvidia](https://www.google.com/finance/quote/NVDA:
 * Facing to gaming market. (GeForce)
 * Decoupling the GPU from the PC. Face to customers directly.
 * ***2008: CUDA, the first GPU computing platform.***
-<br><img width="240" src="https://www.nvidia.com/content/nvidiaGDC/us/en_US/about-nvidia/corporate-timeline/_jcr_content/root/responsivegrid/copy_of_nv_carousel__292630713/item_1669209938611.coreimg.100.850.jpeg/1688446141370/nvidia-timeline-cuda-2006.jpeg" />
+<br/><img width="240" src="https://www.nvidia.com/content/nvidiaGDC/us/en_US/about-nvidia/corporate-timeline/_jcr_content/root/responsivegrid/copy_of_nv_carousel__292630713/item_1669209938611.coreimg.100.850.jpeg/1688446141370/nvidia-timeline-cuda-2006.jpeg" />
 * Iterate GPU every 2-year. Keeping optimize the performance.
 * 2010: General Purpose GPU (GPGPU) concept for scientific computing supported by CUDA API.
 
@@ -56,14 +56,14 @@ See the history of the stock [Nvidia](https://www.google.com/finance/quote/NVDA:
 * 2015: CUDA enforced the Deep Learning neural network.
 * 2016: Nvidia Drive PX, the first AI Auto-pilot platform.
 * 2018: Nvidia announced Nvidia RTX™ for real-time ray tracing.
-<br><img width="240" src="https://www.nvidia.com/content/nvidiaGDC/us/en_US/about-nvidia/corporate-timeline/_jcr_content/root/responsivegrid/copy_of_nv_carousel__292630713/nv_teaser_copy.coreimg.100.850.jpeg/1690308833559/nvidia-rtx-professional.jpeg" />
+<br/><img width="240" src="https://www.nvidia.com/content/nvidiaGDC/us/en_US/about-nvidia/corporate-timeline/_jcr_content/root/responsivegrid/copy_of_nv_carousel__292630713/nv_teaser_copy.coreimg.100.850.jpeg/1690308833559/nvidia-rtx-professional.jpeg" />
 * The raising of Blockchain and Cloud Computing make Nvidia widely adopted.
 
 #### 5. Bitcoin, Mining age
 
 * 2020: Bitcoin price raised to $20,000. The RTX 30 series was released.
 * The mining age makes the GPU price doubled, trippled and even higher. 30 series are almost all mining cards.
-<br><img width="240" src="https://media.istockphoto.com/id/1248674191/photo/bitcoin-gold-cryptocurrency-trading-chart.jpg?s=612x612&w=0&k=20&c=Zj-t9bYp9FChMLXGMRqt2l41KGjYp1jZaehbCKjJWcw=" />
+<br/><img width="240" src="https://media.istockphoto.com/id/1248674191/photo/bitcoin-gold-cryptocurrency-trading-chart.jpg?s=612x612&w=0&k=20&c=Zj-t9bYp9FChMLXGMRqt2l41KGjYp1jZaehbCKjJWcw=" />
 
 #### 6. AI, Big Language Model, Metaverse
 
@@ -72,7 +72,7 @@ See the history of the stock [Nvidia](https://www.google.com/finance/quote/NVDA:
 * 2022: The ChatGPT is publicly announce. The big language model is popular.
 * 2022: NVIDIA Omniverse™ platform is released as fundational role of building metaverse.
 * As the core infrastructure of training LLM, Nvidia is again on the top of the tide.
-<br><img width="240" src="https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/chatgpt.webp"/>
+<br/><img width="240" src="https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/chatgpt.webp"/>
 
 
 #### 7. Today
@@ -80,7 +80,7 @@ See the history of the stock [Nvidia](https://www.google.com/finance/quote/NVDA:
 * Moore's Law is fading today. Now it yields [Huang’s law](https://blogs.nvidia.com/blog/2020/12/14/gtc-china-keynote-dally-ai/) — that GPUs will double AI performance every year.
 
 * The world's 6th largest company (Oct. 2023). <br/> See [World's Largest Companies](https://tw.tradingview.com/markets/world-economy/worlds-largest-companies/)
-  <br><img width="720" src="https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/elon.png"/>
+  <br/><img width="720" src="https://raw.githubusercontent.com/GarfieldZHU/Aloha.zone.io/master/Graphics/.assets/elon.png"/>
 
 
 
@@ -317,7 +317,7 @@ Now, let's focus on the core chip (Nvidia):
 <img width="1024" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/ampere_more.png?raw=true"/>
 </details>
 
-<br>
+<br/>
 
 ### ⚖️ Compare with CPU
 
@@ -336,7 +336,7 @@ Now, let's focus on the core chip (Nvidia):
 | Many diverse instruction sets | A few highly optimized instruction sets |
 | Explicit thread management | Threads are managed by hardware |
 
-<br><img width="480" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/compare.png?raw=true" />
+<br/><img width="480" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/compare.png?raw=true" />
 
 <br/>
 
@@ -407,7 +407,7 @@ Generally, The GPU cores are the shading units for rendering pipeline. But for N
 
 The computational complexity increases multifold as the size and dimensions of the matrix (tensor) go up. Machine Learning, Deep learning, Ray Tracing are tasks that involve an excessive amount of multiplication.
 
-<br><img width="480" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/tensor.jpeg?raw=true"/>
+<br/><img width="480" src="https://github.com/GarfieldZHU/Aloha.zone.io/blob/master/Graphics/.assets/tensor.jpeg?raw=true"/>
 
 <details>
 <summary>Ampere - Tensor core </summary>
@@ -421,7 +421,7 @@ The computational complexity increases multifold as the size and dimensions of t
 Known as "Ray Tracing Cores". It is a hardware implementation of the ray tracing technique.
 
 Ray tracing calculation is a specific rendering pattern with ray related vector calcutions, refer to [Ray Tracing notes](https://garfieldzhu.github.io/Aloha.zone.io/Graphics/RayTracing/)
-<br><img width="480" src="https://d29g4g2dyqv443.cloudfront.net/sites/default/files/akamai/Ampere/ampere-innovation-RT-cores-2c50-D@2x.jpg"/>
+<br/><img width="480" src="https://d29g4g2dyqv443.cloudfront.net/sites/default/files/akamai/Ampere/ampere-innovation-RT-cores-2c50-D@2x.jpg"/>
 
 In short, RT cores add extra circuits to the more general purpose CUDA cores that can be included in the rendering pipeline when a ray-tracing calculation comes along.
 
