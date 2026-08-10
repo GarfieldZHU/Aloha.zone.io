@@ -1,7 +1,7 @@
-import { Universe, Cell } from "wasm-game-of-life";
+import init, { Universe } from "./pkg/wasm_game_of_life.js";
 
-// Import the WebAssembly memory at the top of the file.
-import { memory } from "wasm-game-of-life/wasm_game_of_life_bg";
+// The web target loads the wasm binary beside the generated JavaScript glue.
+const { memory } = await init();
 
 const CELL_SIZE = 5; // px
 const GRID_COLOR = "#CCCCCC";
