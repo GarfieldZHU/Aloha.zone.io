@@ -2,26 +2,70 @@ name: Rust-wasm
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
     paths:
-    - 'wasm/rust-wasm/wasm-game-of-life/**'
-    - '!wasm/rust-wasm/wasm-game-of-life/www/**'
+      - 'wasm/rust-wasm/wasm-game-of-life/**'
   pull_request:
-    branches: [ master ]
+    branches: [master]
     paths:
-    - 'wasm/rust-wasm/wasm-game-of-life/**'
-    - '!wasm/rust-wasm/wasm-game-of-life/www/**'
+      - 'wasm/rust-wasm/wasm-game-of-life/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Install deps
-      run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
-    - name: Build
-      run: cd wasm/rust-wasm/wasm-game-of-life/ && cargo build --verbose
-#     - name: Run tests
-#       run: cd wasm/rust-wasm/wasm-game-of-life/ && cargo test --verbose
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install Rust and the WebAssembly target
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
+
+      - name: Install wasm-pack
+        uses: jetli/wasm-pack-action@v0.4.0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build the Rust WebAssembly package
+        working-directory: wasm/rust-wasm/wasm-game-of-life
+        run: wasm-pack build --release --target web --out-dir www/pkg
+
+      - name: Bundle the web app
+        working-directory: wasm/rust-wasm/wasm-game-of-life/www
+        run: npm run build
+
+      - name: Upload the GitHub Pages artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: wasm/rust-wasm/wasm-game-of-life/www/dist
+
+  deploy:
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'push' && github.ref == 'refs/heads/master')
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
